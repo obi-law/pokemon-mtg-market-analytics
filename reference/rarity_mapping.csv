@@ -1,0 +1,16 @@
+game,rarity_raw,tier_mapped,tier_order
+mtg,common,common,1
+mtg,uncommon,uncommon,2
+mtg,rare,rare,3
+mtg,mythic,top,4
+pokemon,Common,common,1
+pokemon,Uncommon,uncommon,2
+pokemon,Rare,rare,3
+pokemon,Double Rare,rare,3
+pokemon,Illustration Rare,top,4
+pokemon,Ultra Rare,top,4
+pokemon,Special Illustration Rare,top,4
+pokemon,Hyper Rare,top,4
+pokemon,Mega Hyper Rare,top,4
+pokemon,Black White Rare,top,4
+pokemon,ACE SPEC Rare,top,4
