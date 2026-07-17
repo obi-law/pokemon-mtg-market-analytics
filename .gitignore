@@ -4,6 +4,8 @@
 # data (fetched/derived; see data/README.md for reproduction)
 data/*
 !data/README.md
+!data/sealed_prices.csv
+!data/msrp_sources.csv
 
 # Tableau
 *.hyper

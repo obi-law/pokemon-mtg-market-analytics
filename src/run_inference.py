@@ -261,6 +261,18 @@ def sensitivity_all_finishes(processed: Path) -> None:
     record("sensC_all_finishes", "mwu_p", float(res.pvalue))
 
 
+def sensitivity_min_age(data_dir: Path, min_years: float = 0.5) -> None:
+    print(f"\n=== Sensitivity D: sealed, sets >= {min_years}y old only ===")
+    df = pd.read_csv(data_dir / "processed" / "sealed_returns.csv")
+    old = df[df["years"] >= min_years]
+    med = old.groupby("game")[["total_return", "cagr"]].median().round(3)
+    print(f"sets retained: {old.groupby('game').size().to_dict()}")
+    print(med.to_string())
+    for k, v in med.to_dict("index").items():
+        record("sensD_min_age", f"median_total_return_{k}", v["total_return"])
+        record("sensD_min_age", f"median_cagr_{k}", v["cagr"])
+
+
 def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--out-dir", type=str, default="",
@@ -294,6 +306,8 @@ def main() -> None:
     sensitivity_age_strata(win)
     sensitivity_ace_spec(win)
     sensitivity_all_finishes(processed)
+    if h3_p is not None:
+        sensitivity_min_age(data_dir)
 
     print("\n=== Holm correction (primary family) ===")
     for name, p_adj in holm(primary_p).items():

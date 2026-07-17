@@ -1,0 +1,31 @@
+game,set_code,set_name,set_category,release_date,product_type,tcgplayer_market_usd,collected_date,source_note
+mtg,MKM,Murders at Karlov Manor,standard,2024-02-09,booster_play,5.49,2026-07-15,TCGplayer Mid via MTGGoldfish - matches release-side metric
+mtg,OTJ,Outlaws of Thunder Junction,standard,2024-04-19,booster_play,5.76,2026-07-15,TCGplayer Mid via MTGGoldfish - matches release-side metric
+mtg,BLB,Bloomburrow,standard,2024-08-02,booster_play,6.11,2026-07-15,TCGplayer market - single Play Booster
+mtg,DSK,Duskmourn: House of Horror,standard,2024-09-27,booster_play,5.37,2026-07-15,TCGplayer market - single Play Booster
+mtg,FDN,Foundations,standard,2024-11-15,booster_play,5.15,2026-07-15,TCGplayer market - single Play Booster
+mtg,DFT,Aetherdrift,standard,2025-02-14,booster_play,4.61,2026-07-15,TCGplayer market - single Play Booster
+mtg,TDM,Tarkir: Dragonstorm,standard,2025-04-11,booster_play,4.66,2026-07-15,TCGplayer market - single Play Booster
+mtg,FIN,Final Fantasy,universes_beyond,2025-06-13,booster_play,8.9,2026-07-15,TCGplayer market - single Play Booster
+mtg,EOE,Edge of Eternities,standard,2025-08-01,booster_play,6.31,2026-07-15,TCGplayer market - single Play Booster
+mtg,SPM,Marvel's Spider-Man,universes_beyond,2025-09-26,booster_play,4.85,2026-07-15,TCGplayer market - single Play Booster
+mtg,TLA,Avatar: The Last Airbender,universes_beyond,2025-11-21,booster_play,5.02,2026-07-15,TCGplayer market - single Play Booster
+mtg,ECL,Lorwyn Eclipsed,standard,2026-01-23,booster_play,4.93,2026-07-15,TCGplayer market - single Play Booster
+mtg,TMT,Teenage Mutant Ninja Turtles,universes_beyond,2026-03-06,booster_play,3.95,2026-07-15,TCGplayer market - single Play Booster
+mtg,SOS,Secrets of Strixhaven,standard,2026-04-24,booster_play,4.87,2026-07-15,TCGplayer market - single Play Booster
+mtg,MSH,Marvel Super Heroes,universes_beyond,2026-06-26,booster_play,4.82,2026-07-15,TCGplayer market - single Play Booster
+pokemon,sv5,Temporal Forces,main,2024-03-22,booster_single,11.0,2026-07-15,TCGplayer market - loose booster pack
+pokemon,sv6,Twilight Masquerade,main,2024-05-24,booster_single,8.96,2026-07-15,TCGplayer market - loose booster pack
+pokemon,sv6pt5,Shrouded Fable,special,2024-08-02,booster_single,14.38,2026-07-15,TCGplayer market - loose booster pack (no standalone retail pack)
+pokemon,sv7,Stellar Crown,main,2024-09-13,booster_single,10.31,2026-07-15,TCGplayer market - loose booster pack
+pokemon,sv8,Surging Sparks,main,2024-11-08,booster_single,8.27,2026-07-15,TCGplayer market - loose booster pack
+pokemon,sv8pt5,Prismatic Evolutions,special,2025-01-17,booster_single,13.79,2026-07-15,TCGplayer market - loose booster pack (no standalone retail pack)
+pokemon,sv9,Journey Together,main,2025-03-28,booster_single,6.67,2026-07-15,TCGplayer market - loose booster pack
+pokemon,sv10,Destined Rivals,main,2025-05-30,booster_single,9.01,2026-07-15,TCGplayer market - loose booster pack
+pokemon,zsv10pt5,Black Bolt,special_paired,2025-07-18,booster_single,15.73,2026-07-15,TCGplayer market - loose booster pack (paired release w/ White Flare)
+pokemon,rsv10pt5,White Flare,special_paired,2025-07-18,booster_single,14.29,2026-07-15,TCGplayer market - loose booster pack (paired release w/ Black Bolt)
+pokemon,me1,Mega Evolution,main,2025-09-26,booster_single,8.47,2026-07-15,TCGplayer market - loose booster pack
+pokemon,me2,Phantasmal Flames,main,2025-11-14,booster_single,11.51,2026-07-15,TCGplayer market - loose booster pack
+pokemon,me2pt5,Ascended Heroes,special,2026-01-30,booster_single,13.58,2026-07-15,TCGplayer market - loose booster pack (no standalone retail pack)
+pokemon,me3,Perfect Order,main,2026-03-27,booster_single,6.07,2026-07-15,TCGplayer market - loose booster pack
+pokemon,me4,Chaos Rising,main,2026-05-22,booster_single,6.37,2026-07-15,TCGplayer market - loose booster pack
