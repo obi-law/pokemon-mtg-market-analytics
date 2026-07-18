@@ -1,0 +1,22 @@
+Append inside <preferences> in Preferences.tps (BACK UP .tps AND .txt FIRST,
+then restart Tableau). Mirror this block into Preferences.txt per convention.
+
+<color-palette name="PMA Chase Card" type="regular">
+<color>#F5C84C</color>  <!-- chase gold        : pokemon / emphasis            -->
+<color>#9D8CFF</color>  <!-- arcane violet     : mtg / emphasis                -->
+<color>#C9A43E</color>  <!-- worn gold         : pokemon secondary marks       -->
+<color>#6F63C4</color>  <!-- dusk violet       : mtg secondary marks           -->
+<color>#3A4058</color>  <!-- dimmed slate      : de-emphasized game (flip pov) -->
+<color>#5A6478</color>  <!-- reference slate   : axis / reference lines        -->
+<color>#EDEAE2</color>  <!-- bone white        : primary text                  -->
+<color>#9AA3B5</color>  <!-- mist gray         : secondary text                -->
+<color>#7A8298</color>  <!-- cool gray         : negative / below-launch       -->
+</color-palette>
+<color-palette name="PMA Gold Ramp" type="ordered-sequential">
+<color>#2A2410</color>  <!-- deep amber ink    : ramp low                      -->
+<color>#F5C84C</color>  <!-- chase gold        : ramp high                     -->
+</color-palette>
+<color-palette name="PMA Violet Ramp" type="ordered-sequential">
+<color>#1B1836</color>  <!-- deep violet ink   : ramp low                      -->
+<color>#9D8CFF</color>  <!-- arcane violet     : ramp high                     -->
+</color-palette>
