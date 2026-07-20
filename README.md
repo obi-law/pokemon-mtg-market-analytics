@@ -119,4 +119,5 @@ One dashboard, two readings: a collector-card layout that flips between the
 Magic and Pokémon perspectives on the same underlying analysis. The facts
 never change between faces — only the emphasis and the reading do.
 
-![The Chase Card — MTG reading](tableau/Dashboard.png)
+![The Chase Card — MTG reading](tableau/chase_card_magic.png)
+![The Chase Card — Pokémon reading](tableau/chase_card_pokemon.png)
