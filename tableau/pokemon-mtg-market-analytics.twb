@@ -1,0 +1,2965 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20261.26.0410.0924                               -->
+<workbook original-version='18.1' source-build='2026.1.1 (20261.26.0410.0924)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <AccessibleZoneTabOrder />
+    <AnimationOnByDefault />
+    <AutoCreateAndUpdateDSDPhoneLayouts />
+    <_.fcp.DashboardRoundedCorners.true...DashboardRoundedCorners />
+    <DatagraphCoreV1 />
+    <DatagraphNodeDashboardZoneVisibilityV1 />
+    <DatagraphNodeSingleValueFieldV1 />
+    <MarkAnimation />
+    <ObjectModelEncapsulateLegacy />
+    <ObjectModelTableType />
+    <ParameterAction />
+    <ParameterActionClearSelection />
+    <SchemaViewerObjectModel />
+    <SetMembershipControl />
+    <SheetIdentifierTracking />
+    <SortTagCleanup />
+    <WindowsPersistSimpleIdentifiers />
+    <WorksheetBackgroundTransparency />
+    <ZoneFriendlyName />
+    <ZoneVisibilityControl />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+    <color-palette custom='true' name='PMA Chase Card' type='regular'>
+      <color>#f5c84c</color>
+      <color>#9d8cff</color>
+      <color>#edeae2</color>
+      <color>#9aa3b5</color>
+      <color>#5a6478</color>
+      <color>#7a8298</color>
+      <color>#161c2b</color>
+      <color>#10141f</color>
+      <color>#3a4058</color>
+    </color-palette>
+  </preferences>
+  <datasources>
+    <datasource hasconnection='false' inline='true' name='Parameters' version='18.1'>
+      <aliases enabled='yes' />
+      <column caption='Card View' datatype='string' name='[Parameter 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;Pokemon&quot;'>
+        <calculation class='tableau' formula='&quot;Pokemon&quot;' />
+        <aliases>
+          <alias key='&quot;MTG&quot;' value='Magic: The Gathering' />
+        </aliases>
+        <members>
+          <member alias='Magic: The Gathering' value='&quot;MTG&quot;' />
+          <member value='&quot;Pokemon&quot;' />
+        </members>
+      </column>
+    </datasource>
+    <datasource caption='inference_results' inline='true' name='federated.1vx2g491as1p2613es30t0bveheg' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='inference_results' name='textscan.0uyp8690lgf5g910h7bxp0bk4p76'>
+            <connection class='textscan' directory='.../data/processed' filename='inference_results.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <relation connection='textscan.0uyp8690lgf5g910h7bxp0bk4p76' name='inference_results.csv' table='[inference_results#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+            <column datatype='string' name='analysis' ordinal='0' />
+            <column datatype='string' name='metric' ordinal='1' />
+            <column datatype='real' name='value' ordinal='2' />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[inference_results.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>analysis</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[analysis]</local-name>
+            <parent-name>[inference_results.csv]</parent-name>
+            <remote-alias>analysis</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[inference_results.csv_06853E73A5A2405385836823AD854032]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>metric</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[metric]</local-name>
+            <parent-name>[inference_results.csv]</parent-name>
+            <remote-alias>metric</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[inference_results.csv_06853E73A5A2405385836823AD854032]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>value</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[value]</local-name>
+            <parent-name>[inference_results.csv]</parent-name>
+            <remote-alias>value</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[inference_results.csv_06853E73A5A2405385836823AD854032]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='inference_results.csv' datatype='table' name='[__tableau_internal_object_id__].[inference_results.csv_06853E73A5A2405385836823AD854032]' role='measure' type='quantitative' />
+      <column caption='Analysis' datatype='string' name='[analysis]' role='dimension' type='nominal' />
+      <column caption='Metric' datatype='string' name='[metric]' role='dimension' type='nominal' />
+      <column caption='Value' datatype='real' name='[value]' role='measure' type='quantitative' />
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+      <object-graph>
+        <objects>
+          <object caption='inference_results.csv' id='inference_results.csv_06853E73A5A2405385836823AD854032'>
+            <properties context=''>
+              <relation connection='textscan.0uyp8690lgf5g910h7bxp0bk4p76' name='inference_results.csv' table='[inference_results#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+                  <column datatype='string' name='analysis' ordinal='0' />
+                  <column datatype='string' name='metric' ordinal='1' />
+                  <column datatype='real' name='value' ordinal='2' />
+                </columns>
+              </relation>
+            </properties>
+          </object>
+        </objects>
+      </object-graph>
+    </datasource>
+    <datasource caption='sealed_returns' inline='true' name='federated.14tlmw40kzkaq91fdxebn1j7boyd' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='sealed_returns' name='textscan.1vamzwk0z1h6ir16zfdzd0hi8kmd'>
+            <connection class='textscan' directory='.../data/processed' filename='sealed_returns.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <relation connection='textscan.1vamzwk0z1h6ir16zfdzd0hi8kmd' name='sealed_returns.csv' table='[sealed_returns#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+            <column datatype='string' name='game' ordinal='0' />
+            <column datatype='string' name='set_code' ordinal='1' />
+            <column datatype='string' name='set_name' ordinal='2' />
+            <column datatype='string' name='set_category' ordinal='3' />
+            <column datatype='date' name='release_date' ordinal='4' />
+            <column datatype='string' name='product_type' ordinal='5' />
+            <column datatype='real' name='tcgplayer_market_usd' ordinal='6' />
+            <column datatype='date' name='collected_date' ordinal='7' />
+            <column datatype='string' name='source_note' ordinal='8' />
+            <column datatype='real' name='msrp_usd' ordinal='9' />
+            <column datatype='string' name='msrp_basis' ordinal='10' />
+            <column datatype='real' name='years' ordinal='11' />
+            <column datatype='real' name='total_return' ordinal='12' />
+            <column datatype='real' name='cagr' ordinal='13' />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[sealed_returns.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>game</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[game]</local-name>
+            <parent-name>[sealed_returns.csv]</parent-name>
+            <remote-alias>game</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[sealed_returns.csv_3E9DEFA52FCC4762B27AA19C534C7A33]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>set_code</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[set_code]</local-name>
+            <parent-name>[sealed_returns.csv]</parent-name>
+            <remote-alias>set_code</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[sealed_returns.csv_3E9DEFA52FCC4762B27AA19C534C7A33]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>set_name</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[set_name]</local-name>
+            <parent-name>[sealed_returns.csv]</parent-name>
+            <remote-alias>set_name</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[sealed_returns.csv_3E9DEFA52FCC4762B27AA19C534C7A33]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>set_category</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[set_category]</local-name>
+            <parent-name>[sealed_returns.csv]</parent-name>
+            <remote-alias>set_category</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[sealed_returns.csv_3E9DEFA52FCC4762B27AA19C534C7A33]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>release_date</remote-name>
+            <remote-type>133</remote-type>
+            <local-name>[release_date]</local-name>
+            <parent-name>[sealed_returns.csv]</parent-name>
+            <remote-alias>release_date</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[sealed_returns.csv_3E9DEFA52FCC4762B27AA19C534C7A33]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>product_type</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[product_type]</local-name>
+            <parent-name>[sealed_returns.csv]</parent-name>
+            <remote-alias>product_type</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[sealed_returns.csv_3E9DEFA52FCC4762B27AA19C534C7A33]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>tcgplayer_market_usd</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[tcgplayer_market_usd]</local-name>
+            <parent-name>[sealed_returns.csv]</parent-name>
+            <remote-alias>tcgplayer_market_usd</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[sealed_returns.csv_3E9DEFA52FCC4762B27AA19C534C7A33]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>collected_date</remote-name>
+            <remote-type>133</remote-type>
+            <local-name>[collected_date]</local-name>
+            <parent-name>[sealed_returns.csv]</parent-name>
+            <remote-alias>collected_date</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[sealed_returns.csv_3E9DEFA52FCC4762B27AA19C534C7A33]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>source_note</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[source_note]</local-name>
+            <parent-name>[sealed_returns.csv]</parent-name>
+            <remote-alias>source_note</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[sealed_returns.csv_3E9DEFA52FCC4762B27AA19C534C7A33]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>msrp_usd</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[msrp_usd]</local-name>
+            <parent-name>[sealed_returns.csv]</parent-name>
+            <remote-alias>msrp_usd</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[sealed_returns.csv_3E9DEFA52FCC4762B27AA19C534C7A33]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>msrp_basis</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[msrp_basis]</local-name>
+            <parent-name>[sealed_returns.csv]</parent-name>
+            <remote-alias>msrp_basis</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[sealed_returns.csv_3E9DEFA52FCC4762B27AA19C534C7A33]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>years</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[years]</local-name>
+            <parent-name>[sealed_returns.csv]</parent-name>
+            <remote-alias>years</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[sealed_returns.csv_3E9DEFA52FCC4762B27AA19C534C7A33]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>total_return</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[total_return]</local-name>
+            <parent-name>[sealed_returns.csv]</parent-name>
+            <remote-alias>total_return</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[sealed_returns.csv_3E9DEFA52FCC4762B27AA19C534C7A33]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>cagr</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[cagr]</local-name>
+            <parent-name>[sealed_returns.csv]</parent-name>
+            <remote-alias>cagr</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[sealed_returns.csv_3E9DEFA52FCC4762B27AA19C534C7A33]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Show Pokemon' datatype='boolean' name='[Calculation_1403276381462528]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='[Parameters].[Parameter 1] = &quot;Pokemon&quot;' />
+      </column>
+      <column caption='Emphasis' datatype='string' name='[Calculation_1403276381741058]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='IF LOWER([game]) = LOWER([Parameters].[Parameter 1])&#13;&#10;    THEN [game] &#13;&#10;    ELSE &quot;inactive&quot; &#13;&#10;END' />
+      </column>
+      <column caption='Stem Base' datatype='real' name='[Calculation_1927743420399616]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='MIN(1.0)' />
+      </column>
+      <column caption='Return vs Launch' datatype='real' name='[Calculation_1927743420485633]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='AVG([total_return]) - 1.0' />
+      </column>
+      <column caption='Next View' datatype='string' name='[Calculation_2013505631608838]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='IF [Parameters].[Parameter 1] = &quot;Pokemon&quot; &#13;&#10;    THEN &quot;MTG&quot; &#13;&#10;    ELSE &quot;Pokemon&quot;&#13;&#10;END' />
+      </column>
+      <column caption='Flip Label' datatype='string' name='[Calculation_2013505631764487]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='&quot;⇄ flip card: &quot; + IF [Parameters].[Parameter 1] = &quot;Pokemon&quot; &#13;&#10;    THEN &quot;the mtg reading&quot; &#13;&#10;    ELSE &quot;the pokemon reading&quot;&#13;&#10;END' />
+      </column>
+      <column caption='Show Magic' datatype='boolean' name='[Show Pokemon (copy)_1403276381659137]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='[Parameters].[Parameter 1] = &quot;MTG&quot;' />
+      </column>
+      <column caption='sealed_returns.csv' datatype='table' name='[__tableau_internal_object_id__].[sealed_returns.csv_3E9DEFA52FCC4762B27AA19C534C7A33]' role='measure' type='quantitative' />
+      <column caption='Cagr' datatype='real' default-format='p0.0%' name='[cagr]' role='measure' type='quantitative' />
+      <column caption='Collected Date' datatype='date' name='[collected_date]' role='dimension' type='ordinal' />
+      <column caption='Game' datatype='string' name='[game]' role='dimension' type='nominal'>
+        <aliases>
+          <alias key='&quot;mtg&quot;' value='Magic: The Gathering' />
+          <alias key='&quot;pokemon&quot;' value='Pokemon' />
+        </aliases>
+      </column>
+      <column caption='Msrp Basis' datatype='string' name='[msrp_basis]' role='dimension' type='nominal' />
+      <column caption='Msrp Usd' datatype='real' default-format='c&quot;$&quot;#,##0.00;(&quot;$&quot;#,##0.00)' name='[msrp_usd]' role='measure' type='quantitative' />
+      <column caption='Product Type' datatype='string' name='[product_type]' role='dimension' type='nominal' />
+      <column caption='Release Date' datatype='date' name='[release_date]' role='dimension' type='ordinal' />
+      <column caption='Set Category' datatype='string' name='[set_category]' role='dimension' type='nominal'>
+        <aliases>
+          <alias key='&quot;main&quot;' value='Main expansion' />
+          <alias key='&quot;special&quot;' value='Special' />
+          <alias key='&quot;special_paired&quot;' value='Special set (paired release)' />
+          <alias key='&quot;standard&quot;' value='Standard set' />
+          <alias key='&quot;universes_beyond&quot;' value='Universes Beyond' />
+        </aliases>
+      </column>
+      <column caption='Set Code' datatype='string' name='[set_code]' role='dimension' type='nominal' />
+      <column caption='Set Name' datatype='string' name='[set_name]' role='dimension' type='nominal' />
+      <column caption='Source Note' datatype='string' name='[source_note]' role='dimension' type='nominal' />
+      <column caption='Tcgplayer Market Usd' datatype='real' default-format='c&quot;$&quot;#,##0.00;(&quot;$&quot;#,##0.00)' name='[tcgplayer_market_usd]' role='measure' type='quantitative' />
+      <column caption='Total Return' datatype='real' default-format='*0.00&quot;x&quot;' name='[total_return]' role='measure' type='quantitative' />
+      <column caption='Years' datatype='real' default-format='n#,##0.0;-#,##0.0' name='[years]' role='measure' type='quantitative' />
+      <column-instance column='[Calculation_1403276381741058]' derivation='None' name='[none:Calculation_1403276381741058:nk]' pivot='key' type='nominal' />
+      <column-instance column='[game]' derivation='None' name='[none:game:nk]' pivot='key' type='nominal' />
+      <layout common-percentage='0.726168' dim-ordering='alphabetic' measure-ordering='alphabetic' parameter-percentage='0.273832' show-aliased-fields='true' show-structure='true' user-set-layout-v2='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[none:game:nk]' palette='PMA Chase Card' type='palette'>
+            <map to='#3a4058'>
+              <bucket>&quot;pokemon&quot;</bucket>
+            </map>
+            <map to='#9d8cff'>
+              <bucket>&quot;mtg&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[none:Calculation_1403276381741058:nk]' type='palette'>
+            <map to='#3a4058'>
+              <bucket>&quot;inactive&quot;</bucket>
+            </map>
+            <map to='#9d8cff'>
+              <bucket>&quot;mtg&quot;</bucket>
+            </map>
+            <map to='#f5c84c'>
+              <bucket>&quot;pokemon&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+      <datasource-dependencies datasource='Parameters'>
+        <column caption='Card View' datatype='string' name='[Parameter 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;Pokemon&quot;'>
+          <calculation class='tableau' formula='&quot;Pokemon&quot;' />
+          <aliases>
+            <alias key='&quot;MTG&quot;' value='Magic: The Gathering' />
+          </aliases>
+        </column>
+      </datasource-dependencies>
+      <object-graph>
+        <objects>
+          <object caption='sealed_returns.csv' id='sealed_returns.csv_3E9DEFA52FCC4762B27AA19C534C7A33'>
+            <properties context=''>
+              <relation connection='textscan.1vamzwk0z1h6ir16zfdzd0hi8kmd' name='sealed_returns.csv' table='[sealed_returns#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+                  <column datatype='string' name='game' ordinal='0' />
+                  <column datatype='string' name='set_code' ordinal='1' />
+                  <column datatype='string' name='set_name' ordinal='2' />
+                  <column datatype='string' name='set_category' ordinal='3' />
+                  <column datatype='date' name='release_date' ordinal='4' />
+                  <column datatype='string' name='product_type' ordinal='5' />
+                  <column datatype='real' name='tcgplayer_market_usd' ordinal='6' />
+                  <column datatype='date' name='collected_date' ordinal='7' />
+                  <column datatype='string' name='source_note' ordinal='8' />
+                  <column datatype='real' name='msrp_usd' ordinal='9' />
+                  <column datatype='string' name='msrp_basis' ordinal='10' />
+                  <column datatype='real' name='years' ordinal='11' />
+                  <column datatype='real' name='total_return' ordinal='12' />
+                  <column datatype='real' name='cagr' ordinal='13' />
+                </columns>
+              </relation>
+            </properties>
+          </object>
+        </objects>
+      </object-graph>
+    </datasource>
+    <datasource caption='singles_prices' inline='true' name='federated.022yy3210adx2s1amqn411bcdyp5' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='singles_prices' name='textscan.1s4v6j105190w31d0iprf05aouha'>
+            <connection class='textscan' directory='.../data/processed' filename='singles_prices.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <relation connection='textscan.1s4v6j105190w31d0iprf05aouha' name='singles_prices.csv' table='[singles_prices#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+            <column datatype='string' name='game' ordinal='0' />
+            <column datatype='string' name='set_code' ordinal='1' />
+            <column datatype='string' name='set_name' ordinal='2' />
+            <column datatype='date' name='release_date' ordinal='3' />
+            <column datatype='string' name='card_key' ordinal='4' />
+            <column datatype='string' name='card_name' ordinal='5' />
+            <column datatype='string' name='rarity_raw' ordinal='6' />
+            <column datatype='string' name='finish_used' ordinal='7' />
+            <column datatype='real' name='price_usd' ordinal='8' />
+            <column datatype='string' name='tier_mapped' ordinal='9' />
+            <column datatype='integer' name='tier_order' ordinal='10' />
+            <column datatype='integer' name='set_age_days' ordinal='11' />
+            <column datatype='boolean' name='in_price_window' ordinal='12' />
+            <column datatype='string' name='release_event_id' ordinal='13' />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[singles_prices.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>game</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[game]</local-name>
+            <parent-name>[singles_prices.csv]</parent-name>
+            <remote-alias>game</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[singles_prices.csv_BEB54C59D8654BCD93FD64DEE5C4EBEE]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>set_code</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[set_code]</local-name>
+            <parent-name>[singles_prices.csv]</parent-name>
+            <remote-alias>set_code</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[singles_prices.csv_BEB54C59D8654BCD93FD64DEE5C4EBEE]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>set_name</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[set_name]</local-name>
+            <parent-name>[singles_prices.csv]</parent-name>
+            <remote-alias>set_name</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[singles_prices.csv_BEB54C59D8654BCD93FD64DEE5C4EBEE]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>release_date</remote-name>
+            <remote-type>133</remote-type>
+            <local-name>[release_date]</local-name>
+            <parent-name>[singles_prices.csv]</parent-name>
+            <remote-alias>release_date</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[singles_prices.csv_BEB54C59D8654BCD93FD64DEE5C4EBEE]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>card_key</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[card_key]</local-name>
+            <parent-name>[singles_prices.csv]</parent-name>
+            <remote-alias>card_key</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[singles_prices.csv_BEB54C59D8654BCD93FD64DEE5C4EBEE]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>card_name</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[card_name]</local-name>
+            <parent-name>[singles_prices.csv]</parent-name>
+            <remote-alias>card_name</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[singles_prices.csv_BEB54C59D8654BCD93FD64DEE5C4EBEE]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>rarity_raw</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[rarity_raw]</local-name>
+            <parent-name>[singles_prices.csv]</parent-name>
+            <remote-alias>rarity_raw</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[singles_prices.csv_BEB54C59D8654BCD93FD64DEE5C4EBEE]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>finish_used</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[finish_used]</local-name>
+            <parent-name>[singles_prices.csv]</parent-name>
+            <remote-alias>finish_used</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[singles_prices.csv_BEB54C59D8654BCD93FD64DEE5C4EBEE]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>price_usd</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[price_usd]</local-name>
+            <parent-name>[singles_prices.csv]</parent-name>
+            <remote-alias>price_usd</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[singles_prices.csv_BEB54C59D8654BCD93FD64DEE5C4EBEE]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>tier_mapped</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[tier_mapped]</local-name>
+            <parent-name>[singles_prices.csv]</parent-name>
+            <remote-alias>tier_mapped</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[singles_prices.csv_BEB54C59D8654BCD93FD64DEE5C4EBEE]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>tier_order</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[tier_order]</local-name>
+            <parent-name>[singles_prices.csv]</parent-name>
+            <remote-alias>tier_order</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[singles_prices.csv_BEB54C59D8654BCD93FD64DEE5C4EBEE]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>set_age_days</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[set_age_days]</local-name>
+            <parent-name>[singles_prices.csv]</parent-name>
+            <remote-alias>set_age_days</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[singles_prices.csv_BEB54C59D8654BCD93FD64DEE5C4EBEE]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>in_price_window</remote-name>
+            <remote-type>11</remote-type>
+            <local-name>[in_price_window]</local-name>
+            <parent-name>[singles_prices.csv]</parent-name>
+            <remote-alias>in_price_window</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>boolean</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[singles_prices.csv_BEB54C59D8654BCD93FD64DEE5C4EBEE]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>release_event_id</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[release_event_id]</local-name>
+            <parent-name>[singles_prices.csv]</parent-name>
+            <remote-alias>release_event_id</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[singles_prices.csv_BEB54C59D8654BCD93FD64DEE5C4EBEE]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Tier Group' datatype='string' name='[Calculation_1403276400123907]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='IF [tier_mapped] = &apos;top&apos; &#13;&#10;    THEN &apos;top&apos; &#13;&#10;    ELSE &apos;other&apos; &#13;&#10;END' />
+        <aliases>
+          <alias key='&quot;other&quot;' value='all other tiers' />
+          <alias key='&quot;top&quot;' value='chase tier' />
+        </aliases>
+      </column>
+      <column caption='Conc Color' datatype='string' name='[Calculation_1403276400222212]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='IF LOWER([game]) = LOWER([Parameters].[Parameter 1]) &#13;&#10;    THEN [game] + &apos;-&apos; + [Calculation_1403276400123907] &#13;&#10;    ELSE &apos;inactive-&apos; + [Calculation_1403276400123907] &#13;&#10;END' />
+      </column>
+      <column caption='Is Active Game' datatype='boolean' name='[Calculation_1403276400328709]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='LOWER([game]) = LOWER([Parameters].[Parameter 1])' />
+      </column>
+      <column caption='Emphasis' datatype='string' name='[Calculation_1403276403179527]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='IF LOWER([game]) = LOWER([Parameters].[Parameter 1])&#13;&#10;    THEN [game] &#13;&#10;    ELSE &quot;inactive&quot; &#13;&#10;END' />
+      </column>
+      <column caption='Tier Cards' datatype='integer' name='[Calculation_1550611634446336]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='COUNTD([card_key])' />
+      </column>
+      <column caption='Tier Total $' datatype='real' default-format='n#,##0;-#,##0' name='[Calculation_1550611634528257]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='SUM([price_usd])' />
+      </column>
+      <column caption='Tier Label' datatype='string' name='[Calculation_1550611639537666]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='IF [Calculation_1403276400123907] = &apos;top&apos; &#13;&#10;    THEN (IF [game] = &apos;mtg&apos; &#13;&#10;            THEN &apos;chase tier (mythic)&apos; &#13;&#10;            ELSE &apos;chase tier (illustration rare &amp; up)&apos;&#13;&#10;          END) &#13;&#10;    ELSE &apos;all other tiers (common–rare)&apos; &#13;&#10;END' />
+      </column>
+      <column caption='Pct of Game Value' datatype='real' default-format='p0.0%' name='[Calculation_2013505628016641]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='SUM([price_usd]) &#13;&#10;/ &#13;&#10;SUM(&#13;&#10;    { FIXED [game] : SUM([price_usd]) }&#13;&#10;)' />
+      </column>
+      <column caption='singles_prices.csv' datatype='table' name='[__tableau_internal_object_id__].[singles_prices.csv_BEB54C59D8654BCD93FD64DEE5C4EBEE]' role='measure' type='quantitative' />
+      <column caption='Card Key' datatype='string' name='[card_key]' role='dimension' type='nominal' />
+      <column caption='Card Name' datatype='string' name='[card_name]' role='dimension' type='nominal' />
+      <column caption='Finish Used' datatype='string' name='[finish_used]' role='dimension' type='nominal' />
+      <column caption='Game' datatype='string' name='[game]' role='dimension' type='nominal'>
+        <aliases>
+          <alias key='&quot;mtg&quot;' value='Magic: The Gathering' />
+          <alias key='&quot;pokemon&quot;' value='Pokemon' />
+        </aliases>
+      </column>
+      <column caption='In Price Window' datatype='boolean' name='[in_price_window]' role='dimension' type='nominal' />
+      <column caption='Price Usd' datatype='real' default-format='c&quot;$&quot;#,##0.00;(&quot;$&quot;#,##0.00)' name='[price_usd]' role='measure' type='quantitative' />
+      <column caption='Rarity Raw' datatype='string' name='[rarity_raw]' role='dimension' type='nominal' />
+      <column caption='Release Date' datatype='date' name='[release_date]' role='dimension' type='ordinal' />
+      <column caption='Release Event Id' datatype='string' name='[release_event_id]' role='dimension' type='nominal' />
+      <column caption='Set Age Days' datatype='integer' name='[set_age_days]' role='measure' type='quantitative' />
+      <column caption='Set Code' datatype='string' name='[set_code]' role='dimension' type='nominal' />
+      <column caption='Set Name' datatype='string' name='[set_name]' role='dimension' type='nominal' />
+      <column caption='Tier Mapped' datatype='string' name='[tier_mapped]' role='dimension' type='nominal' />
+      <column caption='Tier Order' datatype='integer' name='[tier_order]' role='measure' type='quantitative' />
+      <column-instance column='[Calculation_1403276400222212]' derivation='None' name='[none:Calculation_1403276400222212:nk]' pivot='key' type='nominal' />
+      <column-instance column='[Calculation_1403276403179527]' derivation='None' name='[none:Calculation_1403276403179527:nk]' pivot='key' type='nominal' />
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-aliased-fields='true' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[none:Calculation_1403276400222212:nk]' palette='PMA Chase Card' type='palette'>
+            <map to='#161c2b'>
+              <bucket>&quot;inactive-other&quot;</bucket>
+            </map>
+            <map to='#3a4058'>
+              <bucket>&quot;inactive-top&quot;</bucket>
+            </map>
+            <map to='#5a6478'>
+              <bucket>&quot;mtg-other&quot;</bucket>
+            </map>
+            <map to='#5a6478'>
+              <bucket>&quot;pokemon-other&quot;</bucket>
+            </map>
+            <map to='#9d8cff'>
+              <bucket>&quot;mtg-top&quot;</bucket>
+            </map>
+            <map to='#f5c84c'>
+              <bucket>&quot;pokemon-top&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[none:Calculation_1403276403179527:nk]' type='palette'>
+            <map to='#9d8cff'>
+              <bucket>&quot;mtg&quot;</bucket>
+            </map>
+            <map to='#f5c84c'>
+              <bucket>&quot;pokemon&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+      <datasource-dependencies datasource='Parameters'>
+        <column caption='Card View' datatype='string' name='[Parameter 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;Pokemon&quot;'>
+          <calculation class='tableau' formula='&quot;Pokemon&quot;' />
+          <aliases>
+            <alias key='&quot;MTG&quot;' value='Magic: The Gathering' />
+          </aliases>
+        </column>
+      </datasource-dependencies>
+      <object-graph>
+        <objects>
+          <object caption='singles_prices.csv' id='singles_prices.csv_BEB54C59D8654BCD93FD64DEE5C4EBEE'>
+            <properties context=''>
+              <relation connection='textscan.1s4v6j105190w31d0iprf05aouha' name='singles_prices.csv' table='[singles_prices#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+                  <column datatype='string' name='game' ordinal='0' />
+                  <column datatype='string' name='set_code' ordinal='1' />
+                  <column datatype='string' name='set_name' ordinal='2' />
+                  <column datatype='date' name='release_date' ordinal='3' />
+                  <column datatype='string' name='card_key' ordinal='4' />
+                  <column datatype='string' name='card_name' ordinal='5' />
+                  <column datatype='string' name='rarity_raw' ordinal='6' />
+                  <column datatype='string' name='finish_used' ordinal='7' />
+                  <column datatype='real' name='price_usd' ordinal='8' />
+                  <column datatype='string' name='tier_mapped' ordinal='9' />
+                  <column datatype='integer' name='tier_order' ordinal='10' />
+                  <column datatype='integer' name='set_age_days' ordinal='11' />
+                  <column datatype='boolean' name='in_price_window' ordinal='12' />
+                  <column datatype='string' name='release_event_id' ordinal='13' />
+                </columns>
+              </relation>
+            </properties>
+          </object>
+        </objects>
+      </object-graph>
+    </datasource>
+  </datasources>
+  <actions>
+    <edit-parameter-action caption='a.Flip Card' name='[Action1_4FE6612ED7964983A7216EA35042689D]'>
+      <activation type='on-select' />
+      <source dashboard='Chase Card' type='sheet' worksheet='Btn | Flip' />
+      <agg-type type='attr' />
+      <clear-option type='assign-fixed-value' value='s:LROOT:MTG' />
+      <params>
+        <param name='source-field' value='[federated.14tlmw40kzkaq91fdxebn1j7boyd].[none:Calculation_2013505631608838:nk]' />
+        <param name='target-parameter' value='[Parameters].[Parameter 1]' />
+      </params>
+    </edit-parameter-action>
+  </actions>
+  <worksheets>
+    <worksheet name='Act1 | Concentration'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='singles_prices' name='federated.022yy3210adx2s1amqn411bcdyp5' />
+            <datasource name='Parameters' />
+          </datasources>
+          <datasource-dependencies datasource='Parameters'>
+            <column caption='Card View' datatype='string' name='[Parameter 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;Pokemon&quot;'>
+              <calculation class='tableau' formula='&quot;Pokemon&quot;' />
+              <aliases>
+                <alias key='&quot;MTG&quot;' value='Magic: The Gathering' />
+              </aliases>
+            </column>
+          </datasource-dependencies>
+          <datasource-dependencies datasource='federated.022yy3210adx2s1amqn411bcdyp5'>
+            <column caption='Tier Group' datatype='string' name='[Calculation_1403276400123907]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='IF [tier_mapped] = &apos;top&apos; &#13;&#10;    THEN &apos;top&apos; &#13;&#10;    ELSE &apos;other&apos; &#13;&#10;END' />
+              <aliases>
+                <alias key='&quot;other&quot;' value='all other tiers' />
+                <alias key='&quot;top&quot;' value='chase tier' />
+              </aliases>
+            </column>
+            <column caption='Conc Color' datatype='string' name='[Calculation_1403276400222212]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='IF LOWER([game]) = LOWER([Parameters].[Parameter 1]) &#13;&#10;    THEN [game] + &apos;-&apos; + [Calculation_1403276400123907] &#13;&#10;    ELSE &apos;inactive-&apos; + [Calculation_1403276400123907] &#13;&#10;END' />
+            </column>
+            <column caption='Tier Cards' datatype='integer' name='[Calculation_1550611634446336]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='COUNTD([card_key])' />
+            </column>
+            <column caption='Tier Total $' datatype='real' default-format='n#,##0;-#,##0' name='[Calculation_1550611634528257]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='SUM([price_usd])' />
+            </column>
+            <column caption='Tier Label' datatype='string' name='[Calculation_1550611639537666]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='IF [Calculation_1403276400123907] = &apos;top&apos; &#13;&#10;    THEN (IF [game] = &apos;mtg&apos; &#13;&#10;            THEN &apos;chase tier (mythic)&apos; &#13;&#10;            ELSE &apos;chase tier (illustration rare &amp; up)&apos;&#13;&#10;          END) &#13;&#10;    ELSE &apos;all other tiers (common–rare)&apos; &#13;&#10;END' />
+            </column>
+            <column caption='Pct of Game Value' datatype='real' default-format='p0.0%' name='[Calculation_2013505628016641]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='SUM([price_usd]) &#13;&#10;/ &#13;&#10;SUM(&#13;&#10;    { FIXED [game] : SUM([price_usd]) }&#13;&#10;)' />
+            </column>
+            <column-instance column='[Calculation_1550611639537666]' derivation='Attribute' name='[attr:Calculation_1550611639537666:nk]' pivot='key' type='nominal' />
+            <column caption='Card Key' datatype='string' name='[card_key]' role='dimension' type='nominal' />
+            <column caption='Game' datatype='string' name='[game]' role='dimension' type='nominal'>
+              <aliases>
+                <alias key='&quot;mtg&quot;' value='Magic: The Gathering' />
+                <alias key='&quot;pokemon&quot;' value='Pokemon' />
+              </aliases>
+            </column>
+            <column caption='In Price Window' datatype='boolean' name='[in_price_window]' role='dimension' type='nominal' />
+            <column-instance column='[Calculation_1403276400123907]' derivation='None' name='[none:Calculation_1403276400123907:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_1403276400222212]' derivation='None' name='[none:Calculation_1403276400222212:nk]' pivot='key' type='nominal' />
+            <column-instance column='[game]' derivation='None' name='[none:game:nk]' pivot='key' type='nominal' />
+            <column-instance column='[in_price_window]' derivation='None' name='[none:in_price_window:nk]' pivot='key' type='nominal' />
+            <column caption='Price Usd' datatype='real' default-format='c&quot;$&quot;#,##0.00;(&quot;$&quot;#,##0.00)' name='[price_usd]' role='measure' type='quantitative' />
+            <column caption='Tier Mapped' datatype='string' name='[tier_mapped]' role='dimension' type='nominal' />
+            <column-instance column='[Calculation_1550611634446336]' derivation='User' name='[usr:Calculation_1550611634446336:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_1550611634528257]' derivation='User' name='[usr:Calculation_1550611634528257:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_2013505628016641]' derivation='User' name='[usr:Calculation_2013505628016641:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <manual-sort column='[federated.022yy3210adx2s1amqn411bcdyp5].[none:Calculation_1403276400123907:nk]' direction='ASC'>
+            <dictionary>
+              <bucket>&quot;top&quot;</bucket>
+              <bucket>&quot;other&quot;</bucket>
+            </dictionary>
+          </manual-sort>
+          <filter class='categorical' column='[federated.022yy3210adx2s1amqn411bcdyp5].[none:in_price_window:nk]' context='true'>
+            <groupfilter function='member' level='[none:in_price_window:nk]' member='true' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.022yy3210adx2s1amqn411bcdyp5].[none:in_price_window:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='display' class='0' field='[federated.022yy3210adx2s1amqn411bcdyp5].[usr:Calculation_2013505628016641:qk]' scope='cols' value='false' />
+            <format attr='stroke-size' value='0' />
+            <format attr='line-visibility' value='off' />
+            <format attr='tick-color' value='#00000000' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='display' field='[federated.022yy3210adx2s1amqn411bcdyp5].[none:game:nk]' value='true' />
+          </style-rule>
+          <style-rule element='table'>
+            <format attr='background-color' value='#00000000' />
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='display-field-labels' scope='rows' value='false' />
+            <format attr='font-family' value='Lato' />
+            <format attr='color' value='#9aa3b5' />
+          </style-rule>
+          <style-rule element='gridline'>
+            <format attr='stroke-size' scope='cols' value='0' />
+            <format attr='line-visibility' scope='cols' value='off' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <encodings>
+              <color column='[federated.022yy3210adx2s1amqn411bcdyp5].[none:Calculation_1403276400222212:nk]' />
+              <tooltip column='[federated.022yy3210adx2s1amqn411bcdyp5].[usr:Calculation_1550611634446336:qk]' />
+              <tooltip column='[federated.022yy3210adx2s1amqn411bcdyp5].[usr:Calculation_1550611634528257:qk]' />
+              <tooltip column='[federated.022yy3210adx2s1amqn411bcdyp5].[attr:Calculation_1550611639537666:nk]' />
+              <text column='[federated.022yy3210adx2s1amqn411bcdyp5].[usr:Calculation_2013505628016641:qk]' />
+              <lod column='[federated.022yy3210adx2s1amqn411bcdyp5].[none:Calculation_1403276400123907:nk]' />
+            </encodings>
+            <customized-tooltip show-buttons='false'>
+              <formatted-text>
+                <run bold='true' fontcolor='#10141f' fontname='lato bold' fontsize='11'><![CDATA[<[federated.022yy3210adx2s1amqn411bcdyp5].[none:game:nk]>   ]]></run>
+                <run fontcolor='#10141f' fontname='lato bold' fontsize='11'>·   </run>
+                <run bold='true' fontcolor='#10141f' fontname='lato bold' fontsize='11'><![CDATA[<[federated.022yy3210adx2s1amqn411bcdyp5].[attr:Calculation_1550611639537666:nk]>]]></run>
+                <run>Æ&#10;</run>
+                <run bold='true' fontcolor='#4a3e99' fontname='Lato' fontsize='9'><![CDATA[<[federated.022yy3210adx2s1amqn411bcdyp5].[usr:Calculation_2013505628016641:qk]>]]></run>
+                <run fontcolor='#10141f' fontname='Lato' fontsize='9'> of this game&apos;s singles value</run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#5a6478' fontname='Lato' fontsize='9'><![CDATA[<[federated.022yy3210adx2s1amqn411bcdyp5].[usr:Calculation_1550611634446336:qk]> distinct cards   ·   <[federated.022yy3210adx2s1amqn411bcdyp5].[usr:Calculation_1550611634528257:qk]> at market]]></run>
+              </formatted-text>
+            </customized-tooltip>
+            <style>
+              <style-rule element='datalabel'>
+                <format attr='color-mode' value='user' />
+                <format attr='font-family' value='Lato' />
+                <format attr='color' value='#edeae2' />
+              </style-rule>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-mode' value='all' />
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.022yy3210adx2s1amqn411bcdyp5].[none:game:nk]</rows>
+        <cols>[federated.022yy3210adx2s1amqn411bcdyp5].[usr:Calculation_2013505628016641:qk]</cols>
+      </table>
+      <simple-id uuid='{E96FE383-25E8-47DA-9568-9C45286142A7}' />
+    </worksheet>
+    <worksheet name='Act2 | Rarity Ladder'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='singles_prices' name='federated.022yy3210adx2s1amqn411bcdyp5' />
+            <datasource name='Parameters' />
+          </datasources>
+          <datasource-dependencies datasource='Parameters'>
+            <column caption='Card View' datatype='string' name='[Parameter 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;Pokemon&quot;'>
+              <calculation class='tableau' formula='&quot;Pokemon&quot;' />
+              <aliases>
+                <alias key='&quot;MTG&quot;' value='Magic: The Gathering' />
+              </aliases>
+            </column>
+          </datasource-dependencies>
+          <datasource-dependencies datasource='federated.022yy3210adx2s1amqn411bcdyp5'>
+            <column caption='Is Active Game' datatype='boolean' name='[Calculation_1403276400328709]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='LOWER([game]) = LOWER([Parameters].[Parameter 1])' />
+            </column>
+            <column caption='Emphasis' datatype='string' name='[Calculation_1403276403179527]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='IF LOWER([game]) = LOWER([Parameters].[Parameter 1])&#13;&#10;    THEN [game] &#13;&#10;    ELSE &quot;inactive&quot; &#13;&#10;END' />
+            </column>
+            <column caption='Tier Cards' datatype='integer' name='[Calculation_1550611634446336]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='COUNTD([card_key])' />
+            </column>
+            <column caption='Tier Total $' datatype='real' default-format='n#,##0;-#,##0' name='[Calculation_1550611634528257]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='SUM([price_usd])' />
+            </column>
+            <column caption='Pct of Game Value' datatype='real' default-format='p0.0%' name='[Calculation_2013505628016641]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='SUM([price_usd]) &#13;&#10;/ &#13;&#10;SUM(&#13;&#10;    { FIXED [game] : SUM([price_usd]) }&#13;&#10;)' />
+            </column>
+            <column-instance column='[game]' derivation='Attribute' name='[attr:game:nk]' pivot='key' type='nominal' />
+            <column caption='Card Key' datatype='string' name='[card_key]' role='dimension' type='nominal' />
+            <column caption='Game' datatype='string' name='[game]' role='dimension' type='nominal'>
+              <aliases>
+                <alias key='&quot;mtg&quot;' value='Magic: The Gathering' />
+                <alias key='&quot;pokemon&quot;' value='Pokemon' />
+              </aliases>
+            </column>
+            <column-instance column='[price_usd]' derivation='Median' name='[med:price_usd:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_1403276400328709]' derivation='None' name='[none:Calculation_1403276400328709:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_1403276403179527]' derivation='None' name='[none:Calculation_1403276403179527:nk]' pivot='key' type='nominal' />
+            <column-instance column='[rarity_raw]' derivation='None' name='[none:rarity_raw:nk]' pivot='key' type='nominal' />
+            <column caption='Price Usd' datatype='real' default-format='c&quot;$&quot;#,##0.00;(&quot;$&quot;#,##0.00)' name='[price_usd]' role='measure' type='quantitative' />
+            <column caption='Rarity Raw' datatype='string' name='[rarity_raw]' role='dimension' type='nominal' />
+            <column-instance column='[Calculation_1550611634446336]' derivation='User' name='[usr:Calculation_1550611634446336:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_1550611634528257]' derivation='User' name='[usr:Calculation_1550611634528257:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_2013505628016641]' derivation='User' name='[usr:Calculation_2013505628016641:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.022yy3210adx2s1amqn411bcdyp5].[none:Calculation_1403276400328709:nk]'>
+            <groupfilter function='member' level='[none:Calculation_1403276400328709:nk]' member='true' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <computed-sort column='[federated.022yy3210adx2s1amqn411bcdyp5].[none:rarity_raw:nk]' direction='DESC' using='[federated.022yy3210adx2s1amqn411bcdyp5].[med:price_usd:qk]' />
+          <slices>
+            <column>[federated.022yy3210adx2s1amqn411bcdyp5].[none:Calculation_1403276400328709:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.022yy3210adx2s1amqn411bcdyp5].[med:price_usd:qk]' field-type='quantitative' max='1000.0' min='0.050000000000000003' range-type='fixed' scale='log' scope='cols' type='space' />
+            <format attr='display' class='0' field='[federated.022yy3210adx2s1amqn411bcdyp5].[med:price_usd:qk]' scope='cols' value='false' />
+            <format attr='stroke-size' value='0' />
+            <format attr='line-visibility' value='off' />
+            <format attr='tick-color' value='#00000000' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='display' field='[federated.022yy3210adx2s1amqn411bcdyp5].[none:rarity_raw:nk]' value='true' />
+          </style-rule>
+          <style-rule element='table'>
+            <format attr='background-color' value='#00000000' />
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='display-field-labels' scope='rows' value='false' />
+            <format attr='font-family' value='Lato' />
+            <format attr='color' value='#9aa3b5' />
+          </style-rule>
+          <style-rule element='gridline'>
+            <format attr='stroke-size' scope='cols' value='0' />
+            <format attr='line-visibility' scope='cols' value='off' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <encodings>
+              <color column='[federated.022yy3210adx2s1amqn411bcdyp5].[none:Calculation_1403276403179527:nk]' />
+              <tooltip column='[federated.022yy3210adx2s1amqn411bcdyp5].[usr:Calculation_1550611634446336:qk]' />
+              <tooltip column='[federated.022yy3210adx2s1amqn411bcdyp5].[usr:Calculation_1550611634528257:qk]' />
+              <tooltip column='[federated.022yy3210adx2s1amqn411bcdyp5].[usr:Calculation_2013505628016641:qk]' />
+              <tooltip column='[federated.022yy3210adx2s1amqn411bcdyp5].[attr:game:nk]' />
+              <tooltip column='[federated.022yy3210adx2s1amqn411bcdyp5].[med:price_usd:qk]' />
+              <text column='[federated.022yy3210adx2s1amqn411bcdyp5].[med:price_usd:qk]' />
+            </encodings>
+            <customized-tooltip show-buttons='false'>
+              <formatted-text>
+                <run bold='true' fontcolor='#10141f' fontname='Lato Bold' fontsize='11'><![CDATA[<[federated.022yy3210adx2s1amqn411bcdyp5].[none:rarity_raw:nk]>   ]]></run>
+                <run fontcolor='#10141f' fontname='Lato Bold' fontsize='11'><![CDATA[·   <[federated.022yy3210adx2s1amqn411bcdyp5].[attr:game:nk]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#10141f' fontname='Lato'>median </run>
+                <run bold='true' fontcolor='#4a3e99' fontname='Lato'><![CDATA[<[federated.022yy3210adx2s1amqn411bcdyp5].[med:price_usd:qk]>]]></run>
+                <run fontcolor='#10141f' fontname='Lato'> per card</run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#5a6478' fontname='Lato' fontsize='9'><![CDATA[<[federated.022yy3210adx2s1amqn411bcdyp5].[usr:Calculation_1550611634446336:qk]> distinct cards   ·   <[federated.022yy3210adx2s1amqn411bcdyp5].[usr:Calculation_1550611634528257:qk]> at market]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#5a6478' fontname='Lato' fontsize='9'><![CDATA[<[federated.022yy3210adx2s1amqn411bcdyp5].[usr:Calculation_2013505628016641:qk]> of this game's singles value]]></run>
+              </formatted-text>
+            </customized-tooltip>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.022yy3210adx2s1amqn411bcdyp5].[none:rarity_raw:nk]</rows>
+        <cols>[federated.022yy3210adx2s1amqn411bcdyp5].[med:price_usd:qk]</cols>
+      </table>
+      <simple-id uuid='{00A7EA95-5ED8-404E-B156-EA84AF76B5A2}' />
+    </worksheet>
+    <worksheet name='Btn | Flip'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='sealed_returns' name='federated.14tlmw40kzkaq91fdxebn1j7boyd' />
+            <datasource name='Parameters' />
+          </datasources>
+          <datasource-dependencies datasource='Parameters'>
+            <column caption='Card View' datatype='string' name='[Parameter 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;Pokemon&quot;'>
+              <calculation class='tableau' formula='&quot;Pokemon&quot;' />
+              <aliases>
+                <alias key='&quot;MTG&quot;' value='Magic: The Gathering' />
+              </aliases>
+            </column>
+          </datasource-dependencies>
+          <datasource-dependencies datasource='federated.14tlmw40kzkaq91fdxebn1j7boyd'>
+            <column caption='Next View' datatype='string' name='[Calculation_2013505631608838]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='IF [Parameters].[Parameter 1] = &quot;Pokemon&quot; &#13;&#10;    THEN &quot;MTG&quot; &#13;&#10;    ELSE &quot;Pokemon&quot;&#13;&#10;END' />
+            </column>
+            <column caption='Flip Label' datatype='string' name='[Calculation_2013505631764487]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='&quot;⇄ flip card: &quot; + IF [Parameters].[Parameter 1] = &quot;Pokemon&quot; &#13;&#10;    THEN &quot;the mtg reading&quot; &#13;&#10;    ELSE &quot;the pokemon reading&quot;&#13;&#10;END' />
+            </column>
+            <column-instance column='[Calculation_2013505631608838]' derivation='None' name='[none:Calculation_2013505631608838:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_2013505631764487]' derivation='None' name='[none:Calculation_2013505631764487:nk]' pivot='key' type='nominal' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='width' value='240' />
+            <format attr='height' value='17' />
+          </style-rule>
+          <style-rule element='table'>
+            <format attr='background-color' value='#161c2b' />
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='font-family' value='Lato' />
+            <format attr='font-size' value='11' />
+            <format attr='color' value='#9aa3b5' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Text' />
+            <encodings>
+              <lod column='[federated.14tlmw40kzkaq91fdxebn1j7boyd].[none:Calculation_2013505631608838:nk]' />
+              <text column='[federated.14tlmw40kzkaq91fdxebn1j7boyd].[none:Calculation_2013505631764487:nk]' />
+            </encodings>
+            <customized-label>
+              <formatted-text>
+                <run fontalignment='2'>&lt;</run>
+                <run fontalignment='2'>[federated.14tlmw40kzkaq91fdxebn1j7boyd].[none:Calculation_2013505631764487:nk]</run>
+                <run fontalignment='2'>&gt;</run>
+              </formatted-text>
+            </customized-label>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+                <format attr='minheight' value='-1' />
+                <format attr='maxheight' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+        <tooltip-style tooltip-mode='none' />
+      </table>
+      <simple-id uuid='{FC660774-F1F9-4A8F-9636-E892D73F2189}' />
+    </worksheet>
+    <worksheet name='Hero | Sealed Returns'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='sealed_returns' name='federated.14tlmw40kzkaq91fdxebn1j7boyd' />
+            <datasource name='Parameters' />
+          </datasources>
+          <datasource-dependencies datasource='Parameters'>
+            <column caption='Card View' datatype='string' name='[Parameter 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;Pokemon&quot;'>
+              <calculation class='tableau' formula='&quot;Pokemon&quot;' />
+              <aliases>
+                <alias key='&quot;MTG&quot;' value='Magic: The Gathering' />
+              </aliases>
+            </column>
+          </datasource-dependencies>
+          <datasource-dependencies datasource='federated.14tlmw40kzkaq91fdxebn1j7boyd'>
+            <column caption='Emphasis' datatype='string' name='[Calculation_1403276381741058]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='IF LOWER([game]) = LOWER([Parameters].[Parameter 1])&#13;&#10;    THEN [game] &#13;&#10;    ELSE &quot;inactive&quot; &#13;&#10;END' />
+            </column>
+            <column caption='Stem Base' datatype='real' name='[Calculation_1927743420399616]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='MIN(1.0)' />
+            </column>
+            <column caption='Return vs Launch' datatype='real' name='[Calculation_1927743420485633]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='AVG([total_return]) - 1.0' />
+            </column>
+            <column-instance column='[game]' derivation='Attribute' name='[attr:game:nk]' pivot='key' type='nominal' />
+            <column-instance column='[set_category]' derivation='Attribute' name='[attr:set_category:nk]' pivot='key' type='nominal' />
+            <column-instance column='[set_name]' derivation='Attribute' name='[attr:set_name:nk]' pivot='key' type='nominal' />
+            <column-instance column='[total_return]' derivation='Avg' name='[avg:total_return:qk]' pivot='key' type='quantitative' />
+            <column caption='Cagr' datatype='real' default-format='p0.0%' name='[cagr]' role='measure' type='quantitative' />
+            <column caption='Game' datatype='string' name='[game]' role='dimension' type='nominal'>
+              <aliases>
+                <alias key='&quot;mtg&quot;' value='Magic: The Gathering' />
+                <alias key='&quot;pokemon&quot;' value='Pokemon' />
+              </aliases>
+            </column>
+            <column caption='Msrp Usd' datatype='real' default-format='c&quot;$&quot;#,##0.00;(&quot;$&quot;#,##0.00)' name='[msrp_usd]' role='measure' type='quantitative' />
+            <column-instance column='[Calculation_1403276381741058]' derivation='None' name='[none:Calculation_1403276381741058:nk]' pivot='key' type='nominal' />
+            <column-instance column='[set_code]' derivation='None' name='[none:set_code:nk]' pivot='key' type='nominal' />
+            <column caption='Set Category' datatype='string' name='[set_category]' role='dimension' type='nominal'>
+              <aliases>
+                <alias key='&quot;main&quot;' value='Main expansion' />
+                <alias key='&quot;special&quot;' value='Special' />
+                <alias key='&quot;special_paired&quot;' value='Special set (paired release)' />
+                <alias key='&quot;standard&quot;' value='Standard set' />
+                <alias key='&quot;universes_beyond&quot;' value='Universes Beyond' />
+              </aliases>
+            </column>
+            <column caption='Set Code' datatype='string' name='[set_code]' role='dimension' type='nominal' />
+            <column caption='Set Name' datatype='string' name='[set_name]' role='dimension' type='nominal' />
+            <column-instance column='[cagr]' derivation='Sum' name='[sum:cagr:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[msrp_usd]' derivation='Sum' name='[sum:msrp_usd:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[tcgplayer_market_usd]' derivation='Sum' name='[sum:tcgplayer_market_usd:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[total_return]' derivation='Sum' name='[sum:total_return:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[years]' derivation='Sum' name='[sum:years:qk]' pivot='key' type='quantitative' />
+            <column caption='Tcgplayer Market Usd' datatype='real' default-format='c&quot;$&quot;#,##0.00;(&quot;$&quot;#,##0.00)' name='[tcgplayer_market_usd]' role='measure' type='quantitative' />
+            <column caption='Total Return' datatype='real' default-format='*0.00&quot;x&quot;' name='[total_return]' role='measure' type='quantitative' />
+            <column-instance column='[Calculation_1927743420399616]' derivation='User' name='[usr:Calculation_1927743420399616:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_1927743420485633]' derivation='User' name='[usr:Calculation_1927743420485633:qk]' pivot='key' type='quantitative' />
+            <column caption='Years' datatype='real' default-format='n#,##0.0;-#,##0.0' name='[years]' role='measure' type='quantitative' />
+          </datasource-dependencies>
+          <computed-sort column='[federated.14tlmw40kzkaq91fdxebn1j7boyd].[none:set_code:nk]' direction='ASC' using='[federated.14tlmw40kzkaq91fdxebn1j7boyd].[avg:total_return:qk]' />
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.14tlmw40kzkaq91fdxebn1j7boyd].[avg:total_return:qk]' field-type='quantitative' major-origin='0.5' major-spacing='0.5' max='3.7000000000000002' min='0.40000000000000002' range-type='fixed' scope='rows' type='space' />
+            <encoding attr='space' class='0' field='[federated.14tlmw40kzkaq91fdxebn1j7boyd].[usr:Calculation_1927743420399616:qk]' field-type='quantitative' fold='true' scope='rows' synchronized='true' type='space' />
+            <format attr='title' class='0' field='[federated.14tlmw40kzkaq91fdxebn1j7boyd].[avg:total_return:qk]' scope='rows' value='' />
+            <format attr='auto-subtitle' class='0' field='[federated.14tlmw40kzkaq91fdxebn1j7boyd].[avg:total_return:qk]' scope='rows' value='false' />
+            <format attr='display' class='0' field='[federated.14tlmw40kzkaq91fdxebn1j7boyd].[usr:Calculation_1927743420399616:qk]' scope='rows' value='false' />
+            <format attr='stroke-color' value='#5a6478' />
+            <format attr='line-visibility' value='on' />
+            <format attr='line-pattern-only' value='solid' />
+          </style-rule>
+          <style-rule element='table'>
+            <format attr='background-color' value='#00000000' />
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='display-field-labels' scope='cols' value='false' />
+            <format attr='font-family' value='Lato' />
+            <format attr='color' value='#9aa3b5' />
+          </style-rule>
+          <style-rule element='refline'>
+            <format attr='fill-above' id='refline0' value='#00000000' />
+            <format attr='fill-below' id='refline0' value='#00000000' />
+            <format attr='stroke-color' id='refline0' value='#5a64784b' />
+            <format attr='background-color' id='refline0' value='#ffffff00' />
+          </style-rule>
+          <style-rule element='gridline'>
+            <format attr='stroke-size' scope='rows' value='0' />
+            <format attr='line-visibility' scope='rows' value='off' />
+          </style-rule>
+          <style-rule element='zeroline'>
+            <format attr='stroke-size' value='0' />
+            <format attr='line-visibility' value='off' />
+          </style-rule>
+          <style-rule element='table-div'>
+            <format attr='stroke-size' scope='rows' value='0' />
+            <format attr='line-visibility' scope='rows' value='off' />
+            <format attr='stroke-size' scope='cols' value='0' />
+            <format attr='line-visibility' scope='cols' value='off' />
+          </style-rule>
+          <style-rule element='annotation'>
+            <format attr='fill-color' id='annotation_1' value='#00000000' />
+            <format attr='stroke-color' id='annotation_1' value='#5a6478' />
+            <format attr='fill-color' id='annotation_4' value='#00000000' />
+            <format attr='fill-color' id='annotation_2' value='#00000000' />
+            <format attr='fill-color' id='annotation_0' value='#00000000' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='GanttBar' />
+            <encodings>
+              <size column='[federated.14tlmw40kzkaq91fdxebn1j7boyd].[usr:Calculation_1927743420485633:qk]' />
+              <color column='[federated.14tlmw40kzkaq91fdxebn1j7boyd].[none:Calculation_1403276381741058:nk]' />
+              <tooltip column='[federated.14tlmw40kzkaq91fdxebn1j7boyd].[attr:set_category:nk]' />
+            </encodings>
+            <reference-line axis-column='[federated.14tlmw40kzkaq91fdxebn1j7boyd].[avg:total_return:qk]' enable-instant-analytics='true' formula='constant' id='refline0' label='launch price' label-type='custom' scope='per-table' value='1.0' value-column='[federated.14tlmw40kzkaq91fdxebn1j7boyd].[avg:total_return:qk]' z-order='1' />
+            <customized-tooltip show-buttons='false'>
+              <formatted-text>
+                <run fontcolor='#10141f' fontname='lato bold' fontsize='11'><![CDATA[<[federated.14tlmw40kzkaq91fdxebn1j7boyd].[attr:set_name:nk]> (<[federated.14tlmw40kzkaq91fdxebn1j7boyd].[none:set_code:nk]>)]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#5a6478' fontname='Lato' fontsize='9'><![CDATA[<[federated.14tlmw40kzkaq91fdxebn1j7boyd].[attr:game:nk]>   ·   <[federated.14tlmw40kzkaq91fdxebn1j7boyd].[attr:set_category:nk]>]]></run>
+                <run>Æ&#10;&#10;</run>
+                <run bold='true' fontcolor='#4a3e99' fontname='Lato' fontsize='12'><![CDATA[<[federated.14tlmw40kzkaq91fdxebn1j7boyd].[avg:total_return:qk]>]]></run>
+                <run fontname='Lato'> vs launch price</run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#5a6478' fontname='Lato' fontsize='9'><![CDATA[launch <[federated.14tlmw40kzkaq91fdxebn1j7boyd].[sum:msrp_usd:qk]>   →   now <[federated.14tlmw40kzkaq91fdxebn1j7boyd].[sum:tcgplayer_market_usd:qk]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#5a6478' fontname='Lato' fontsize='9'><![CDATA[<[federated.14tlmw40kzkaq91fdxebn1j7boyd].[sum:cagr:qk]> annualized over <[federated.14tlmw40kzkaq91fdxebn1j7boyd].[sum:years:qk]> years]]></run>
+              </formatted-text>
+            </customized-tooltip>
+          </pane>
+          <pane id='1' selection-relaxation-option='selection-relaxation-allow' y-axis-name='[federated.14tlmw40kzkaq91fdxebn1j7boyd].[usr:Calculation_1927743420399616:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='GanttBar' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <size column='[federated.14tlmw40kzkaq91fdxebn1j7boyd].[usr:Calculation_1927743420485633:qk]' />
+              <color column='[federated.14tlmw40kzkaq91fdxebn1j7boyd].[none:Calculation_1403276381741058:nk]' />
+              <tooltip column='[federated.14tlmw40kzkaq91fdxebn1j7boyd].[attr:set_category:nk]' />
+            </encodings>
+            <customized-tooltip show-buttons='false'>
+              <formatted-text>
+                <run fontcolor='#10141f' fontname='lato bold' fontsize='11'><![CDATA[<[federated.14tlmw40kzkaq91fdxebn1j7boyd].[attr:set_name:nk]> (<[federated.14tlmw40kzkaq91fdxebn1j7boyd].[none:set_code:nk]>)]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#5a6478' fontname='Lato' fontsize='9'><![CDATA[<[federated.14tlmw40kzkaq91fdxebn1j7boyd].[attr:game:nk]>   ·   <[federated.14tlmw40kzkaq91fdxebn1j7boyd].[attr:set_category:nk]>]]></run>
+                <run>Æ&#10;&#10;</run>
+                <run bold='true' fontcolor='#4a3e99' fontname='Lato' fontsize='12'><![CDATA[<[federated.14tlmw40kzkaq91fdxebn1j7boyd].[avg:total_return:qk]>]]></run>
+                <run fontname='Lato'> vs launch price</run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#5a6478' fontname='Lato' fontsize='9'><![CDATA[launch <[federated.14tlmw40kzkaq91fdxebn1j7boyd].[sum:msrp_usd:qk]>   →   now <[federated.14tlmw40kzkaq91fdxebn1j7boyd].[sum:tcgplayer_market_usd:qk]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#5a6478' fontname='Lato' fontsize='9'><![CDATA[<[federated.14tlmw40kzkaq91fdxebn1j7boyd].[sum:cagr:qk]> annualized over <[federated.14tlmw40kzkaq91fdxebn1j7boyd].[sum:years:qk]> years]]></run>
+              </formatted-text>
+            </customized-tooltip>
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='1' />
+              </style-rule>
+            </style>
+          </pane>
+          <pane id='2' selection-relaxation-option='selection-relaxation-allow' y-axis-name='[federated.14tlmw40kzkaq91fdxebn1j7boyd].[avg:total_return:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Circle' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <size column='[federated.14tlmw40kzkaq91fdxebn1j7boyd].[usr:Calculation_1927743420485633:qk]' />
+              <color column='[federated.14tlmw40kzkaq91fdxebn1j7boyd].[none:Calculation_1403276381741058:nk]' />
+              <tooltip column='[federated.14tlmw40kzkaq91fdxebn1j7boyd].[attr:set_name:nk]' />
+              <tooltip column='[federated.14tlmw40kzkaq91fdxebn1j7boyd].[attr:game:nk]' />
+              <tooltip column='[federated.14tlmw40kzkaq91fdxebn1j7boyd].[sum:msrp_usd:qk]' />
+              <tooltip column='[federated.14tlmw40kzkaq91fdxebn1j7boyd].[sum:tcgplayer_market_usd:qk]' />
+              <tooltip column='[federated.14tlmw40kzkaq91fdxebn1j7boyd].[sum:total_return:qk]' />
+              <tooltip column='[federated.14tlmw40kzkaq91fdxebn1j7boyd].[sum:cagr:qk]' />
+              <tooltip column='[federated.14tlmw40kzkaq91fdxebn1j7boyd].[sum:years:qk]' />
+              <tooltip column='[federated.14tlmw40kzkaq91fdxebn1j7boyd].[attr:set_category:nk]' />
+            </encodings>
+            <customized-tooltip show-buttons='false'>
+              <formatted-text>
+                <run fontcolor='#10141f' fontname='lato bold' fontsize='11'><![CDATA[<[federated.14tlmw40kzkaq91fdxebn1j7boyd].[attr:set_name:nk]> (<[federated.14tlmw40kzkaq91fdxebn1j7boyd].[none:set_code:nk]>)]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#5a6478' fontname='Lato' fontsize='9'><![CDATA[<[federated.14tlmw40kzkaq91fdxebn1j7boyd].[attr:game:nk]>   ·   <[federated.14tlmw40kzkaq91fdxebn1j7boyd].[attr:set_category:nk]>]]></run>
+                <run>Æ&#10;&#10;</run>
+                <run bold='true' fontcolor='#4a3e99' fontname='Lato' fontsize='12'><![CDATA[<[federated.14tlmw40kzkaq91fdxebn1j7boyd].[avg:total_return:qk]>]]></run>
+                <run fontname='Lato'> vs launch price</run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#5a6478' fontname='Lato' fontsize='9'><![CDATA[launch <[federated.14tlmw40kzkaq91fdxebn1j7boyd].[sum:msrp_usd:qk]>   →   now <[federated.14tlmw40kzkaq91fdxebn1j7boyd].[sum:tcgplayer_market_usd:qk]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#5a6478' fontname='Lato' fontsize='9'><![CDATA[<[federated.14tlmw40kzkaq91fdxebn1j7boyd].[sum:cagr:qk]> annualized over <[federated.14tlmw40kzkaq91fdxebn1j7boyd].[sum:years:qk]> years]]></run>
+              </formatted-text>
+            </customized-tooltip>
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='1' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>([federated.14tlmw40kzkaq91fdxebn1j7boyd].[avg:total_return:qk] + [federated.14tlmw40kzkaq91fdxebn1j7boyd].[usr:Calculation_1927743420399616:qk])</rows>
+        <cols>[federated.14tlmw40kzkaq91fdxebn1j7boyd].[none:set_code:nk]</cols>
+        <annotations>
+          <annotation class='point' id='0' mark-position='1' pullback='0' text-width='87'>
+            <formatted-text>
+              <run bold='true' fontsize='9'>TMT (</run>
+              <run fontsize='9'>0.57×)</run>
+            </formatted-text>
+            <point>
+              <visual-coordinate class='axis'>
+                <x-coord cell-offset='0.55'>
+                  <node-reference>
+                    <fields>
+                      <field>[federated.14tlmw40kzkaq91fdxebn1j7boyd].[none:set_code:nk]</field>
+                    </fields>
+                    <multibucket>
+                      <bucket>&quot;TMT&quot;</bucket>
+                    </multibucket>
+                  </node-reference>
+                </x-coord>
+                <y-coord axis-value='0.55683168316831699'>
+                  <node-reference>
+                    <axis>[federated.14tlmw40kzkaq91fdxebn1j7boyd].[avg:total_return:qk]</axis>
+                  </node-reference>
+                </y-coord>
+                <page-reference />
+              </visual-coordinate>
+            </point>
+            <body x='75' y='3' />
+          </annotation>
+          <annotation class='point' id='1' mark-position='1' pullback='0' text-width='183'>
+            <formatted-text>
+              <run fontalignment='0' fontsize='9'>FIN (1.27× — the UB exception)</run>
+            </formatted-text>
+            <point>
+              <visual-coordinate class='axis'>
+                <x-coord cell-offset='0.55'>
+                  <node-reference>
+                    <fields>
+                      <field>[federated.14tlmw40kzkaq91fdxebn1j7boyd].[none:set_code:nk]</field>
+                    </fields>
+                    <multibucket>
+                      <bucket>&quot;FIN&quot;</bucket>
+                    </multibucket>
+                  </node-reference>
+                </x-coord>
+                <y-coord axis-value='1.2756435643564359'>
+                  <node-reference>
+                    <axis>[federated.14tlmw40kzkaq91fdxebn1j7boyd].[avg:total_return:qk]</axis>
+                  </node-reference>
+                </y-coord>
+                <page-reference />
+              </visual-coordinate>
+            </point>
+            <body x='-157' y='-6' />
+          </annotation>
+          <annotation class='point' id='2' mark-position='1' pullback='0' text-width='155'>
+            <formatted-text>
+              <run fontalignment='0' fontsize='9'>MKM (1.00× — round trip)</run>
+            </formatted-text>
+            <point>
+              <visual-coordinate class='axis'>
+                <x-coord cell-offset='0.6'>
+                  <node-reference>
+                    <fields>
+                      <field>[federated.14tlmw40kzkaq91fdxebn1j7boyd].[none:set_code:nk]</field>
+                    </fields>
+                    <multibucket>
+                      <bucket>&quot;MKM&quot;</bucket>
+                    </multibucket>
+                  </node-reference>
+                </x-coord>
+                <y-coord axis-value='1.0011881188118814'>
+                  <node-reference>
+                    <axis>[federated.14tlmw40kzkaq91fdxebn1j7boyd].[avg:total_return:qk]</axis>
+                  </node-reference>
+                </y-coord>
+                <page-reference />
+              </visual-coordinate>
+            </point>
+            <body x='102' y='21' />
+          </annotation>
+          <annotation class='point' id='4' mark-position='1' pullback='0' text-width='108'>
+            <formatted-text>
+              <run fontalignment='0' fontsize='9'>zsv10pt5 (3.50×)</run>
+            </formatted-text>
+            <point>
+              <visual-coordinate class='axis'>
+                <x-coord cell-offset='0.6'>
+                  <node-reference>
+                    <fields>
+                      <field>[federated.14tlmw40kzkaq91fdxebn1j7boyd].[none:set_code:nk]</field>
+                    </fields>
+                    <multibucket>
+                      <bucket>&quot;zsv10pt5&quot;</bucket>
+                    </multibucket>
+                  </node-reference>
+                </x-coord>
+                <y-coord axis-value='3.5235643564356436'>
+                  <node-reference>
+                    <axis>[federated.14tlmw40kzkaq91fdxebn1j7boyd].[avg:total_return:qk]</axis>
+                  </node-reference>
+                </y-coord>
+                <page-reference />
+              </visual-coordinate>
+            </point>
+            <body x='-84' y='19' />
+          </annotation>
+        </annotations>
+      </table>
+      <simple-id uuid='{A5736650-0E01-4AC8-9191-39DC6332D9E3}' />
+    </worksheet>
+  </worksheets>
+  <dashboards>
+    <dashboard enable-sort-zone-taborder='true' name='Chase Card'>
+      <style>
+        <style-rule element='table'>
+          <format attr='background-color' value='#0b0e16' />
+        </style-rule>
+      </style>
+      <size maxheight='1820' maxwidth='1300' minheight='1820' minwidth='1300' sizing-mode='fixed' />
+      <zones>
+        <zone friendly-name='Pokemon P/T pill' h='2967' id='60' type-v2='empty' w='9231' x='79385' y='85989'>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <_.fcp.DashboardRoundedCorners.true...format attr='corner-radius' value='27' />
+            <format attr='background-color' value='#f5c84c' />
+          </zone-style>
+        </zone>
+        <zone friendly-name='MTG P/T pill' h='2967' hidden-by-user='true' id='50' type-v2='empty' w='14615' x='74000' y='85989'>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <_.fcp.DashboardRoundedCorners.true...format attr='corner-radius' value='27' />
+            <format attr='background-color' value='#9d8cff' />
+          </zone-style>
+        </zone>
+        <zone friendly-name='Act 2 panel' h='32967' id='48' type-v2='empty' w='40769' x='50000' y='51923'>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <_.fcp.DashboardRoundedCorners.true...format attr='corner-radius' value='16' />
+            <format attr='background-color' value='#161c2b' />
+          </zone-style>
+        </zone>
+        <zone friendly-name='Act 1 panel' h='32967' id='49' type-v2='empty' w='39231' x='10769' y='51923'>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <_.fcp.DashboardRoundedCorners.true...format attr='corner-radius' value='16' />
+            <format attr='background-color' value='#161c2b' />
+          </zone-style>
+        </zone>
+        <zone friendly-name='Hero panel' h='35165' id='47' type-v2='empty' w='81538' x='9231' y='13736'>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <_.fcp.DashboardRoundedCorners.true...format attr='corner-radius' value='16' />
+            <format attr='background-color' value='#161c2b' />
+          </zone-style>
+        </zone>
+        <zone friendly-name='Pokemon Card' h='100000' id='33' param='horz' type-v2='layout-flow' w='100000' x='0' y='0'>
+          <zone h='100000' id='32' is-scaled='1' param='.../assets/frame_pokemon_1300x1820.png' type-v2='bitmap' w='100000' x='0' y='0'>
+            <zone-style>
+              <format attr='border-color' value='#000000' />
+              <format attr='border-style' value='none' />
+              <format attr='border-width' value='0' />
+              <format attr='margin' value='0' />
+            </zone-style>
+          </zone>
+        </zone>
+        <zone friendly-name='MTG Card' h='100000' hidden-by-user='true' id='1' param='horz' type-v2='layout-flow' w='100000' x='0' y='0'>
+          <zone forceUpdate='true' h='100000' hidden-by-user='true' id='2' is-scaled='1' param='.../assets/frame_mtg_1300x1820.png' type-v2='bitmap' w='100000' x='0' y='0'>
+            <zone-style>
+              <format attr='border-color' value='#000000' />
+              <format attr='border-style' value='none' />
+              <format attr='border-width' value='0' />
+              <format attr='margin' value='0' />
+            </zone-style>
+          </zone>
+        </zone>
+        <zone forceUpdate='true' h='3077' hidden-by-user='true' id='7' type-v2='text' w='47692' x='9231' y='7143'>
+          <formatted-text>
+            <run fontcolor='#edeae2' fontname='raleway bold' fontsize='26'>Parallel Economies</run>
+          </formatted-text>
+        </zone>
+        <zone forceUpdate='true' h='3516' hidden-by-user='true' id='8' is-centered='0' is-scaled='1' param='.../assets/orb_mtg_violet.png' type-v2='bitmap' w='4923' x='83692' y='6923' />
+        <zone h='1648' hidden-by-user='true' id='9' is-centered='0' param='.../assets/divider_mtg_1060x30.png' type-v2='bitmap' w='81538' x='9231' y='49451' />
+        <zone forceUpdate='true' h='2088' hidden-by-user='true' id='10' type-v2='text' w='58462' x='9231' y='10659'>
+          <formatted-text>
+            <run fontcolor='#9aa3b5' fontname='Lato' fontsize='11'>the mtg reading — tiered pricing, thick playable middle, market grades each premium</run>
+          </formatted-text>
+        </zone>
+        <zone forceUpdate='true' h='2747' hidden-by-user='true' id='13' type-v2='text' w='37538' x='11538' y='86264'>
+          <formatted-text>
+            <run fontcolor='#c9c2b4' fontname='Lato' fontsize='13'>&quot;Premiums are proposed by the printer and ratified by the market.&quot;</run>
+            <run fontcolor='#c9c2b4' fontname='Lato' fontsize='13' italic='true'>Æ </run>
+            <run fontcolor='#c9c2b4' fontname='Benton Sans Book' fontsize='13'>—</run>
+            <run fontcolor='#c9c2b4' fontname='Lato' fontsize='13' italic='true'> sometimes.</run>
+          </formatted-text>
+        </zone>
+        <zone forceUpdate='true' h='2198' id='14' type-v2='text' w='81538' x='9231' y='89835'>
+          <formatted-text>
+            <run fontcolor='#5a6478' fontname='Lato'>PMA 001-002/002 · 2026 · obie.w.lawrence · tcgplayer market 2026-07-15 · matched window 2024-02→2026-06 · rarity axis log-scaled · mkm/otj launch basis = market (tcgplayer mid)</run>
+          </formatted-text>
+        </zone>
+        <zone h='10165' id='15' name='Act1 | Concentration' show-title='false' w='36154' x='10769' y='57143' />
+        <zone h='12582' id='18' name='Act2 | Rarity Ladder' show-title='false' w='37692' x='51538' y='57143' />
+        <zone forceUpdate='true' h='3242' id='19' type-v2='text' w='36923' x='10769' y='52912'>
+          <formatted-text>
+            <run fontcolor='#edeae2' fontname='raleway bold' fontsize='16'>Where the value lives</run>
+            <run>Æ&#10;</run>
+            <run fontcolor='#9aa3b5' fontname='Lato'>share of all singles value in each game&apos;s chase tier — mythics (mtg) / illustration rares &amp; up (pokémon) — vs everything else.</run>
+          </formatted-text>
+        </zone>
+        <zone forceUpdate='true' h='1484' id='20' type-v2='text' w='33846' x='51538' y='52912'>
+          <formatted-text>
+            <run fontcolor='#edeae2' fontname='raleway bold' fontsize='16'>The rarity ladder</run>
+          </formatted-text>
+        </zone>
+        <zone forceUpdate='true' h='2088' hidden-by-user='true' id='21' type-v2='text' w='13385' x='74615' y='86429'>
+          <formatted-text>
+            <run fontalignment='1' fontcolor='#10141f' fontname='raleway bold' fontsize='20'>0.90 / 2.30</run>
+          </formatted-text>
+        </zone>
+        <zone h='3846' hidden-by-user='true' id='22' type-v2='text' w='36154' x='10769' y='67857'>
+          <formatted-text>
+            <run fontcolor='#9aa3b5' fontname='Lato' fontsize='11'>median card $0.29 vs $0.19 — pocket change either way; the difference is where value sits: 71% top-tier vs 94%</run>
+            <run>Æ&#10;</run>
+          </formatted-text>
+        </zone>
+        <zone forceUpdate='true' h='9341' hidden-by-user='true' id='23' type-v2='text' w='35385' x='51538' y='66484'>
+          <formatted-text>
+            <run fontcolor='#9d8cff' fontname='Lato' fontsize='10'>◆</run>
+            <run fontcolor='#000000' fontname='Lato' fontsize='10'>Æ </run>
+            <run fontcolor='#9aa3b5' fontname='Lato' fontsize='10'>four of five $6.99 universes beyond packs trade below launch — final fantasy (1.27×) is the exception</run>
+            <run>Æ&#10;&#10;&#10;</run>
+            <run fontcolor='#9d8cff' fontname='Lato' fontsize='10'>◆</run>
+            <run fontcolor='#000000' fontname='Lato' fontsize='10'>Æ </run>
+            <run fontcolor='#9aa3b5' fontname='Lato' fontsize='10'>sealed drifts back toward launch as sets age (ρ 0.73)</run>
+          </formatted-text>
+        </zone>
+        <zone h='32967' id='31' name='Hero | Sealed Returns' show-title='false' w='78462' x='10769' y='14835' />
+        <zone forceUpdate='true' h='3077' id='34' type-v2='text' w='47692' x='9231' y='7143'>
+          <formatted-text>
+            <run fontcolor='#edeae2' fontname='raleway bold' fontsize='26'>Chase Market</run>
+          </formatted-text>
+        </zone>
+        <zone forceUpdate='true' h='2088' id='35' type-v2='text' w='58462' x='9231' y='10659'>
+          <formatted-text>
+            <run fontcolor='#9aa3b5' fontname='Lato' fontsize='11'>the pokemon reading — flat pricing, scarce chase, market sorts the winners</run>
+          </formatted-text>
+        </zone>
+        <zone h='2418' id='36' type-v2='text' w='13538' x='69231' y='7473'>
+          <formatted-text>
+            <run fontalignment='2' fontcolor='#f5c84c' fontname='raleway bold' fontsize='22'>HP 230</run>
+          </formatted-text>
+        </zone>
+        <zone h='3516' id='37' is-centered='0' is-scaled='1' param='.../Image/orb_pokemon_gold.png' type-v2='bitmap' w='4923' x='83692' y='6923' />
+        <zone h='3846' id='38' type-v2='text' w='36154' x='10769' y='65934'>
+          <formatted-text>
+            <run fontcolor='#9aa3b5' fontname='Lato' fontsize='11'>94% of singles value sits in the chase tier — the pack is a lottery ticket</run>
+          </formatted-text>
+        </zone>
+        <zone forceUpdate='true' h='8242' id='39' type-v2='text' w='37692' x='51538' y='71429'>
+          <formatted-text>
+            <run fontcolor='#f5c84c' fontname='Lato' fontsize='10'>◆</run>
+            <run fontcolor='#9aa3b5' fontname='Lato' fontsize='10'> specials cluster at 3.0–3.5×; every set trades above launch</run>
+            <run>Æ&#10;&#10;&#10;</run>
+            <run fontcolor='#f5c84c' fontname='Lato' fontsize='10'>◆</run>
+            <run fontcolor='#9aa3b5' fontname='Lato' fontsize='10'> annualized returns run hottest when newest (ρ −0.82)</run>
+          </formatted-text>
+        </zone>
+        <zone forceUpdate='true' h='2747' id='41' type-v2='text' w='39846' x='11538' y='86264'>
+          <formatted-text>
+            <run fontcolor='#c9c2b4' fontname='Lato' fontsize='13'>&quot;Demand for lottery tickets outran the printer.&quot;</run>
+            <run fontcolor='#c9c2b4' fontname='Lato' fontsize='13' italic='true'> — every time</run>
+          </formatted-text>
+        </zone>
+        <zone forceUpdate='true' h='2088' id='42' type-v2='text' w='8000' x='80000' y='86429'>
+          <formatted-text>
+            <run fontalignment='1' fontcolor='#10141f' fontname='raleway bold' fontsize='20'>×2.30</run>
+          </formatted-text>
+        </zone>
+        <zone h='1538' id='44' name='Btn | Flip' show-title='false' w='20308' x='76923' y='2747' />
+        <zone forceUpdate='true' h='1978' hidden-by-user='true' id='51' type-v2='text' w='20000' x='53077' y='86538'>
+          <formatted-text>
+            <run fontalignment='2' fontname='Lato'>median sealed return — mtg / pokemon</run>
+          </formatted-text>
+        </zone>
+        <zone h='6868' id='52' type-v2='text' w='23692' x='10769' y='71978'>
+          <formatted-text>
+            <run fontcolor='#9aa3b5' fontname='Lato' fontsize='11'>Median single (cheapest copy)</run>
+            <run>Æ&#10;</run>
+            <run fontcolor='#9aa3b5' fontname='Lato' fontsize='11'>Singles premium vs Pokémon (Cliff&apos;s δ)</run>
+            <run>Æ&#10;</run>
+            <run fontcolor='#9aa3b5' fontname='Lato' fontsize='11'>Priciest single in window — Avatar Aang (TLA)</run>
+            <run>Æ&#10;</run>
+            <run fontcolor='#9aa3b5' fontname='Lato' fontsize='11'>Rarity ladder, Dunn pairs distinct</run>
+          </formatted-text>
+        </zone>
+        <zone h='6868' id='53' type-v2='text' w='12154' x='34769' y='71978'>
+          <formatted-text>
+            <run fontalignment='2' fontcolor='#edeae2' fontname='Lato' fontsize='11'>$0.29</run>
+            <run fontalignment='2'>Æ&#10;</run>
+            <run fontalignment='2' fontcolor='#edeae2' fontname='Lato' fontsize='11'>0.163 (CI 0.063–0.250)</run>
+            <run fontalignment='2'>Æ&#10;</run>
+            <run fontalignment='2' fontcolor='#edeae2' fontname='Lato' fontsize='11'>$3,833</run>
+            <run fontalignment='2'>Æ&#10;</run>
+            <run fontalignment='2' fontcolor='#edeae2' fontname='Lato' fontsize='11'>6/6</run>
+          </formatted-text>
+        </zone>
+        <zone forceUpdate='true' h='1648' id='58' is-centered='0' is-scaled='1' param='.../assets/divider_pokemon_1060x30.png' type-v2='bitmap' w='81538' x='9231' y='49451' />
+        <zone forceUpdate='true' h='1978' id='59' type-v2='text' w='20000' x='58462' y='86538'>
+          <formatted-text>
+            <run fontalignment='2' fontcolor='#9aa3b5' fontname='raleway bold'>median sealed return vs launch</run>
+          </formatted-text>
+        </zone>
+        <zone h='1868' hidden-by-user='true' id='61' type-v2='text' w='37692' x='51538' y='54286'>
+          <formatted-text>
+            <run fontcolor='#9aa3b5' fontname='Lato'>median market price per card at each of magic&apos;s four rarities — cheapest copy, matched window</run>
+          </formatted-text>
+        </zone>
+        <zone forceUpdate='true' h='1868' id='62' type-v2='text' w='37692' x='51538' y='54286'>
+          <formatted-text>
+            <run fontcolor='#9aa3b5' fontname='latos'>median market price per card across pokémon&apos;s eleven rarity tiers — cheapest copy, matched window</run>
+          </formatted-text>
+        </zone>
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <size maxheight='3050' minheight='3050' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='67' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='99120' id='66' param='vert' type-v2='layout-flow' w='98770' x='615' y='440'>
+                <zone fixed-size='280' h='100000' id='32' is-fixed='true' is-scaled='1' param='.../assets/frame_pokemon_1300x1820.png' type-v2='bitmap' w='100000' x='0' y='0'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' forceUpdate='true' h='100000' hidden-by-user='true' id='2' is-fixed='true' is-scaled='1' param='.../assets/frame_mtg_1300x1820.png' type-v2='bitmap' w='100000' x='0' y='0'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='28' h='1538' id='44' is-fixed='true' name='Btn | Flip' show-title='false' w='20308' x='76923' y='2747'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='64' forceUpdate='true' h='3516' id='8' is-centered='0' is-fixed='true' is-scaled='1' param='.../assets/orb_mtg_violet.png' type-v2='bitmap' w='4923' x='83692' y='6923'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='64' h='3516' id='37' is-centered='0' is-fixed='true' is-scaled='1' param='.../Image/orb_pokemon_gold.png' type-v2='bitmap' w='4923' x='83692' y='6923'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone forceUpdate='true' h='3077' id='7' type-v2='text' w='47692' x='9231' y='7143'>
+                  <formatted-text>
+                    <run fontcolor='#edeae2' fontname='raleway bold' fontsize='26'>Parallel Economies</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone forceUpdate='true' h='3077' id='34' type-v2='text' w='47692' x='9231' y='7143'>
+                  <formatted-text>
+                    <run fontcolor='#edeae2' fontname='raleway bold' fontsize='26'>Chase Market</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='2418' id='36' type-v2='text' w='13538' x='69231' y='7473'>
+                  <formatted-text>
+                    <run fontalignment='2' fontcolor='#f5c84c' fontname='raleway bold' fontsize='22'>HP 230</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone forceUpdate='true' h='2088' id='10' type-v2='text' w='58462' x='9231' y='10659'>
+                  <formatted-text>
+                    <run fontcolor='#9aa3b5' fontname='Lato' fontsize='11'>the mtg reading — tiered pricing, thick playable middle, market grades each premium</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone forceUpdate='true' h='2088' id='35' type-v2='text' w='58462' x='9231' y='10659'>
+                  <formatted-text>
+                    <run fontcolor='#9aa3b5' fontname='Lato' fontsize='11'>the pokemon reading — flat pricing, scarce chase, market sorts the winners</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='32967' id='31' is-fixed='true' name='Hero | Sealed Returns' show-title='false' w='78462' x='10769' y='14835'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='30' h='1648' id='9' is-centered='0' is-fixed='true' param='.../assets/divider_mtg_1060x30.png' type-v2='bitmap' w='81538' x='9231' y='49451'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='30' forceUpdate='true' h='1648' id='58' is-centered='0' is-fixed='true' is-scaled='1' param='.../assets/divider_pokemon_1060x30.png' type-v2='bitmap' w='81538' x='9231' y='49451'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone forceUpdate='true' h='3242' id='19' type-v2='text' w='36923' x='10769' y='52912'>
+                  <formatted-text>
+                    <run fontcolor='#edeae2' fontname='raleway bold' fontsize='16'>Where the value lives</run>
+                    <run>Æ&#10;</run>
+                    <run fontcolor='#9aa3b5' fontname='Lato'>share of all singles value in each game&apos;s chase tier — mythics (mtg) / illustration rares &amp; up (pokémon) — vs everything else.</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone forceUpdate='true' h='1484' id='20' type-v2='text' w='33846' x='51538' y='52912'>
+                  <formatted-text>
+                    <run fontcolor='#edeae2' fontname='raleway bold' fontsize='16'>The rarity ladder</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='1868' id='61' type-v2='text' w='37692' x='51538' y='54286'>
+                  <formatted-text>
+                    <run fontcolor='#9aa3b5' fontname='Lato'>median market price per card at each of magic&apos;s four rarities — cheapest copy, matched window</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone forceUpdate='true' h='1868' id='62' type-v2='text' w='37692' x='51538' y='54286'>
+                  <formatted-text>
+                    <run fontcolor='#9aa3b5' fontname='latos'>median market price per card across pokémon&apos;s eleven rarity tiers — cheapest copy, matched window</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='185' h='10165' id='15' is-fixed='true' name='Act1 | Concentration' show-title='false' w='36154' x='10769' y='57143'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='229' h='12582' id='18' is-fixed='true' name='Act2 | Rarity Ladder' show-title='false' w='37692' x='51538' y='57143'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='3846' id='38' type-v2='text' w='36154' x='10769' y='65934'>
+                  <formatted-text>
+                    <run fontcolor='#9aa3b5' fontname='Lato' fontsize='11'>94% of singles value sits in the chase tier — the pack is a lottery ticket</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone forceUpdate='true' h='9341' id='23' type-v2='text' w='35385' x='51538' y='66484'>
+                  <formatted-text>
+                    <run fontcolor='#9d8cff' fontname='Lato' fontsize='10'>◆</run>
+                    <run fontcolor='#000000' fontname='Lato' fontsize='10'>Æ </run>
+                    <run fontcolor='#9aa3b5' fontname='Lato' fontsize='10'>four of five $6.99 universes beyond packs trade below launch — final fantasy (1.27×) is the exception</run>
+                    <run>Æ&#10;&#10;&#10;</run>
+                    <run fontcolor='#9d8cff' fontname='Lato' fontsize='10'>◆</run>
+                    <run fontcolor='#000000' fontname='Lato' fontsize='10'>Æ </run>
+                    <run fontcolor='#9aa3b5' fontname='Lato' fontsize='10'>sealed drifts back toward launch as sets age (ρ 0.73)</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='3846' id='22' type-v2='text' w='36154' x='10769' y='67857'>
+                  <formatted-text>
+                    <run fontcolor='#9aa3b5' fontname='Lato' fontsize='11'>median card $0.29 vs $0.19 — pocket change either way; the difference is where value sits: 71% top-tier vs 94%</run>
+                    <run>Æ&#10;</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone forceUpdate='true' h='8242' id='39' type-v2='text' w='37692' x='51538' y='71429'>
+                  <formatted-text>
+                    <run fontcolor='#f5c84c' fontname='Lato' fontsize='10'>◆</run>
+                    <run fontcolor='#9aa3b5' fontname='Lato' fontsize='10'> specials cluster at 3.0–3.5×; every set trades above launch</run>
+                    <run>Æ&#10;&#10;&#10;</run>
+                    <run fontcolor='#f5c84c' fontname='Lato' fontsize='10'>◆</run>
+                    <run fontcolor='#9aa3b5' fontname='Lato' fontsize='10'> annualized returns run hottest when newest (ρ −0.82)</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='6868' id='52' type-v2='text' w='23692' x='10769' y='71978'>
+                  <formatted-text>
+                    <run fontcolor='#9aa3b5' fontname='Lato' fontsize='11'>Median single (cheapest copy)</run>
+                    <run>Æ&#10;</run>
+                    <run fontcolor='#9aa3b5' fontname='Lato' fontsize='11'>Singles premium vs Pokémon (Cliff&apos;s δ)</run>
+                    <run>Æ&#10;</run>
+                    <run fontcolor='#9aa3b5' fontname='Lato' fontsize='11'>Priciest single in window — Avatar Aang (TLA)</run>
+                    <run>Æ&#10;</run>
+                    <run fontcolor='#9aa3b5' fontname='Lato' fontsize='11'>Rarity ladder, Dunn pairs distinct</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='6868' id='53' type-v2='text' w='12154' x='34769' y='71978'>
+                  <formatted-text>
+                    <run fontalignment='2' fontcolor='#edeae2' fontname='Lato' fontsize='11'>$0.29</run>
+                    <run fontalignment='2'>Æ&#10;</run>
+                    <run fontalignment='2' fontcolor='#edeae2' fontname='Lato' fontsize='11'>0.163 (CI 0.063–0.250)</run>
+                    <run fontalignment='2'>Æ&#10;</run>
+                    <run fontalignment='2' fontcolor='#edeae2' fontname='Lato' fontsize='11'>$3,833</run>
+                    <run fontalignment='2'>Æ&#10;</run>
+                    <run fontalignment='2' fontcolor='#edeae2' fontname='Lato' fontsize='11'>6/6</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone forceUpdate='true' h='2747' id='13' type-v2='text' w='37538' x='11538' y='86264'>
+                  <formatted-text>
+                    <run fontcolor='#c9c2b4' fontname='Lato' fontsize='13'>&quot;Premiums are proposed by the printer and ratified by the market.&quot;</run>
+                    <run fontcolor='#c9c2b4' fontname='Lato' fontsize='13' italic='true'>Æ </run>
+                    <run fontcolor='#c9c2b4' fontname='Benton Sans Book' fontsize='13'>—</run>
+                    <run fontcolor='#c9c2b4' fontname='Lato' fontsize='13' italic='true'> sometimes.</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone forceUpdate='true' h='2747' id='41' type-v2='text' w='39846' x='11538' y='86264'>
+                  <formatted-text>
+                    <run fontcolor='#c9c2b4' fontname='Lato' fontsize='13'>&quot;Demand for lottery tickets outran the printer.&quot;</run>
+                    <run fontcolor='#c9c2b4' fontname='Lato' fontsize='13' italic='true'> — every time</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone forceUpdate='true' h='2088' id='21' type-v2='text' w='13385' x='74615' y='86429'>
+                  <formatted-text>
+                    <run fontalignment='1' fontcolor='#10141f' fontname='raleway bold' fontsize='20'>0.90 / 2.30</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone forceUpdate='true' h='2088' id='42' type-v2='text' w='8000' x='80000' y='86429'>
+                  <formatted-text>
+                    <run fontalignment='1' fontcolor='#10141f' fontname='raleway bold' fontsize='20'>×2.30</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone forceUpdate='true' h='1978' id='51' type-v2='text' w='20000' x='53077' y='86538'>
+                  <formatted-text>
+                    <run fontalignment='2' fontname='Lato'>median sealed return — mtg / pokemon</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone forceUpdate='true' h='1978' id='59' type-v2='text' w='20000' x='58462' y='86538'>
+                  <formatted-text>
+                    <run fontalignment='2' fontcolor='#9aa3b5' fontname='raleway bold'>median sealed return vs launch</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone forceUpdate='true' h='2198' id='14' type-v2='text' w='81538' x='9231' y='89835'>
+                  <formatted-text>
+                    <run fontcolor='#5a6478' fontname='Lato'>PMA 001-002/002 · 2026 · obie.w.lawrence · tcgplayer market 2026-07-15 · matched window 2024-02→2026-06 · rarity axis log-scaled · mkm/otj launch basis = market (tcgplayer mid)</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{E4D4ACCB-F6E1-4CE7-B73E-68F45362B5F6}' />
+    </dashboard>
+  </dashboards>
+  <windows source-height='72'>
+    <window class='dashboard' maximized='true' name='Chase Card'>
+      <viewpoints>
+        <viewpoint name='Act1 | Concentration' />
+        <viewpoint name='Act2 | Rarity Ladder' />
+        <viewpoint name='Btn | Flip'>
+          <selection-collection>
+            <tuple-selection>
+              <tuple-reference>
+                <tuple-descriptor>
+                  <pane-descriptor>
+                    <x-fields />
+                    <y-fields />
+                  </pane-descriptor>
+                  <columns>
+                    <field>[federated.14tlmw40kzkaq91fdxebn1j7boyd].[none:Calculation_2013505631608838:nk]</field>
+                    <field>[federated.14tlmw40kzkaq91fdxebn1j7boyd].[none:Calculation_2013505631764487:nk]</field>
+                  </columns>
+                </tuple-descriptor>
+                <tuple>
+                  <value>&quot;MTG&quot;</value>
+                  <value>&quot;⇄ flip card: the mtg reading&quot;</value>
+                </tuple>
+              </tuple-reference>
+            </tuple-selection>
+          </selection-collection>
+        </viewpoint>
+        <viewpoint name='Hero | Sealed Returns'>
+          <zoom type='entire-view' />
+        </viewpoint>
+      </viewpoints>
+      <active id='-1' />
+      <simple-id uuid='{A7E9F6CA-7325-4643-A630-7098B18124DE}' />
+    </window>
+    <window class='worksheet' name='Hero | Sealed Returns'>
+      <cards>
+        <edge name='left'>
+          <strip size='219'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card mode='compact' param='[Parameters].[Parameter 1]' type='parameter' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.14tlmw40kzkaq91fdxebn1j7boyd].[none:set_category:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{AD29DF70-71FF-4B71-BCE0-975C9E93EDD7}' />
+    </window>
+    <window class='worksheet' name='Act1 | Concentration'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.022yy3210adx2s1amqn411bcdyp5].[none:Calculation_1403276400222212:nk]' type='color' />
+            <card mode='compact' param='[Parameters].[Parameter 1]' type='parameter' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.022yy3210adx2s1amqn411bcdyp5].[none:Calculation_1550611639537666:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{BF040755-C04F-433D-B7DE-9BFB86BAACB6}' />
+    </window>
+    <window class='worksheet' name='Act2 | Rarity Ladder'>
+      <cards>
+        <edge name='left'>
+          <strip size='200'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card mode='compact' param='[Parameters].[Parameter 1]' type='parameter' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.022yy3210adx2s1amqn411bcdyp5].[none:game:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{0B17F7C7-3166-4CD1-BDF5-C970BC38DE1A}' />
+    </window>
+    <window class='worksheet' name='Btn | Flip'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{B944DC19-C0B6-4920-AC80-D5D9F2821844}' />
+    </window>
+  </windows>
+  <datagraph>
+    <graph>
+      <properties>
+        <default-execution-subgraph-guid value='30aac782-b9d0-4e1b-ac5b-c2fe9e47fe28' />
+      </properties>
+      <node-execution-subgraphs>
+        <pair execution-subgraph-guid='30aac782-b9d0-4e1b-ac5b-c2fe9e47fe28' node-guid='4b1557a2-1741-479a-8ea4-1ec3fe2bb61f' />
+        <pair execution-subgraph-guid='30aac782-b9d0-4e1b-ac5b-c2fe9e47fe28' node-guid='10861e4c-c23a-4471-9db4-b8b802937b32' />
+        <pair execution-subgraph-guid='30aac782-b9d0-4e1b-ac5b-c2fe9e47fe28' node-guid='53a8082f-b348-4339-9a7b-a5367e76217e' />
+        <pair execution-subgraph-guid='30aac782-b9d0-4e1b-ac5b-c2fe9e47fe28' node-guid='8fd3edeb-8c8d-4467-842a-b674a380b477' />
+        <pair execution-subgraph-guid='30aac782-b9d0-4e1b-ac5b-c2fe9e47fe28' node-guid='b601a628-0f78-40bd-9882-4d90102c7b70' />
+        <pair execution-subgraph-guid='30aac782-b9d0-4e1b-ac5b-c2fe9e47fe28' node-guid='f5bcd97c-ccb7-4377-a28f-1914047caab7' />
+        <pair execution-subgraph-guid='30aac782-b9d0-4e1b-ac5b-c2fe9e47fe28' node-guid='5f91820b-45bd-4296-802e-aa9e60c9e953' />
+        <pair execution-subgraph-guid='30aac782-b9d0-4e1b-ac5b-c2fe9e47fe28' node-guid='6411a3d4-e32e-4b14-bbbe-eb16fee6cd9d' />
+        <pair execution-subgraph-guid='30aac782-b9d0-4e1b-ac5b-c2fe9e47fe28' node-guid='a8f08fd2-fcb1-4913-b67f-a638f5db0493' />
+        <pair execution-subgraph-guid='30aac782-b9d0-4e1b-ac5b-c2fe9e47fe28' node-guid='8bca10d6-8a2f-44b4-a4ff-ca704d14d014' />
+        <pair execution-subgraph-guid='30aac782-b9d0-4e1b-ac5b-c2fe9e47fe28' node-guid='338691ab-d5a6-4941-861a-7b1f59af02f3' />
+        <pair execution-subgraph-guid='30aac782-b9d0-4e1b-ac5b-c2fe9e47fe28' node-guid='59062a9e-c8f4-4651-b6b9-64f5f4198d31' />
+        <pair execution-subgraph-guid='30aac782-b9d0-4e1b-ac5b-c2fe9e47fe28' node-guid='f66b5c0a-d484-4bf5-b678-9034bf8f598d' />
+        <pair execution-subgraph-guid='30aac782-b9d0-4e1b-ac5b-c2fe9e47fe28' node-guid='565a0e8d-7bc6-4a2a-8143-0eda04a131f9' />
+        <pair execution-subgraph-guid='30aac782-b9d0-4e1b-ac5b-c2fe9e47fe28' node-guid='430fed0c-8241-4036-be47-94af88ef260e' />
+        <pair execution-subgraph-guid='30aac782-b9d0-4e1b-ac5b-c2fe9e47fe28' node-guid='8e817a6c-a9aa-4ce1-ae11-dcef7dfeeebf' />
+        <pair execution-subgraph-guid='30aac782-b9d0-4e1b-ac5b-c2fe9e47fe28' node-guid='c7ecdf2d-bb27-4d1d-ba9b-71dadbf417e7' />
+        <pair execution-subgraph-guid='30aac782-b9d0-4e1b-ac5b-c2fe9e47fe28' node-guid='7c02d347-ec02-4d17-a2d0-bdee1a3a7ec2' />
+        <pair execution-subgraph-guid='30aac782-b9d0-4e1b-ac5b-c2fe9e47fe28' node-guid='c8c82d2f-3018-4104-a4b2-9313bb73de4b' />
+        <pair execution-subgraph-guid='30aac782-b9d0-4e1b-ac5b-c2fe9e47fe28' node-guid='d8a0a5f7-141d-455e-8d51-d791ec369620' />
+        <pair execution-subgraph-guid='30aac782-b9d0-4e1b-ac5b-c2fe9e47fe28' node-guid='99503d72-8418-4760-b52d-6914bdfeed58' />
+        <pair execution-subgraph-guid='30aac782-b9d0-4e1b-ac5b-c2fe9e47fe28' node-guid='fc442768-f1bb-4dd7-8fe4-47363a8f3a5d' />
+        <pair execution-subgraph-guid='30aac782-b9d0-4e1b-ac5b-c2fe9e47fe28' node-guid='70e7df14-508c-4e92-b674-75919408949a' />
+        <pair execution-subgraph-guid='30aac782-b9d0-4e1b-ac5b-c2fe9e47fe28' node-guid='d7d40b46-fa9d-4672-acb3-46a4f32d4b16' />
+        <pair execution-subgraph-guid='30aac782-b9d0-4e1b-ac5b-c2fe9e47fe28' node-guid='4382e00a-204b-4319-91a5-0a036a480530' />
+        <pair execution-subgraph-guid='30aac782-b9d0-4e1b-ac5b-c2fe9e47fe28' node-guid='86efe7ae-abfc-48d9-937a-d5f92a5f751b' />
+        <pair execution-subgraph-guid='30aac782-b9d0-4e1b-ac5b-c2fe9e47fe28' node-guid='a20be26f-e740-4898-b70c-8d44f7878886' />
+      </node-execution-subgraphs>
+      <nodes>
+        <single-value-field-node fieldname='[federated.14tlmw40kzkaq91fdxebn1j7boyd].[Show Pokemon (copy)_1403276381659137]' fieldname-input-guid='7c7364b7-b234-4dc5-affe-a0be2a32a446' node-guid='4b1557a2-1741-479a-8ea4-1ec3fe2bb61f' value-output-guid='99e93f06-1cbf-42e1-940c-d3df9b92d5e3' />
+        <dashboard-zone-visibility-node dashboard-identifier='{E4D4ACCB-F6E1-4CE7-B73E-68F45362B5F6}' node-guid='b601a628-0f78-40bd-9882-4d90102c7b70' visibility-input-guid='f16dcb5d-904e-4736-a58a-2cc1c6ac9556' zone-id='1' />
+        <dashboard-zone-visibility-node dashboard-identifier='{E4D4ACCB-F6E1-4CE7-B73E-68F45362B5F6}' node-guid='10861e4c-c23a-4471-9db4-b8b802937b32' visibility-input-guid='43e8f916-55b3-4563-bc30-fa9d8c6a85a9' zone-id='36' />
+        <dashboard-zone-visibility-node dashboard-identifier='{E4D4ACCB-F6E1-4CE7-B73E-68F45362B5F6}' node-guid='53a8082f-b348-4339-9a7b-a5367e76217e' visibility-input-guid='6b42924b-79bf-4958-bf77-8f6fce247f99' zone-id='35' />
+        <single-value-field-node fieldname='[federated.14tlmw40kzkaq91fdxebn1j7boyd].[Calculation_1403276381462528]' fieldname-input-guid='18d4e612-1597-40cd-a26a-713ce4833f6c' node-guid='8fd3edeb-8c8d-4467-842a-b674a380b477' value-output-guid='35ebfdc2-07d9-43ee-89f2-0e6e3a649abc' />
+        <dashboard-zone-visibility-node dashboard-identifier='{E4D4ACCB-F6E1-4CE7-B73E-68F45362B5F6}' node-guid='f5bcd97c-ccb7-4377-a28f-1914047caab7' visibility-input-guid='79cb1c0d-4019-4f55-badc-08794865d702' zone-id='8' />
+        <dashboard-zone-visibility-node dashboard-identifier='{E4D4ACCB-F6E1-4CE7-B73E-68F45362B5F6}' node-guid='5f91820b-45bd-4296-802e-aa9e60c9e953' visibility-input-guid='00a96d26-59cc-404e-839d-ebe6480afe77' zone-id='9' />
+        <dashboard-zone-visibility-node dashboard-identifier='{E4D4ACCB-F6E1-4CE7-B73E-68F45362B5F6}' node-guid='a8f08fd2-fcb1-4913-b67f-a638f5db0493' visibility-input-guid='2b971193-93c9-4df8-b190-32c8a130b556' zone-id='10' />
+        <dashboard-zone-visibility-node dashboard-identifier='{E4D4ACCB-F6E1-4CE7-B73E-68F45362B5F6}' node-guid='6411a3d4-e32e-4b14-bbbe-eb16fee6cd9d' visibility-input-guid='6f397516-4eac-41d0-bd78-5f1625c7ad04' zone-id='50' />
+        <dashboard-zone-visibility-node dashboard-identifier='{E4D4ACCB-F6E1-4CE7-B73E-68F45362B5F6}' node-guid='8bca10d6-8a2f-44b4-a4ff-ca704d14d014' visibility-input-guid='216d462d-d71d-460e-80f7-3887d8b428fd' zone-id='41' />
+        <dashboard-zone-visibility-node dashboard-identifier='{E4D4ACCB-F6E1-4CE7-B73E-68F45362B5F6}' node-guid='338691ab-d5a6-4941-861a-7b1f59af02f3' visibility-input-guid='b797fbc8-9a1f-439d-9c22-f1a677471d51' zone-id='7' />
+        <dashboard-zone-visibility-node dashboard-identifier='{E4D4ACCB-F6E1-4CE7-B73E-68F45362B5F6}' node-guid='59062a9e-c8f4-4651-b6b9-64f5f4198d31' visibility-input-guid='33bbeeca-cd8c-413f-befa-4c7c070df154' zone-id='13' />
+        <dashboard-zone-visibility-node dashboard-identifier='{E4D4ACCB-F6E1-4CE7-B73E-68F45362B5F6}' node-guid='f66b5c0a-d484-4bf5-b678-9034bf8f598d' visibility-input-guid='c636a773-a7ab-44a0-baa1-328f72d7ad98' zone-id='21' />
+        <dashboard-zone-visibility-node dashboard-identifier='{E4D4ACCB-F6E1-4CE7-B73E-68F45362B5F6}' node-guid='565a0e8d-7bc6-4a2a-8143-0eda04a131f9' visibility-input-guid='2263cfaf-3eca-4635-83dc-9f805b2934b2' zone-id='23' />
+        <dashboard-zone-visibility-node dashboard-identifier='{E4D4ACCB-F6E1-4CE7-B73E-68F45362B5F6}' node-guid='430fed0c-8241-4036-be47-94af88ef260e' visibility-input-guid='fd94665c-d406-4625-9dd0-5a12f7f68174' zone-id='22' />
+        <dashboard-zone-visibility-node dashboard-identifier='{E4D4ACCB-F6E1-4CE7-B73E-68F45362B5F6}' node-guid='8e817a6c-a9aa-4ce1-ae11-dcef7dfeeebf' visibility-input-guid='a493d903-1189-4b35-920c-6946c73dc621' zone-id='33' />
+        <dashboard-zone-visibility-node dashboard-identifier='{E4D4ACCB-F6E1-4CE7-B73E-68F45362B5F6}' node-guid='c7ecdf2d-bb27-4d1d-ba9b-71dadbf417e7' visibility-input-guid='5b664aac-c2c0-441b-a44b-dc2149fad218' zone-id='34' />
+        <dashboard-zone-visibility-node dashboard-identifier='{E4D4ACCB-F6E1-4CE7-B73E-68F45362B5F6}' node-guid='c8c82d2f-3018-4104-a4b2-9313bb73de4b' visibility-input-guid='dad8483e-247c-47a4-9b85-ff83187d55e0' zone-id='37' />
+        <dashboard-zone-visibility-node dashboard-identifier='{E4D4ACCB-F6E1-4CE7-B73E-68F45362B5F6}' node-guid='7c02d347-ec02-4d17-a2d0-bdee1a3a7ec2' visibility-input-guid='effec233-94fd-4385-96d9-1671d0b6d59d' zone-id='51' />
+        <dashboard-zone-visibility-node dashboard-identifier='{E4D4ACCB-F6E1-4CE7-B73E-68F45362B5F6}' node-guid='d8a0a5f7-141d-455e-8d51-d791ec369620' visibility-input-guid='26d9d776-f43c-4da9-8ee1-97cb1a41f6ba' zone-id='58' />
+        <dashboard-zone-visibility-node dashboard-identifier='{E4D4ACCB-F6E1-4CE7-B73E-68F45362B5F6}' node-guid='99503d72-8418-4760-b52d-6914bdfeed58' visibility-input-guid='8c505867-842a-46cd-9563-af248955597d' zone-id='38' />
+        <dashboard-zone-visibility-node dashboard-identifier='{E4D4ACCB-F6E1-4CE7-B73E-68F45362B5F6}' node-guid='fc442768-f1bb-4dd7-8fe4-47363a8f3a5d' visibility-input-guid='e813cbc6-2197-416e-a8e3-fab1df0d1539' zone-id='39' />
+        <dashboard-zone-visibility-node dashboard-identifier='{E4D4ACCB-F6E1-4CE7-B73E-68F45362B5F6}' node-guid='70e7df14-508c-4e92-b674-75919408949a' visibility-input-guid='f73a2091-f418-4c66-8578-431d3b4cc706' zone-id='42' />
+        <dashboard-zone-visibility-node dashboard-identifier='{E4D4ACCB-F6E1-4CE7-B73E-68F45362B5F6}' node-guid='d7d40b46-fa9d-4672-acb3-46a4f32d4b16' visibility-input-guid='99d4f675-fe35-47fb-a257-fcba9d252a63' zone-id='59' />
+        <dashboard-zone-visibility-node dashboard-identifier='{E4D4ACCB-F6E1-4CE7-B73E-68F45362B5F6}' node-guid='4382e00a-204b-4319-91a5-0a036a480530' visibility-input-guid='23e316ae-eb44-48f6-91eb-ef2ed01263b3' zone-id='60' />
+        <dashboard-zone-visibility-node dashboard-identifier='{E4D4ACCB-F6E1-4CE7-B73E-68F45362B5F6}' node-guid='86efe7ae-abfc-48d9-937a-d5f92a5f751b' visibility-input-guid='bef4c30c-d526-46c0-be3d-2f549fbe0318' zone-id='62' />
+        <dashboard-zone-visibility-node dashboard-identifier='{E4D4ACCB-F6E1-4CE7-B73E-68F45362B5F6}' node-guid='a20be26f-e740-4898-b70c-8d44f7878886' visibility-input-guid='16aa645c-233c-4d7f-b619-332819b8bbd2' zone-id='61' />
+      </nodes>
+      <edges>
+        <edge from='35ebfdc2-07d9-43ee-89f2-0e6e3a649abc' to='a493d903-1189-4b35-920c-6946c73dc621' />
+        <edge from='35ebfdc2-07d9-43ee-89f2-0e6e3a649abc' to='5b664aac-c2c0-441b-a44b-dc2149fad218' />
+        <edge from='35ebfdc2-07d9-43ee-89f2-0e6e3a649abc' to='6b42924b-79bf-4958-bf77-8f6fce247f99' />
+        <edge from='35ebfdc2-07d9-43ee-89f2-0e6e3a649abc' to='43e8f916-55b3-4563-bc30-fa9d8c6a85a9' />
+        <edge from='35ebfdc2-07d9-43ee-89f2-0e6e3a649abc' to='dad8483e-247c-47a4-9b85-ff83187d55e0' />
+        <edge from='35ebfdc2-07d9-43ee-89f2-0e6e3a649abc' to='8c505867-842a-46cd-9563-af248955597d' />
+        <edge from='35ebfdc2-07d9-43ee-89f2-0e6e3a649abc' to='e813cbc6-2197-416e-a8e3-fab1df0d1539' />
+        <edge from='35ebfdc2-07d9-43ee-89f2-0e6e3a649abc' to='216d462d-d71d-460e-80f7-3887d8b428fd' />
+        <edge from='35ebfdc2-07d9-43ee-89f2-0e6e3a649abc' to='f73a2091-f418-4c66-8578-431d3b4cc706' />
+        <edge from='35ebfdc2-07d9-43ee-89f2-0e6e3a649abc' to='26d9d776-f43c-4da9-8ee1-97cb1a41f6ba' />
+        <edge from='35ebfdc2-07d9-43ee-89f2-0e6e3a649abc' to='99d4f675-fe35-47fb-a257-fcba9d252a63' />
+        <edge from='35ebfdc2-07d9-43ee-89f2-0e6e3a649abc' to='23e316ae-eb44-48f6-91eb-ef2ed01263b3' />
+        <edge from='35ebfdc2-07d9-43ee-89f2-0e6e3a649abc' to='bef4c30c-d526-46c0-be3d-2f549fbe0318' />
+        <edge from='99e93f06-1cbf-42e1-940c-d3df9b92d5e3' to='f16dcb5d-904e-4736-a58a-2cc1c6ac9556' />
+        <edge from='99e93f06-1cbf-42e1-940c-d3df9b92d5e3' to='79cb1c0d-4019-4f55-badc-08794865d702' />
+        <edge from='99e93f06-1cbf-42e1-940c-d3df9b92d5e3' to='00a96d26-59cc-404e-839d-ebe6480afe77' />
+        <edge from='99e93f06-1cbf-42e1-940c-d3df9b92d5e3' to='2b971193-93c9-4df8-b190-32c8a130b556' />
+        <edge from='99e93f06-1cbf-42e1-940c-d3df9b92d5e3' to='b797fbc8-9a1f-439d-9c22-f1a677471d51' />
+        <edge from='99e93f06-1cbf-42e1-940c-d3df9b92d5e3' to='33bbeeca-cd8c-413f-befa-4c7c070df154' />
+        <edge from='99e93f06-1cbf-42e1-940c-d3df9b92d5e3' to='c636a773-a7ab-44a0-baa1-328f72d7ad98' />
+        <edge from='99e93f06-1cbf-42e1-940c-d3df9b92d5e3' to='2263cfaf-3eca-4635-83dc-9f805b2934b2' />
+        <edge from='99e93f06-1cbf-42e1-940c-d3df9b92d5e3' to='fd94665c-d406-4625-9dd0-5a12f7f68174' />
+        <edge from='99e93f06-1cbf-42e1-940c-d3df9b92d5e3' to='effec233-94fd-4385-96d9-1671d0b6d59d' />
+        <edge from='99e93f06-1cbf-42e1-940c-d3df9b92d5e3' to='6f397516-4eac-41d0-bd78-5f1625c7ad04' />
+        <edge from='99e93f06-1cbf-42e1-940c-d3df9b92d5e3' to='16aa645c-233c-4d7f-b619-332819b8bbd2' />
+      </edges>
+      <pin-values />
+    </graph>
+  </datagraph>
+  <thumbnails>
+    <thumbnail height='44' name='Act1 | Concentration' width='192'>
+      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
+      rkJggg==
+    </thumbnail>
+    <thumbnail height='192' name='Act2 | Rarity Ladder' width='192'>
+      iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAACXBIWXMAAA7DAAAOwwHHb6hk
+      AAAgAElEQVR4nO29WZPbWJqm+RxsBLgvTtL3VXsoMyKXqUybrLqouu7/0n9hxuZf9H/ou2qz
+      qm6zru6uyZ6szIyMyNDq++5OJ925k9iBuQCdcg+5FIqQojwk4jGTSYITBwd0fDgHB9/7vSIM
+      w5CYmAlFuu0OxMTcJnEAxEw0cQDETDRxAMRMNHEAxEw0cQDETDRxAMRMNHEAxEw0ym13IOZ2
+      CJxzvJP/fNvduHXiAJhU3C7e2T/edi9unY8uAHw/4PCkwVmjRRiGJI0ES/NVspkknd6Aw+MG
+      99bmSWjqO7W3sX1EEIY8uLNwbbvnB2zuHFEu5Zgq5gDo9gacN7sszJVRFQXf96k1WoRByGm9
+      ydJ8lcpUftzGcGixsXPE2vIsmXTync/R83yeb+wzNG0URWa6XGS6UkBR5HduI+bd+OieAYIg
+      oFZvEvgB1ak8Qgh+/6dnHB43cF2fbn9IEASEYUgYhgRB9Pcll9svt/WHJv2B+dpxZElg2x7r
+      W1GABEHA/nGdr55s0Wr3CcOQ/tDi4KiOZTt0e0Nsx73WdggEQfTvoWnz9dNtLlrda335dv8A
+      PN/n8LiBoWvksylebh7w9dNtXM97p/MaHz98ve2Y63x0IwCAEIJCIc3ifAXPC7Adl95giK5r
+      48+YlkOr3cPzA5KGRiGXQZIE580utuMiyxK5TIrL6yMIAvoDC4B0SkeSJGarRf709TrDoYUk
+      SQwGFrquUW+0KJdy9AcmQRiSzUR3925vwLEQCKCQT6NpKsuL06N92pw3OySNBHpCQ1WVqH+e
+      jyxL5HNp9MSr/iuKRLVSZLpcIKGp7B2e4fsBruvRavdH55WgkEvjuB79gYnneciyTD6Xpj8w
+      sW0XgEzaIJ0yEEL8+/yCPiI+ygAIw5CzRpsgDPH9AM/3qUwVrn2mPxhyWm8ShiGm6fDo/hKB
+      7/PNi11KxSyqIqPIMpcR0Or02dk7pVoukEomAMjnUmiqQqvdR1VlVEXm7soch8cN7qy69PsW
+      uqaSNBKEYUi708d1fdrdPpWpPLPVEs9e7vH5Z6s02z063QHnRodcNkV/YFKrN8nnMgxNi8HQ
+      YmmhGvWJaOTo903qQnB23iabSSJLEp3uIBoBR+f1+MESnd6Apy/3mC4XyeVSuK7HwXGdTDqJ
+      5/ucNzvcW5u/FmAxER9lAFzF930CP8BxXFT11ekU81ky6STdnsnLrQNM0+Ks0aJaLvD4wfL4
+      c0enDc4vOti2y+x0idmZEvLoIlQUhWIhw2m9SSZtkDR0ZqdL7B/XaVx06PQGFHJpVEVBCMH8
+      TJn5uTK7B6c0Wz1czweiEWtuusR5s8P9Owtk00lebB7gewGmZjMYWriux3SliJKMju0HARet
+      LrV6E01TWF6cQ1FkioUs2UySbm/Ii81DhpZNGIKqKDx+uExCU3m2vk+nN0RRZHw/YDi0mK4U
+      4wC4gY8yAIQQVMt57qzM4vsBm7sn1OpNZqql8WeOa+fUz9sUchkE0Xzcsl2KhexrU4GEpjK0
+      bHw/QJakK8eBylSepy/38HyfhdkySUOnUsqxtXuMJEmsLc3AaNojyVL0txD4/pvn38Fobj43
+      M0U2kyQkJKGp1x7cZVmmUsph2g7t7gCBIAzh+LRB46IzPi9Gh9A0BVVRCMPoGaJSylGtFJCE
+      QJbl8TQt5jof3UPwTdi2A0IgSdGF7Xk+u/unzFSKVCuF8chQyGc4a7TwgwDH9XAcF0JIJXUe
+      31/i5OyCVrt/re1sNoXjeZimTTadRJIEM9Ml6o02khBk0sb37q+qyKSS0X6z0yUqU3nSKQNZ
+      fvXrkAQYRoLVpRlkSbB3WMOyHfYPz5iplqiWC6jq66tCkiTIpJL4QUCllGe6UiSbSV4bHWNe
+      8dF9K0KApsp882KXr59to8gySwtVPru/jGnZGAkNVVEo5DM8eblHJm0QhiGaqnB3dY4//uUl
+      //hf/4BhJHh0bwlNi+6a1XIB1/M5OK5jGBqGHj0HGAmN5fkqkiSRSuoAFHMZZqpFZqpFVFXB
+      9TwMIzGev6uKgp5QkSUJXdeQhCCZ1EkaOr//4zMe3Vvks/tLfPnXDda3D0loKvfW5lmaryLL
+      AiEESUNHUWQSmsqj+8t89c0WrXaPXDbNkxe74/NSVYUwDDH0BEJEo+PyQpWBafHP//JnhCSY
+      m5nis/tL10a3mAgRSyInk2Cwg/X0P952N26d+JYQM9HEARAz0cRToAkl9IcEvee33Y1bJw6A
+      mIkmngLFTDRxAMRMNB/de4CYD0PodvAu/tdtd+PWiQNgQgmdC9z9/3Tb3bh1PqoACIKAi1YP
+      z/Mol/LXBCK243LWaJHPpsikkx8k9Xdo2pw1mizOVcYJcv2BSeOiw9J8BelHerPqeT47+6eY
+      loMsS5RLOUrF7PhNc8yH46N6BojSoFv85ckWrU5/nGwWBCGnZxd8/XSbdrfPh1rXGg4ttnZP
+      8Hx/vK0/MNnePSEIgg9zkBvwfZ/t/VOckcDmm+e7vNw8vNaPmA/DRzUChES5QJ7ns3dYI5tJ
+      oqkK/YHJ6VkTf3xRhgxNB9txEURJZZqq4Lgeg2EkelEVGU1VEYIoE9TzSSQ0kkZifGcPwhDP
+      C8YZl+Ntvo/vBziuTUJTkWUJ1/XwfB9FlrEdlyAIcT0fQ1cx9ESUljw6jqIoJI0EwSgpz/N8
+      EJBO6siyTEiUDLcwV6FazlPIpdk5qOF5PmEQMjAtPC9AT0RahKgvHp7ngRCkDB3H9V47/1gQ
+      8zofVQAA47z73mBI46LNTKVI/byNJEmUizkEgqFp8+U3m6hKdDHlMylWlmbGOltJCFqdHndX
+      I5HIwdEZQhJ4XsDPH61QKmTHx3Ncl1q9Nc6mvGh1CYKAXt/k5dYha8uzVMt5NnePMU2bYiHL
+      i419ioUMg6GNIsv8+ot7nNWb7B/XSRo6rutxd2WWoWnzbH2fbCZJLpvi3uo8hjESxISMpZbN
+      di8KTCFoXLTZ2j0hCEME8Plna7Q6fZ6t75FNR+1UpvJs752iqpFuOZNOcv/OAlqcEfoaH+U3
+      kkrpFAoZdg9qGIkE580OM9UijfMOAKdnF3R7Q+6szOI4LufNDoV8motml9/+6iGeH82xy6Uc
+      mZTBTLVIrz9ke/eEdqd/PQAcj1qjee0ZIAhDUkmdQj5Nrd7E0DXOm13urc4zNC2SSZ0vHt8h
+      DOHf/vKCVrvH9v4pqaRBPpuift6m1miRNHSEJPjV5/fGmaaX+L5P/bzNSe2CIAx4eHcRVVWY
+      KuUp5LMMhhbPN/YZDC3CMEQSUTuGnuD5xj6241IsZPA8n2arS7c7YKqU+/f7JX0kfJQBIIDZ
+      apGzepNvnu+QzaaolPI0LqIAGFoOqaSOJAR6QmNupkwmnWSqmGN96xBVVchlU6SMBI2LDu3e
+      gISqXBOxX5JOGXzx2RqJkZrq5OyCb57toCgypUKWnf1TtvdO0BMquWwS07SRhIQkCSQhoSoy
+      juvh+wGGEbVRLuXIZpKYloOR0G6sYCFLEvlsCtOysR1v/JnzZodmq4uhJwj8YPwcpOtRO2EY
+      4roeeiJKw05oKvOzZXQjVoPdxEf1EHwVVZG5uzqHHwQsL1SvrQjlsylURWZ1eYa7q3MszJXR
+      ExqOG8kmy6Ucs9UiQRiye1gjZehMFXOoyve7H+SyKTRN5bh2QXWqgKaqhIwqMwSML95UUieT
+      SZLPprm3Ns/q8izlUv6tq0iSJMhmkqwtz+L7PgfHDWzbZWfvBMNIUCxkbxS5SJIgldTRdXV8
+      /vMzUyRH+oaY63yUI8AlxXyW3/3NZyQ0Df/KCslMtUSt3uS//Lc/IkmChdkyd1fnCYFOb8Bg
+      aGFu2izOVSCE9a1DNE0hoakIKfXOx9cTGsV8Btt2KOTTY0XaWaPFf/ufX+IHAUvzVQr5DHeW
+      Z/nq6TbfPN8hoan8/NHqd5csEdHFfHd1jq+ebJFNG8iSzMuNQ7LZFJZlIyTxrV0Ei3Nl/vpi
+      l3/6738aVbco8fjBMpr20d7vfjQ+qmS4b3f16qrGd51G/bzN9v4pnz9aJQgCDo7qKKrM6tIs
+      inz9wrhs92qbN23zPJ+NnWNUVWF1aRpZktg7OOPwpMFvf/3ge40obzoXIcT3qu3zts9fPUYs
+      iIn4qEaAty3jfdcSXz6XRlMVnq7vIQBVVViYr6C+pdraTW1e3ea4HqoiMzV6SRWGIYahUcyn
+      kYT4wcuO397v+7YTL3e+Ox/VCPC+hKM1fABFlif6QolHgIiJCoCYV8TJcBFxAMRMNPGyQMxE
+      EwdAzETzUa0CxXw4YlF8RBwAE0po1bDX/+/b7sat894BEIYh7e6Ai2aHhKZSLuWv1en/Ie0N
+      LZtWu0cxnyVpvP4Kv93tMxzaVMr58fp7rz/EdT1yuSjpTQhBNp2k2e5FeT/fSjb7sQjDkKFp
+      0+r0KeYzN/b/u/D9gKPTBrbjRTlBuRT5bPpa7dCYD8N7f6NnjRZ/fbqN7wecN7vsH53het57
+      tWlZDvXzNrbj3PjzXm9IrdHC96P8/zAMaVx0ODo9x3V9GhcdzpsdLMel1mgxNO13Prbn+ewe
+      1GhfEdy8Czv7p2P3F9OyqZ+3ouK7PwDP89nYPqLV6tEfDHn6Yo+d/dPx+cZ8ON5rBAiCgIPj
+      OsVChtXlGYLRL+hSuheGIbbjoaryuDBrtM1FVeRxijEQ2f8EUbHXfDZN6p4+TiXwfB/P89BU
+      FUmSCMPXUx8838dxX1kIhaGAsUXQ2y9kx/XGb4cd1+O82X0teczzfIIwHL85th0PWY6yPX3f
+      p3HRRhtlbBZyadIpY9z/IAzH/gVXC9SGYYjreUiSdE3uGBIZf8zNTlEp5Tg6bXBSa7I4X0GS
+      BL4f4PsBqiqPE+rCMMQPAsIgRFGil3xXzyvmZt7rm7mcZhwc1amWC2TSSRKaykWry1+fboMQ
+      0YUTBHzx+A5CwNOX+2iagmXZPLy7SKmY49nLPRrNDpqqUMxnmJuZ4uC4zr21edrdAc9f7iFJ
+      ErIs8evP7/2gvv7lySZBEPLrz+/RuGizvnXEnZVZTs6aNFtdVEUhn0shhGBr94iDozMe3F0g
+      ldR5vrGPJEnk0inurc3z5OUupuVAGLKyOIMQsHtQ4/DknJXFaeamSxydnHN3dY5Ob8Bfn+2Q
+      1BM4rsvd1Tmmijm+/GYTIcD1fDzP5+ePVpmfmXrt7XQQhjiuP852PTxp8PTl3tgg8Fc/v8tF
+      q8fz9f2R1VKKlcUZ1reO8AOfIAiplvM8uLsYa4pv4L0DYHVpBsfz+erJFnpCY215Bk1T8cOQ
+      X//sLtlMko3tIw5PGvi+Tz6XYrpcoD+wODiuY9kufhDwd795TDplEIQhzVZvfIzqVJ7pv/sF
+      pmWzsX3Exehi/RDYjstgaLG6OMN0tYChJ+h0B3S6A+6szFItF9k7rCFLMr/51QPy2TS+H/Cb
+      Xz5ACMH+UZ1ub8D9tXmOT/PcXZtnYbZM/bw9bn9n/5RffX6P6UqBk9o5h8cN9ISG5/n84mdr
+      FHIZ1rePaLV7zFaL41HR831OaxccnTYwTZtH95ZQFYVquUBlKo9lOTx9uUevb45Hvd/9zWPS
+      KZ0XmwcIAWvLs3iez+lZk053cE3oExPx3leSpqn87MEy99fm2d47Ye+wztxMCVmSkOXItMLQ
+      NVqdyLDOcT1q9RYA+VwGx/Uw9ATqSLMqX70DhtDvmyPnx2ha4AcB72aA+t3oCY35mRJnjTbt
+      bp9qpUjyWw/wQkT9v3yYdT2P07MmkiQYDq0bp2OXuK6HEIL0SJxj6JHe2Bltv8xHEkLgev61
+      diRJIpnUMS2bXDZFNp1ECOj1h7Q7g9E+3nifZDKBoWsEQYhtu7iux1mjhSAyyYvv/jfz3s8A
+      9fM2mXQSQ9dIpwxanZHDShgShpHX1dCy0RMaYRiSz2dYWZhGiGjufdZocdZo4bqR6slxXj1A
+      O47L1t4JhXyGqWKWTm/wg/uaUFX6I/mg7wcEQTDKna8yXSmyvXfC/uEZ91bn3trO8ek5p/Um
+      D9YWxoZ4b0JVZcIQBkOTTNrAtt2xqcV3IUuCUiGDnijxbGOfo9o5i7MVNneOyWVTlEt5NPX1
+      W4EQAsNIIISITDFkGc/3UOT4OeAm3vtb6faGPHmxO567rixOk0rqWLbLl99sIJBQNYWHdxbw
+      g4CN7SMOjurIssTiXIVyKcd5s8Mfv1pHEpGbST6XBkBIUW57vdGm0+0TBCFC/DCvq5lqkT9/
+      vcH//N/fIEnRXde2XZ4838F2XSzbpVoukEwmkGWJr5/tsLIwGEshL5FliW5vyN7RGbbjoic0
+      ZEUmk07y9MUurXaP8sgsO6FprC5N82LzgJebhwhJsDhXIf2uS7JCkM2mWFmc5uXmIemkThCE
+      1OpNhqaNZTuvCWIkKTLke75xwL/+4QmSHBULuLs2jybFQfBt3isZLlrF8LFthzCMvnw9odHu
+      9vnqyTaf3V8ikzaQZRk9Ed2tLNsZLecJEpoSrbw4Lo4b3fk1VUFWZDzPR1WUcbkRMfIAk2UZ
+      IaK18oSmjgUgrusRhCGaqo6XYRVZxvWinH0hBKblEAQBkhBIsjT6uU8YBoRhZJanKDKW7eJ6
+      HpqiIMsSnuej6xpi9FBv2s4o3z+aqmiqguv6OK6LLMtoqoLn+2hqZL9kWnYkXJcECU1DkgSW
+      5ZBIRP++XL26PJ/IAtUe98cPAizLQVOVyCvY95ElMe7z5e/BGPXxcqXNHX2nysiyKRbEvM6P
+      kg3aavd4sXXIzx4sk0nH7oQ/ReIAiPhRxsRCPsP/+etHP0bTMTEflHhSOKmoWZTqf7jtXtw6
+      sSAmZqKJs6tiJpo4AGImmvgZYEIJA5fQadx2N26dOAAmlNA8jJdB+UQC4FKE4vk+6aRBtzcY
+      1clP0O0PSSeN9xLpfN++2I5Lr2+STSdJJL5/5lIQBDQuOrhulCqdThmkU/qP5kgzyXwS32gY
+      RqUPD47quJ7HyVmTWr2JaTkcnjToD813bsvzfY5r5/T6w+8liDk+PafTjXKV+kOLo5MGpvXu
+      QpxrffB8nq3vcXjSoFZv8mx9n8OT8ysGIDEfik8iACDEcV0s2yEIQoIgIAiiFOHLv9+G63m4
+      XlQxznU9amfN11Rkvh+Msy8v7/KXVeZ8P+C4dk5/EAVaNm2wujwzlmFefv7btkqXKRzfVnoF
+      IyHRTLXEvbV58rkUR6eNyCEmDPF9H8fxrrV3uf1qhujV84q5mU9iCvQuPFvfJwgCfvZwhWar
+      x87BKSsL09Qv2pzUzlFkmXwujSRJbO4es3d0xoM7C+SzabZ2j3HcqMz5/TsLPHu5T39oRiXa
+      V+ZwXC8SxBw3WF6cZnGuTK3eYmVxmnZ3wJ//uoEqy4SEPLy7SC6b5unL3VHQuggh+PzRKtVy
+      YdxfSUQ1/9MpI8qkHQXy0WkkiAmCkGI+w88frdJq99jaO8Fx3LEbzObOMUMzyn5dmK1wZ2V2
+      oktBvomJCQDbccbmF37gY1kOvYHJ+UWHR/eWowK3ikynO6Dd6V8TxAxNh9/86gGFXBo/CPn1
+      F3dRFYX94zqNZpf7a3PjjMv5mSkaFx1s28W0HJ6t7/GzhyvMVkscnTY4PG4ghKDTG/KLx2sU
+      8xnWtw+pn7eZKubGwnfX8zk8bnB4XKfZ7kXlzVWFcinP3//uC1zX48mLXdqdPo7r0ekO+Pvf
+      fU4mnWR965AwDPniszUc12Pv8Ix2p08hn7nNX8FPkokJgJswdI2pUo6XmwdMlXLMTpfGNf4v
+      EUKQSiZIp/Qo0zLw6faGuF500UWZpK+XUYdIz3ApG700rpBkCdtxkYQYZ6kKIWE7DmEYcDkr
+      lYRAU2WGps1MpchUIReJYFyPTm+I40Sjx+WxM2mDpBGlSw8th2a7x1dPtwHQEypB/ML/RiYm
+      AFRFwbSc8XNBMEpPvj+SMa5vH7KxfcTdlbcLYk7OLtg9qHFvdY50SqfXG77xs/KoZItp2WTS
+      RpSeHHLNzebN+0pUywUURebl5iGn9Qtmq1O82DxAVRWmy0U07fVfnxDRBb8wW+bB3QUUWcbz
+      /WsFCGJeMTEBUJ3K882LXb78ZnP80Gk7Hhs7x3heZFWazSRJ6BqSLLGxc4xtv17WxPN8PNen
+      3R0wGFgISSDJMsmkzvbuCZblkEkbQHQhzs9MsbV7zMFxHdfzKRWy716jSAiK+QwLc2X2Ds8w
+      9ASO4+L7Ac12dyS5vL6LJEnMVIps7Bzx1TdbSLJELptieb6KFFeHeI1PIhkuDEOGQwvX98mk
+      kgxNCxDoCZWhaWPoGrIsjVzmfRRZQlEVjITG0LTxA58whEw6iZ5Q6fSGDE2LlKGjaSqW5ZDP
+      pZAkCct2aHX6Iz1vVHIkndQZDG36A5NEQiWV1LFtl1RSJwxDmu0evh+gKBLZTApFlml3+mSz
+      0b8HQ4sgCMiMpkp+ENBs9cbvEVzPp93pk07q2I6LaTuRBWwYTX2CIMA0HYqFTCSoCUK6/QHD
+      oQ0CDD1BLpO89h4h1gNEfBIBEPP9iQMg4hN5DxAT88OIJ4WTimwg5X512724deIpUMxEE0+B
+      YiaaOABiJpo4AGImmvgheEKJl0Ej4gB4C57nM7Rs0kljnCPkuh6W7ZBOGT9aduXliyzfj+qX
+      6gkNfVRFLubDEk+B3kKvP+Tpi128K443nd6Apy/3flS3Fs/z+OvTHV5uHrK9d8KLjQPq563X
+      9AQx708cAG/B9Xw63evKsMvU4+9aPQ6CYCxgebUtHBuGXHLp7OL5rz4bhCFD02K6UmBtaQZZ
+      ltg9qF0RxARRLdQgfGs7nuePRTsxNxNPgX4gvf6Qo9NzVhZnyKQNTs8uaLZ7TBVz7B7UEEIw
+      NC3KpTz378zT65usbx0BIZqmcm91jqFpc3Bcx3Fckkmd+2sLYx8CSRKkUgbFQpZuf0hvMCQI
+      Q84aLTZ2jgmCgHw2zf0783R7w3E7qaTOyuIM+0d1hpYFYVQZe3GuEgtibiAOgO/got3ln/7l
+      z+OLx3U9VPWyqrXHSe2c1aUZ9g/PKJfyDIYWg6HFF4/X8Dyfpy93qU7l2Tk4pVjIMD9TYv+o
+      Tv28A4Qcn57zm18+IJdNjytoA3heQO2syflFh5OzC9aWZlAVhXTK4PH9ZYIwYGP7mE5nwNCy
+      OT694De/vE8um+akdo7jODy8s4jjuhydnFPIZchm4kLF3yYOgO+glM/yD3/7+dgA7/SsyTfP
+      dyJL2KkcJ7ULFCUqs16tFGicd1AVhUzaQBIShp6gNzCp1Vuc1Jqsbx0SBAHzM1Pksmmy6STl
+      Uv5GjYDn+XR7A+ZnpliciwzyVEXGdly6PZOhZeOOpjjZjEG5lEcIEY0IJw1OzpoQhhhGgtmZ
+      UhwANxAHwDsynj6IV/8v5DKcnjXZ3D1mab6KntCIHClDCMELfFzPR1UivfGDOwtUpvIEYYgA
+      Do7qbzyeokjMz04BsLFzTC6TolLO82x9H8fzmJueQtdUvj2pESKyrXpwZ4F7q/PIshR5IsQl
+      VW4kDoD3IJXUyWVSdHoDyqUckiwRAr2+ORKpe6iKQiGfYdq02T2s0er0IIRqpUj4HfatCEG5
+      lKM3MNk9rJFIqPQHJtlMCmdUTeImQUx1Ks/2/inr24cosoxhJJiplsYWrzGviAPgLaRTBg/v
+      LV6bnuQyKR7eXRyL1xVFZrpSjN4LjD4jhEAgMAyNhdkySSPB0kIV7UzFdlwURUaRJYqFLIqi
+      vLa+rygyD+4ukk0ZyFJkJaUpCpqqcm9tnt4gqkixvFglN3KuVNVX7ZSKWfwwpNPpI4RAVRTi
+      Vwg3E2eDvgeDgcn6zjHlYo652SkEsHdwxuFJg9/++sGNJnY/FeI3wRHxCPAe6EaCR/ciA2pp
+      5M01PzvFdKXwwbyMY35c4t/SeyBLEvIVF0khxHiJ9CePpCISM7fdi1snngLFTDTx2ljMRBMH
+      QMxEEwdAzETzETytxfwYBOYh9vr/c9vduHXiAPieXKYzX+YGhWGU4owARZaxbRdVld+rFucr
+      P4EQMWpXGRXS/WAELqF9+uHa+0iJA+B7Uqs3OW91+eKzNSC6WPcOz5BliYXZMl893WJteZZi
+      IcNwGJVl/L7Loq7r8+evNwjDEFVVSCUN5mZKkX9BnNL8QYmfAb4nQ9Om3emP/x+GkTagPzAj
+      x5fRCGGaNpu7x9fsmS5FK34QjJ1mvi2QAQjCgG5/SGUqz/JClaFpsblzPBbE3CS2udzu+6/K
+      tft+8KMq1z4F4hHgR8D1fI5Pzzk+bWCaNvfvzOP7ARetLrbtksumKJdy7B2ejfUFS/MVctn0
+      uA1ZEuRyaabLBWzH5eCoThAENFsD9o/q+EFANpNkeb5Kf2hRq7dwXRdd15ifKXN61hx7lJVL
+      eaYrhVgQcwPxCPAjIEsSmqaS0DTKUzkMPcF5s8vhcYNCPk2xkEWSJfK5NDPVIp7nc1JrXrtb
+      +37A+UWHzd1jdg9qVKYizYCsyJRLOSpTec4vunS6QzrdAVu7x2RG2oLGeZtWu0e5lCOfTXPW
+      aDIYWrf4jfx0iQPge6IocmTCd6nfDQJcz0dTlfEdVpIESSNB0khQLuVJJnWEgGwmyfxsmUIu
+      Tb9vsrl7jGk5qKpyxSGGURsS+WwKSUj4fkCpmEUSgrNGi72j+tjkw/EiD4NUUmdhrkI+m6Y3
+      MMnn0lSmCszPTvHg7iKGnvj3/7I+AuIA+J5MVwo4jsfG1iHtTp+9ozNM044u0CuiE0mKtAHD
+      oYXruAgEkiQhCYHvBxwc1ZmtFClP5ZEk8ZoyQAhQVIWlhQqlYpad/Rr9gcXJ6cVoupS6pgWQ
+      JIEkBJIkyOfSXLS6tLt9en0zcsb5Lu3BhBI/A3xPkobO//GL+zx5vsvuQQ09oXF3dY5iPosQ
+      UMynSWgqSSNBPptiffsIPwxHRtcCIaJAmJ8ts71/ysC0I4fKbPrKCCIxVcyRUBUUOXKifLF5
+      gGnZzFQjTXEqqWPoCQw9gSLLlArZkd+YYG66hGk5fPN8B0kIKuUC6eQsxHqY11yFjr0AABKJ
+      SURBVIiT4X4gl6s4lxfdx0asB4iIR4AfyMd64cdcJ34GiJlo4inQhBIGLqHTuO1u3DpxAMRM
+      NPEUKGaiiQMgZqKJV4EmlMA5xzv5z7fdjVsnDoBJxe3inf3jbffi1okDYITtuGztntDrDwEw
+      9ASL82UKucz3bqvXN9k7rDFdKVIu5cbbW50+Z40WC7NlUkn9jft7ns/zjX2Gph1VnisXma4U
+      biygG/N+xM8AI1zXo1ZvoqoKM5UChq7y//35BV892cQdOcSEYZSA9l0LZ57v0+0PcRx3/Mb4
+      8hj9vjnO+oxy+F9vz/N9Do8bGLpGPpvi5eYBXz/dxvW8cXvf3u9y+9Xjhe/Q10knHgGuoCgy
+      1ak887NlAOZmyvzrH55QLrWoVop0un1MywEgl0mSNHT6AxNNVTCMBJblMDRthCQIgoD2yElG
+      CEF5Kn/tWK7r0Wz38DwfeZQarV8psqUoEtVKkelygYSmsnd4NnaGabX7eH5A0khQyKVxXI/+
+      wMTzPGQ5qkTdH5jYdpQpmkknSaf0+M31DcQB8BYMPcFUKUet3gKIktAMHceNBCr3VufYOThl
+      qphjZXGas/MW23unfP7ZKp4X0O708H2fxkWHoWWTy6SA6M58eNrgtHZBPpdhaEamGksLVZSR
+      ljgIQvp9k7oQnJ23yWaSyJJEpzvgtN4kDENM0+Hxg6Wxb9l0uUgul8J1PQ6O62TSSTzf57zZ
+      4d7a/LUAi4mIA+BtCNBUmV7f5KLVo1TMcmd5ljAM+d9/es5Fq/vGXVVFZnGuwvxsmaOTc7b2
+      Tkjdieb9vu9zcFTH9wJMzWYwtHBdj+lKESUZBYAfRAqyWr2JqincXZxDUWSKhSzZTJJub8iL
+      zUOGlk0YgqooPH64TEJTeba+T7c3RFFkfD9gOLSYrhTjALiBOADeQjiaxhRymagEuSKPSpAL
+      EgkVx/XeuK+QorRnIQQJTSEIXml1L58j5mamyGaShGFIIqGS0F5Vk5ZlmUoph2k7tLsDBIIw
+      hOPTBo2LDoVcJirHPpria5qCqiiEYfQMUS7lqJYLCEmgyHLsDvMG4ofgN+D5AS82D7Ash+WF
+      Kqqq0B+YuJ6P7Xj0+kPyuTSqoozdGm3nVUAEV8TvjWaHTNoYT28URSaVNACYnS5RKedJp4yx
+      5wCAJMAwEqwuzSBLgr3DGpbtsH94xky1RLVcQFVfXxWSJEEmlcQPAipTeWYqRbKZ5MdRsPcW
+      iL+VEZIk8Dyf3//p2ej/kTHF3//tL1BkidWlaZ6t7/Nf/8eXEIY8frjCwmwZRZZ4+nKfl1sH
+      lEt5MunkWBP8YiNavUkaCX73N58xNG0SCRVFlvn5wxX++NVL1rcPSWiR8cXSfBVZjtKsk4aO
+      IsskNJVH95b56skWrXaPXDbNkxe7ZNLGuGxKGIYYegIhojTt5YUqA9Pin//lzwhJMDczxWf3
+      l5Bjm6TXiJPhJpRYEBMR3xJiJpo4AGImmngKNKGE/pCg9/y2u3HrxAEQM9HEU6CYiSYOgJiJ
+      Jn4PMKGEbgfv4n/ddjdunTgAJpTQucDd/0+33Y1b55MNAM/3qTfayLKgXMqP63aGYYhlO5ye
+      NekPTPSExuJ8BUWWOa6d0+4Mxm0kjQRryzPjfS3b4aR2QX9gUZ7KUZ3K0xuYnNSaOE7kDDM3
+      HeX3DE2b49o5phmlT0uSYKqQpVopIkTkKXB8eo7nB+Szaaarr8y1Pc9nZ/8U03KQZYlyKUep
+      mB2nUsR8OD7JZ4AwDBkOLb5+usX61hFD0x5v73QH/OsfnnJ8eo6iyLQ6fX7/x2cMLZvj2gXd
+      3gBNU9A0ZaTAinLoLdvhm+e7nDc7pJI623snNC46dLoDTmrnkfgkCPnDly/Y2T+lPzA5OjnH
+      9/2oPVVBkiUgZGf/lP/3j88wLQdplOfzfP1gnFzn+1EAXApqvnm+y8vNQzzfv6Vv9NPlkx0B
+      avU2qqogKzLnrS6ppE4QhHz9bJu56RIP7y1dq65s2Q6SEJQrRe6szL7WXrc3xHYc7q8tUC7l
+      WF2aBuDguI6hJ1hdniGTMjAMjaOTc1aWplEVmeXFaQq5V8YXZ40WB8cNfvXzu1S+JZK5JCSq
+      Dr0wV6FazlPIpdk5qEWuMEHIwLTwvAA9ERXh9f0Ax/XGXmUpQ8d1PSzHRYhI13C1fHvMKz7J
+      APD9gPpFi9WlWVzXo9cb4rgetu3SH5h88dnaKK359f3anT6nZ00kSVAqZMdZlKmkjqoo7Oyf
+      YjsuhVx6rOsNCQlGaq3B0EYdXWyu59G4aGNZDpqmkM+maXX6pJIJMunkWy/IIIyCstsf0mz3
+      SBoJJCFoXLTZ3D2JlGbA55+t0er0eba+RyadJJ9NUZnKs713iqpGeoBMOsn9OwtocUboa3yS
+      30ir02c4tCiXcvQGQ/YPzxgMzHGF/DeJy/3A57w1wPN9VEUhkzbGAZA0Etxbm2f/6IydvRM0
+      TeX+nQUA+n2Trd1jVE1hMIiUXZIkYTsep7UmzUSPbCZJJm3g+z6yJN0YgNf64vvUz9uc1C4I
+      woCHdxdRVYWpUp5CPstgaPF8Y5/B0CIMQyQh+PXn9zD0BM839rEdl2Ihg+f5NFs9ut0BU1cE
+      +jERn1wABEHA3kGNIAg5PK7jej7t7oDzZpfZ6RKyJNHrm6RTxmv7qorCysI0a8uzY9vTS4QQ
+      FPMZCrk0Q9Pi62c7HJ00yGaSSJKI3BwNncW5KrlsinqjRcpI8PDuIvlceuwLYOgJur0hruu9
+      VaEljxxiTMvGdjz0kVjmvNmh2epi6AmCK4Z4uq6R0NTIqG/UthACTVOZn51CN2I12E18cg/B
+      /YFJ46LN4wfLTFeLLMyWWZqv0LhoI6RInL65c0SvP4welk2L9e1DfD9ACIEsy6hqpK66OkXp
+      9AacnF3gel7kERxGI4lAkEoZrCzNcGdljsIVK1MhBLIStaeM1GSlYhbH9cYGeUEQcN7sRCtC
+      3quHXEkSZDNJ1pZnIwnlcQPbdtnZO8EwEhSvTM+uIkmCVFJH11XWlme4tzrH/MwUydgi6UY+
+      uRGgVm+RTieZnZ4aTzNUVaHWaDEYWDy8u8jzjUjY4vk+CU3j0b1FJEnCtGz+7S8v+MuTTQCK
+      +Qx//7svxhf67n6Nf/vyBUEYUi0XWFmYpn7RfmNfmu0e//wvf0KSJGRZ5s7yLI8fLPPZ/SWe
+      vNjj5eYBIVDIpfnZw5XRKtEVRHQx312d46snW2TSBrIk83LjkGw2hWVFFSiu7yJYmCvzzYtd
+      /um/R8eerZZ4/GAZTfvk7nfvzSeXDHd5Olfv3u97ikKId2rjQxzz28d612O/y+ev9i8WxER8
+      ciPATSsrH2L57/u28T7H/Pa+/57HnjTiMTFmovnkpkAx70acDBcRB0DMRBNPgWImmjgAYiaa
+      T24VKObdiETxL267G7dOHAATSmjVsNf/r9vuxq0TB8BPEN8PODptYDtelBOUS5HPpq/VDo35
+      MMTf6E8Qz/PZ2D6i1erRHwx5+mKPnf3TsbNMzIcjDoCfICEhvh8wNzvFw7uLLMxNcdZo4fk+
+      YRjieT627RIErwIiDEM838d1vXEqhON6uG8p4R4TT4F+8gRhiOP6Yw3D4UmDpy/3CMOQlKHz
+      y5/f4aLV4/nG/ni6tLI4w/rWEX7gEwQh1XKeB3cXY03xDcQB8BPF831OaxccnTYwTZtH95ZQ
+      FYVquUBlKo9lOTx9uUevb471yL/77WPSKZ0XmwcIAXeWZ3E9n9OzJp3ugFIhe9un9ZMjDoCf
+      KJIkkUzqmJZNLpsim06Oq0m0O4Ox5PJyupNMJjB0jSAIsW03cr1sRN5mV805Yq4TB8BPFFkS
+      lAoZ9ESJZxv7HNXOWZytsLlzTC6bolzKo6nqa/sJITCMBEKIyBRDlvF8D0WOf9U3EX8rP2WE
+      IJtNsbI4zcvNQ9Kjyha1epOhaWPZzmuCGEkSzE2XeL5xwL/+2xMkSaJczHF3bR5Nin/d3yZO
+      hvsJEoQhpmmT0NTI6TEIosoSqhJ5BXs+shyZ5o11wJ6PoWtjQYztuOMVIEVR0BNqLIi5gfiW
+      8BNEGkkhL5Elafx/VQX9hn2u6oOFEOgJLbZFfQfi9wAxE008Akwqahal+h9uuxe3TvwMEDPR
+      xFOgmIkmDoCYiSZ+BphQwsAldBq33Y1bJw6ACSU0D+P3AMRToDcShiEXzS6W7Yy3eZ7PRasb
+      pxh/QsQB8AZ8P+Dl1iHtTn+8zbId1rcOGQytW+xZzIckDoC3MBhauFcqNgdhyGBg4V8RovhB
+      gOt5BFdWk4MgGFd+hmg08X0f54pY5er2SxGL5/vXMjwvj+mM2grDEMfxrglhAFzPu9bPcd9G
+      x4x5M/EzwA8hDDk6PWd96xBJEvQHFjOVIp9/tkq72+erJ1uERNZEjx8sc9Hqsr51iKZGlkaP
+      Hy7jOC7PXu4TBCFBEJAZGet1e0PuLEel1p9v7tPuDLBsm2I+KqveH5gYusYvHt/BMBJ8/XR7
+      PEqVS3ke3V9k96BGs9VjaFo4rsfiXIVH95ZiTfENxAHwA3EcF0kS/PZXD7Esh6+fbtMfmLzY
+      OGB1aZa15RmCMKTbG7C9e8Lf/+4LNE3hxcYBB0d1ctkUlu3wD3/3C84vOuzsn/LF4zWCIOBP
+      X28wP1fGtl3mZ6dYmq/y+z89Y2muwtzMFM/X96nVW4SEyJLgH/72C1zP45vnuxwe1xkOLXRd
+      429+cZ92p8+LrUOGpkUmnbztr+0nR3xLeAuSuF7mPAgCEAIx+iNLErIc1f73PB/LdnBcn2I+
+      M/65aTroukbSSKDIMumUge8HY0MOSUTuMoYe/VyWJHzPHx9LGrVjjJLbLo9tOw6m5ZDLppEk
+      aWTplMSyI2dJTZVHrjRiPM2KeZ04AN6AJEnksmnq521c18P3A5qtHpoqoyVeF6JE+wgUJTLa
+      uBSvK4qM63qjeXw0n5ck6b1LmAshUGWZoRkdyw+CyKtYkSEuj/7OxFOgNyBJgrWVWf76dJs/
+      fPkCIQlc12NpvvrGNGNZlpmbLrG1d8LJ2QVGIsHc7BSlYo4v/7qJokj4fsjSfIUgfL8SJ0II
+      ZipFtvdOIkebEIQkqEzlGRzU3qvtSSJOhnsLYRjS7g7GfmKGnqCQS6MoMqblYFkO+VyKIAhp
+      d/pks0kII5dKz/fRVJV8NoXn+zTbfQSQSKjkMtG2Xn9IqZDD9TwsyyGV1AnDkFanTyGXpj+0
+      0FSFpJGg3R1g6BqaqtAfmIiRZqDbGzI0bYSIrFzTKYNe34y8wlIGnuvRG5hk0slrNqmxICYi
+      DoB34CbbpY+dOAAi4inQO/ApXfgx14kDYFKRDaTcL2+7F7dOPAWKmWjiZdCYiSYOgJiJJg6A
+      mIkmfgieUOJl0Ig4AD4gvh/QH5h4vo+qyCQNHVl+/7SHmB+POAA+EJbtsLtfo9sfIo3qdRZy
+      aRbmKiS0m3OHYm6fOAA+AJ7vs7lzTKc7YHVphqSRwLTssaVRGIbjhDVFlscjwuX2IAiRZYkg
+      CEcpzq9GjSCM3GKibZEsU5YlJOnV45vn+SB4rQS6HwQEQRglyMXcSBwAH4D+wOSs0eJnD1eo
+      lgsA5HPp8c/3j+vs7p+iyjKGkeDu6hyO67G9e0IQBPhBSDqlY1oO/YHF0nyFxfkK23sn9PpD
+      LNshn83geh6DoYWe0Hh0b5FEQuPl5iGd3gABFAtZ1pZnOD49p9MdYFo2juszO13kzvLstaCJ
+      iYi/kQ9ArzdECEE6bbz+s4HJxtYRD+8u8tmDZUIim6PB0OKi1eX+nQWmKwXa3T4Ls2Xurc6x
+      d3iGZTu0uwNSSYOfPVjhvNUhZeg8frCMEHDWaEfiF9Pi8YNl7t+Zp93pcVq7oN3p43o+j+4v
+      sbJQpd5oY1rO6x2PiUeAD4GmqQRBgOf68K0Y6PWGqJpCZSoPRM8Fne5gLG5JpwxczydlGGTS
+      SXzfx7YdfN8fVXlWyWZSJPUE2UySdMpAVRQGQ5MgCJkqZsmmkwRBQC6bpjcwCYIAQ1dJJw18
+      L9IZ27ZzreJ0TEQ8AnwAspkkqqJwcnaB50VOjpf6XSHAc71XDo+jC/t9F4Yu1V6XCrBgJMCJ
+      dL/xqtO7Eo8AHwA9obG2MsvW7jG27aIokURS1zVmKkXSKYMXGwcoiky/b1KtFJGl91eElUs5
+      9o/qbOwcRd5gjsNMpcqhGVd8e1fiAPgACCGYm5kioamcNzsEQUgymaAylSeTTvLo/hIntQsE
+      MDszRWUqj+u6PLy7iCxLpFMGC3Nl9IRKECp89mCZpKGzvFDFSGhIkmB5YXpsdjc/M4WQBIVc
+      pD3u9AYosqA6NU2xkI20xFL0J5nUubsyR9KIpz83EWeDTijxm+CI+BkgZqL5/wFqcrCMgl9/
+      qAAAAABJRU5ErkJggg==
+    </thumbnail>
+    <thumbnail height='22' name='Btn | Flip' width='192'>
+      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
+      SUVORK5CYII=
+    </thumbnail>
+    <thumbnail height='192' name='Chase Card' width='192'>
+      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
+    </thumbnail>
+    <thumbnail height='192' name='Hero | Sealed Returns' width='192'>
+      iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAACXBIWXMAAA7DAAAOwwHHb6hk
+      AAAE/UlEQVR4nO3dzW4bVRjG8ed4xnacxG3TNKJAJVCXLLgL1gixYcOKJUJdIHEBSFwCElfA
+      RcCWDUhQIbWiKqIfoISEJmlSUtvjOWcOi0DER6ZSS2PJfv6/jRVrRnoX859jZfOGnHMWYKrz
+      rDfmnEU7mHfPHEBVTXX3/ubznAWYuWcOAFgEBABrBABrBABrBABrBABrBABrBABrBABrBABr
+      BABrBABrBABrBABr5Wlf5py1u3+o5cGSUmqUUlJqGvX7PQ1XBrOeETgzrSdAr9fV70cj1TFq
+      XE1VVbV2dw/0451NpaZRappZzgmciVNPAEk6ejxWUFAIQZ0QFJXV7/cU6lqSVHT49YT5d2oA
+      IQS9fPnSE2+sz2QcYLZ4jcMaAcAaAcAaAcAaAcAaAcAaAcAaAcAaAcAaAcAaAcAaAcAaAcAa
+      AcAaAcAaAcAaAcAaAcAaAcAaAcAaAcAaAcAaAcAaAcAaAcAaAcAaAcAaAcAaAcAaAcAaAcAa
+      AcAaAcAaAcAaAcAaAcAaAcAaAcBa66b4X3f21euVijGpjknKUlkWWl8bqtttXS8MzJXWE2B5
+      0Fc1jZrWUbnJCp2gqprqxq17yjmzKR4LofVVXsek1eUlKRyfCE2TVawMtH7xnCQ2xWMxtG6K
+      31g/P+tZgJnjNQ5rBABrBABrBABrBABrBABrBABrBABrBABrBABrBABrBABrBABrBABrBABr
+      BABrBABrBABrBABrBABrBABrBABrBABrBABrBABrBABrBABrBABrBABrBABrBABrBABrBABr
+      BABrBABrBABrBABrrYuyx5NK/X5PKSZN66iiKNTtFiqLYtYzAmemdU/waDzVw8MjSUFl0VFV
+      1apj1OrKQBvr55VnOCRwVlp/Am1t76rf7Wqw1NNoXKmOUSEE7Tx4+OfibDbFY/61Lsp+/bWr
+      J39fvDD8zzVsisci4CmGNQKANQKANQKANQKANQKANQKANQKANQKANQKANQKANQKANQKANQKA
+      NQKANQKANQKANQKANQKANQKANQKANQKANQKANQKANQKANQKANQKANQKANQKANQKANQKANQKA
+      NQKANQKANQKANQKANQKANQKAtdZN8Vvbe1rq9xRTUh2TlLO63VIX14Zsi8fCaD0B+r2u+v2u
+      ptNaTWqkEDQaV7rxwz3lnJVYlI0FcOoJIEmTaqpOJ2g4XFbOUtM0Wl1eOlmazaJsLILWTfFX
+      XtqY9SzAzPEahzUCgDUCgDUCgDUCgDUCgDUCgDUCgDUCgDUCgDUCgDUCgDUCgDUCgDUCgDUC
+      gDUCgDUCgDUCgDUCgDUCgDUCgDUCgDUCgDUCgDUCgDUCgDUCgDUCgDUCgDUCgDUCgDUCgDUC
+      gDUCgDUCgDUCgLXWNakxJhVFRzEm1TGq6HRUlqWKgmawOFo3xf90b0tXX3lRv+0dqCwKTapa
+      KSUNVwdaXzs/6zmB52I8nmhSTbV24ZykJ/wEKstCh48ea3mwpNFoohijJGlre185N2yKx9x5
+      ePBI7773kd5+5wN9/c33kqSQc87/vjDnrOOvw/FFQcr5+PMvVTXV1vYDXX31ykyGB/6P767f
+      1Keffa5bt+9Iki6/cElvvflG+6b48PenXf98+IF5s7d/ePLwS9L2zq7u3P2F/wLBGwHAGgFg
+      7uWcdf/nTX17/aZiSk91LwFg7u3tH+j9ax/r2oef6Isvv3qqe/8AOj4sWgSHZycAAAAASUVO
+      RK5CYII=
+    </thumbnail>
+  </thumbnails>
+</workbook>
