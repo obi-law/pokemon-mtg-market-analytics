@@ -113,4 +113,10 @@ intervals on medians, Holm correction across the primary hypothesis family.
 
 ## Live Viz
 
-[link + screenshot after publish]
+**[Same Aisle, Two Economies — the Chase Card](https://public.tableau.com/app/profile/obie.w.lawrence/viz/PokemonMTGMarketAnalytics/ChaseCard)**
+
+One dashboard, two readings: a collector-card layout that flips between the
+Magic and Pokémon perspectives on the same underlying analysis. The facts
+never change between faces — only the emphasis and the reading do.
+
+![The Chase Card — MTG reading](tableau/Dashboard.png)
