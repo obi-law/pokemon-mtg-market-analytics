@@ -1,8 +1,16 @@
-# Pokémon vs. Magic: The Gathering — Market Analytics
+# Magic: The Gathering vs. Pokémon — Market Analytics
 
 Statistical comparison of the two largest trading card games as products and
 as markets: singles price distributions, rarity premium structure, sealed
 product appreciation since release, and catalog/release cadence.
+
+**Live viz: [Same Aisle, Two Economies — the Chase Card](https://public.tableau.com/app/profile/obie.w.lawrence/viz/PokemonMTGMarketAnalytics/ChaseCard)**
+— one dashboard, two readings: a collector-card layout that flips between
+the Magic and Pokémon perspectives on the same underlying analysis. The
+facts never change between faces; only the emphasis and the reading do.
+
+![The Chase Card — MTG reading](tableau/chase_card_magic.png)
+![The Chase Card — Pokémon reading](tableau/chase_card_pokemon.png)
 
 ## Questions
 
@@ -17,15 +25,15 @@ product appreciation since release, and catalog/release cadence.
 
 ## Data
 
-- **MTG:** MTGJSON (card/set catalog, price snapshot) — fetched YYYY-MM-DD
+- **MTG:** MTGJSON (card/set catalog, price snapshot) — fetched 2026-07-15
 - **Pokémon:** Pokémon TCG API v2 (card/set catalog + TCGplayer price
-  snapshot) — fetched YYYY-MM-DD
+  snapshot) — fetched 2026-07-15
 - **Sealed product prices:** hand-collected from TCGplayer, single collection
-  date per batch — YYYY-MM-DD
+  date per batch — 2026-07-15
 - **Release MSRP:** hand-researched; sources cited in `data/README.md`
 
 Set scope: all main-series and major special expansions released
-2024-02-01 through 2026-06-30 (15 MTG sets, N Pokémon sets), so both samples
+2024-02-01 through 2026-06-30 (15 MTG sets, 15 Pokémon sets), so both samples
 cover the identical market window.
 
 ## Method
@@ -36,6 +44,9 @@ processed CSVs. Statistical tests are non-parametric (prices are heavily
 right-skewed): Mann–Whitney U for cross-game distribution comparisons,
 Kruskal–Wallis + Dunn's post-hoc for rarity tiers, bootstrap confidence
 intervals on medians, Holm correction across the primary hypothesis family.
+The dashboard itself is a single parameter-driven card: Dynamic Zone
+Visibility swaps the face chrome while both readings share the same
+worksheets, so the facts-identical invariant is enforced by construction.
 
 ## Findings
 
@@ -47,8 +58,8 @@ intervals on medians, Holm correction across the primary hypothesis family.
    statistically decisive but small - the typical card in either game is
    pocket change.
 2. The games differ far more in where value sits than in what a typical
-   card costs: Pokemon concentrates 93.5% of singles market value in its
-   top rarity tier vs 71.2% for MTG (difference -0.223, set-clustered 95%
+   card costs: MTG holds 71.2% of singles market value in its top rarity
+   tier vs 93.5% for Pokemon (difference -0.223, set-clustered 95%
    CI [-0.37, -0.11]; robust to remapping ACE SPEC Rare, -0.220).
 3. Both rarity ladders are statistically real: all 6 MTG tier pairs
    distinct (Dunn's, Holm); 32/55 Pokemon pairs, with adjacent premium
@@ -60,22 +71,39 @@ intervals on medians, Holm correction across the primary hypothesis family.
 
 **Sealed (15 sets per game, single pack, launch price vs 2026-07-15 market)**
 
-5. Complete separation: every Pokemon set trades above launch
-   (1.35x-3.50x) while 12 of 15 MTG sets trade at or below (0.57x-1.27x).
-   Median total return 2.30x vs 0.90x (Mann-Whitney U=0, Holm-adj.
+5. Complete separation: 12 of 15 MTG sets trade at or below launch
+   (0.57x-1.27x) while every Pokemon set trades above (1.35x-3.50x).
+   Median total return 0.90x vs 2.30x (Mann-Whitney U=0, Holm-adj.
    p = 3.4e-06; n=15/15, estimates emphasized over the test). Robust to
-   excluding sets under 6 months old (medians 2.37x vs 0.98x).
-6. Pricing strategy shows up in returns: four of five $6.99 Universes
-   Beyond sets trade 0.57x-0.72x launch (Final Fantasy, 1.27x, is the
-   exception), while TPCi's flat $4.49 MSRP means all Pokemon return
-   dispersion is market-generated - specials cluster at 3.0x-3.5x.
+   excluding sets under 6 months old (medians 0.98x vs 2.37x).
+6. Pricing strategy shows up in returns: four of five of WotC's $6.99
+   Universes Beyond sets trade 0.57x-0.72x launch (Final Fantasy, 1.27x,
+   is the exception), while TPCi's flat $4.49 MSRP means all Pokemon
+   return dispersion is market-generated - specials cluster at 3.0x-3.5x.
 7. Age gradients run in opposite directions: MTG sealed returns improve
    with age (Spearman rho=0.73) as young sets sell below launch and
    drift back; Pokemon annualized returns are highest for the youngest
    sets (rho=-0.82). Caveat: annualizing short holding periods
    mechanically amplifies both extremes (see methodology).
 
-<!-- methodology additions -->
+
+## Methodology & Limitations
+
+- **Print runs / circulation counts are not published** by either publisher.
+  "Catalog size" counts distinct printed cards, not copies in circulation.
+- **Prices are a cross-sectional snapshot** as of the collection date, not a
+  time series. Appreciation figures compare release MSRP to current market —
+  two points per set, not a price path.
+- **WotC discontinued MSRP (~2019);** MTG "at release" prices are typical
+  retail, hand-researched and cited. Pokémon MSRP is current and official.
+- **Rarity tiers do not map 1:1 across games.** The mapping table and its
+  rationale are committed in `reference/rarity_mapping.csv` and
+  `reference/rarity_mapping_notes.md`; results are reported per-game and under the
+  mapping separately.
+- **Cards within a set are not independent observations.** Cross-game tests
+  are reported with set-clustered bootstrap intervals alongside naive tests.
+- TCGplayer "market price" is a listing-derived estimate, not transaction
+  data.
 - Sealed comparison is single-pack grain: TCGplayer Market Price
   (2026-07-15) vs launch price per set. MKM/OTJ predate WotC's MSRP
   reinstatement and use TCGplayer Mid via MTGGoldfish on BOTH sides
@@ -93,31 +121,3 @@ intervals on medians, Holm correction across the primary hypothesis family.
   a >=6-month minimum-age sensitivity.
 - Sealed n=15 per game is underpowered for formal testing; effect
   estimates are emphasized over p-values.
-
-## Methodology & Limitations
-
-- **Print runs / circulation counts are not published** by either publisher.
-  "Catalog size" counts distinct printed cards, not copies in circulation.
-- **Prices are a cross-sectional snapshot** as of the collection date, not a
-  time series. Appreciation figures compare release MSRP to current market —
-  two points per set, not a price path.
-- **WotC discontinued MSRP (~2019);** MTG "at release" prices are typical
-  retail, hand-researched and cited. Pokémon MSRP is current and official.
-- **Rarity tiers do not map 1:1 across games.** The mapping table used is
-  disclosed in `data/README.md`; results are reported per-game and under the
-  mapping separately.
-- **Cards within a set are not independent observations.** Cross-game tests
-  are reported with set-clustered bootstrap intervals alongside naive tests.
-- TCGplayer "market price" is a listing-derived estimate, not transaction
-  data.
-
-## Live Viz
-
-**[Same Aisle, Two Economies — the Chase Card](https://public.tableau.com/app/profile/obie.w.lawrence/viz/PokemonMTGMarketAnalytics/ChaseCard)**
-
-One dashboard, two readings: a collector-card layout that flips between the
-Magic and Pokémon perspectives on the same underlying analysis. The facts
-never change between faces — only the emphasis and the reading do.
-
-![The Chase Card — MTG reading](tableau/chase_card_magic.png)
-![The Chase Card — Pokémon reading](tableau/chase_card_pokemon.png)
