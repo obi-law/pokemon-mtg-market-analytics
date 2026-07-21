@@ -59,7 +59,7 @@
       <connection class='federated'>
         <named-connections>
           <named-connection caption='singles_prices' name='textscan.1s4v6j105190w31d0iprf05aouha'>
-            <connection class='textscan' directory='../pokemon-mtg-market-analytics/data/processed' filename='singles_prices.csv' password='' server='' />
+            <connection class='textscan' directory='../data/processed' filename='singles_prices.csv' password='' server='' />
           </named-connection>
         </named-connections>
         <relation connection='textscan.1s4v6j105190w31d0iprf05aouha' name='singles_prices.csv' table='[singles_prices#csv]' type='table'>
@@ -346,7 +346,7 @@
       <column-instance column='[Calculation_1403276400222212]' derivation='None' name='[none:Calculation_1403276400222212:nk]' pivot='key' type='nominal' />
       <column-instance column='[Calculation_1403276403179527]' derivation='None' name='[none:Calculation_1403276403179527:nk]' pivot='key' type='nominal' />
       <extract _.fcp.VConnDownstreamExtractsWithWarnings.true...user-specific='false' count='-1' enabled='true' object-id='' units='records'>
-        <connection access_mode='readonly' authentication='auth-none' author-locale='en_US' class='hyper' dbname='../Documents/My Tableau Repository/Datasources/MTG Commercial Analytics/singles_prices.hyper' default-settings='yes' schema='Extract' sslmode='' tablename='Extract' update-time='07/20/2026 10:34:09 PM' username='tableau_internal_user'>
+        <connection access_mode='readonly' authentication='auth-none' author-locale='en_US' class='hyper' dbname='../My Tableau Repository/Datasources/MTG Commercial Analytics/singles_prices.hyper' default-settings='yes' schema='Extract' sslmode='' tablename='Extract' update-time='07/20/2026 10:34:09 PM' username='tableau_internal_user'>
           <relation name='Extract' table='[Extract].[Extract]' type='table' />
           <refresh>
             <refresh-event add-from-file-path='singles_prices' increment-value='%null%' refresh-type='create' rows-inserted='8747' timestamp-start='2026-07-20 22:34:08.967' />
@@ -638,7 +638,7 @@
       <connection class='federated'>
         <named-connections>
           <named-connection caption='inference_results' name='textscan.0uyp8690lgf5g910h7bxp0bk4p76'>
-            <connection class='textscan' directory='../pokemon-mtg-market-analytics/data/processed' filename='inference_results.csv' password='' server='' />
+            <connection class='textscan' directory='../data/processed' filename='inference_results.csv' password='' server='' />
           </named-connection>
         </named-connections>
         <relation connection='textscan.0uyp8690lgf5g910h7bxp0bk4p76' name='inference_results.csv' table='[inference_results#csv]' type='table'>
@@ -715,7 +715,7 @@
       <column caption='Metric' datatype='string' name='[metric]' role='dimension' type='nominal' />
       <column caption='Value' datatype='real' name='[value]' role='measure' type='quantitative' />
       <extract _.fcp.VConnDownstreamExtractsWithWarnings.true...user-specific='false' count='-1' enabled='true' object-id='' units='records'>
-        <connection access_mode='readonly' authentication='auth-none' author-locale='en_US' class='hyper' dbname='../Documents/My Tableau Repository/Datasources/MTG Commercial Analytics/inference_results.hyper' default-settings='yes' schema='Extract' sslmode='' tablename='Extract' update-time='07/20/2026 10:33:54 PM' username='tableau_internal_user'>
+        <connection access_mode='readonly' authentication='auth-none' author-locale='en_US' class='hyper' dbname='../My Tableau Repository/Datasources/MTG Commercial Analytics/inference_results.hyper' default-settings='yes' schema='Extract' sslmode='' tablename='Extract' update-time='07/20/2026 10:33:54 PM' username='tableau_internal_user'>
           <relation name='Extract' table='[Extract].[Extract]' type='table' />
           <refresh>
             <refresh-event add-from-file-path='inference_results' increment-value='%null%' refresh-type='create' rows-inserted='52' timestamp-start='2026-07-20 22:33:54.158' />
@@ -795,7 +795,7 @@
       <connection class='federated'>
         <named-connections>
           <named-connection caption='sealed_returns' name='textscan.1vamzwk0z1h6ir16zfdzd0hi8kmd'>
-            <connection class='textscan' directory='../pokemon-mtg-market-analytics/data/processed' filename='sealed_returns.csv' password='' server='' />
+            <connection class='textscan' directory='../data/processed' filename='sealed_returns.csv' password='' server='' />
           </named-connection>
         </named-connections>
         <relation connection='textscan.1vamzwk0z1h6ir16zfdzd0hi8kmd' name='sealed_returns.csv' table='[sealed_returns#csv]' type='table'>
@@ -1077,7 +1077,7 @@
       <column-instance column='[Calculation_1403276381741058]' derivation='None' name='[none:Calculation_1403276381741058:nk]' pivot='key' type='nominal' />
       <column-instance column='[game]' derivation='None' name='[none:game:nk]' pivot='key' type='nominal' />
       <extract _.fcp.VConnDownstreamExtractsWithWarnings.true...user-specific='false' count='-1' enabled='true' object-id='' units='records'>
-        <connection access_mode='readonly' authentication='auth-none' author-locale='en_US' class='hyper' dbname='../Documents/My Tableau Repository/Datasources/MTG Commercial Analytics/sealed_returns.hyper' default-settings='yes' schema='Extract' sslmode='' tablename='Extract' update-time='07/20/2026 10:34:02 PM' username='tableau_internal_user'>
+        <connection access_mode='readonly' authentication='auth-none' author-locale='en_US' class='hyper' dbname='../My Tableau Repository/Datasources/MTG Commercial Analytics/sealed_returns.hyper' default-settings='yes' schema='Extract' sslmode='' tablename='Extract' update-time='07/20/2026 10:34:02 PM' username='tableau_internal_user'>
           <relation name='Extract' table='[Extract].[Extract]' type='table' />
           <refresh>
             <refresh-event add-from-file-path='sealed_returns' increment-value='%null%' refresh-type='create' rows-inserted='30' timestamp-start='2026-07-20 22:34:02.642' />
@@ -2085,7 +2085,7 @@
           </zone-style>
         </zone>
         <zone friendly-name='Pokemon Card' h='100000' hidden-by-user='true' id='33' param='horz' type-v2='layout-flow' w='100000' x='0' y='0'>
-          <zone h='100000' hidden-by-user='true' id='32' is-scaled='1' param='../pokemon-mtg-market-analytics/tableau/assets/frame_pokemon_1300x1820.png' type-v2='bitmap' w='100000' x='0' y='0'>
+          <zone h='100000' hidden-by-user='true' id='32' is-scaled='1' param='../tableau/assets/frame_pokemon_1300x1820.png' type-v2='bitmap' w='100000' x='0' y='0'>
             <zone-style>
               <format attr='border-color' value='#000000' />
               <format attr='border-style' value='none' />
@@ -2095,7 +2095,7 @@
           </zone>
         </zone>
         <zone friendly-name='MTG Card' h='100000' id='1' param='horz' type-v2='layout-flow' w='100000' x='0' y='0'>
-          <zone h='100000' id='2' is-scaled='1' param='../pokemon-mtg-market-analytics/tableau/assets/frame_mtg_1300x1820.png' type-v2='bitmap' w='100000' x='0' y='0'>
+          <zone h='100000' id='2' is-scaled='1' param='../tableau/assets/frame_mtg_1300x1820.png' type-v2='bitmap' w='100000' x='0' y='0'>
             <zone-style>
               <format attr='border-color' value='#000000' />
               <format attr='border-style' value='none' />
@@ -2109,8 +2109,8 @@
             <run fontcolor='#edeae2' fontname='raleway bold' fontsize='26'>Parallel Economies</run>
           </formatted-text>
         </zone>
-        <zone h='3516' id='8' is-centered='0' is-scaled='1' param='../pokemon-mtg-market-analytics/tableau/assets/orb_mtg_violet.png' type-v2='bitmap' w='4923' x='83692' y='6923' />
-        <zone h='1648' id='9' is-centered='0' param='../pokemon-mtg-market-analytics/tableau/assets/divider_mtg_1060x30.png' type-v2='bitmap' w='81538' x='9231' y='49451' />
+        <zone h='3516' id='8' is-centered='0' is-scaled='1' param='../tableau/assets/orb_mtg_violet.png' type-v2='bitmap' w='4923' x='83692' y='6923' />
+        <zone h='1648' id='9' is-centered='0' param='../tableau/assets/divider_mtg_1060x30.png' type-v2='bitmap' w='81538' x='9231' y='49451' />
         <zone forceUpdate='true' h='2088' id='10' type-v2='text' w='58462' x='9231' y='10659'>
           <formatted-text>
             <run fontcolor='#9aa3b5' fontname='Lato' fontsize='11'>the mtg reading — tiered pricing, thick playable middle, market grades each premium</run>
@@ -2234,7 +2234,7 @@
             <run fontalignment='2' fontcolor='#edeae2' fontname='Lato' fontsize='11'>6/6</run>
           </formatted-text>
         </zone>
-        <zone h='1648' hidden-by-user='true' id='58' is-centered='0' is-scaled='1' param='../pokemon-mtg-market-analytics/tableau/assets/divider_pokemon_1060x30.png' type-v2='bitmap' w='81538' x='9231' y='49451' />
+        <zone h='1648' hidden-by-user='true' id='58' is-centered='0' is-scaled='1' param='../tableau/assets/divider_pokemon_1060x30.png' type-v2='bitmap' w='81538' x='9231' y='49451' />
         <zone forceUpdate='true' h='1978' hidden-by-user='true' id='59' type-v2='text' w='20000' x='58462' y='86538'>
           <formatted-text>
             <run fontalignment='2' fontcolor='#9aa3b5' fontname='raleway bold'>median sealed return vs launch</run>
@@ -2257,7 +2257,7 @@
           <zones>
             <zone h='100000' id='85' type-v2='layout-basic' w='100000' x='0' y='0'>
               <zone h='99120' id='84' param='vert' type-v2='layout-flow' w='98770' x='615' y='440'>
-                <zone fixed-size='280' h='100000' hidden-by-user='true' id='32' is-fixed='true' is-scaled='1' param='../pokemon-mtg-market-analytics/tableau/assets/frame_pokemon_1300x1820.png' type-v2='bitmap' w='100000' x='0' y='0'>
+                <zone fixed-size='280' h='100000' hidden-by-user='true' id='32' is-fixed='true' is-scaled='1' param='../tableau/assets/frame_pokemon_1300x1820.png' type-v2='bitmap' w='100000' x='0' y='0'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
                     <format attr='border-style' value='none' />
@@ -2266,7 +2266,7 @@
                     <format attr='padding' value='0' />
                   </zone-style>
                 </zone>
-                <zone fixed-size='280' h='100000' id='2' is-fixed='true' is-scaled='1' param='../pokemon-mtg-market-analytics/tableau/assets/frame_mtg_1300x1820.png' type-v2='bitmap' w='100000' x='0' y='0'>
+                <zone fixed-size='280' h='100000' id='2' is-fixed='true' is-scaled='1' param='../tableau/assets/frame_mtg_1300x1820.png' type-v2='bitmap' w='100000' x='0' y='0'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
                     <format attr='border-style' value='none' />
@@ -2284,7 +2284,7 @@
                     <format attr='padding' value='0' />
                   </zone-style>
                 </zone>
-                <zone fixed-size='64' h='3516' id='8' is-centered='0' is-fixed='true' is-scaled='1' param='../pokemon-mtg-market-analytics/tableau/assets/orb_mtg_violet.png' type-v2='bitmap' w='4923' x='83692' y='6923'>
+                <zone fixed-size='64' h='3516' id='8' is-centered='0' is-fixed='true' is-scaled='1' param='../tableau/assets/orb_mtg_violet.png' type-v2='bitmap' w='4923' x='83692' y='6923'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
                     <format attr='border-style' value='none' />
@@ -2371,7 +2371,7 @@
                     <format attr='padding' value='0' />
                   </zone-style>
                 </zone>
-                <zone fixed-size='30' h='1648' id='9' is-centered='0' is-fixed='true' param='../pokemon-mtg-market-analytics/tableau/assets/divider_mtg_1060x30.png' type-v2='bitmap' w='81538' x='9231' y='49451'>
+                <zone fixed-size='30' h='1648' id='9' is-centered='0' is-fixed='true' param='../tableau/assets/divider_mtg_1060x30.png' type-v2='bitmap' w='81538' x='9231' y='49451'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
                     <format attr='border-style' value='none' />
@@ -2380,7 +2380,7 @@
                     <format attr='padding' value='0' />
                   </zone-style>
                 </zone>
-                <zone fixed-size='30' h='1648' id='58' is-centered='0' is-fixed='true' is-scaled='1' param='../pokemon-mtg-market-analytics/tableau/assets/divider_pokemon_1060x30.png' type-v2='bitmap' w='81538' x='9231' y='49451'>
+                <zone fixed-size='30' h='1648' id='58' is-centered='0' is-fixed='true' is-scaled='1' param='../tableau/assets/divider_pokemon_1060x30.png' type-v2='bitmap' w='81538' x='9231' y='49451'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
                     <format attr='border-style' value='none' />
