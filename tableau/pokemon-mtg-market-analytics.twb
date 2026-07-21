@@ -12,6 +12,7 @@
     <DatagraphNodeSingleValueFieldV1 />
     <MarkAnimation />
     <ObjectModelEncapsulateLegacy />
+    <ObjectModelExtractV2 />
     <ObjectModelTableType />
     <ParameterAction />
     <ParameterActionClearSelection />
@@ -19,6 +20,7 @@
     <SetMembershipControl />
     <SheetIdentifierTracking />
     <SortTagCleanup />
+    <_.fcp.VConnDownstreamExtractsWithWarnings.true...VConnDownstreamExtractsWithWarnings />
     <WindowsPersistSimpleIdentifiers />
     <WorksheetBackgroundTransparency />
     <ZoneFriendlyName />
@@ -42,8 +44,8 @@
   <datasources>
     <datasource hasconnection='false' inline='true' name='Parameters' version='18.1'>
       <aliases enabled='yes' />
-      <column caption='Card View' datatype='string' name='[Parameter 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;Pokemon&quot;'>
-        <calculation class='tableau' formula='&quot;Pokemon&quot;' />
+      <column alias='Magic: The Gathering' caption='Card View' datatype='string' name='[Parameter 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;MTG&quot;'>
+        <calculation class='tableau' formula='&quot;MTG&quot;' />
         <aliases>
           <alias key='&quot;MTG&quot;' value='Magic: The Gathering' />
         </aliases>
@@ -52,453 +54,6 @@
           <member value='&quot;Pokemon&quot;' />
         </members>
       </column>
-    </datasource>
-    <datasource caption='inference_results' inline='true' name='federated.1vx2g491as1p2613es30t0bveheg' version='18.1'>
-      <connection class='federated'>
-        <named-connections>
-          <named-connection caption='inference_results' name='textscan.0uyp8690lgf5g910h7bxp0bk4p76'>
-            <connection class='textscan' directory='.../data/processed' filename='inference_results.csv' password='' server='' />
-          </named-connection>
-        </named-connections>
-        <relation connection='textscan.0uyp8690lgf5g910h7bxp0bk4p76' name='inference_results.csv' table='[inference_results#csv]' type='table'>
-          <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
-            <column datatype='string' name='analysis' ordinal='0' />
-            <column datatype='string' name='metric' ordinal='1' />
-            <column datatype='real' name='value' ordinal='2' />
-          </columns>
-        </relation>
-        <metadata-records>
-          <metadata-record class='capability'>
-            <remote-name />
-            <remote-type>0</remote-type>
-            <parent-name>[inference_results.csv]</parent-name>
-            <remote-alias />
-            <aggregation>Count</aggregation>
-            <contains-null>true</contains-null>
-            <attributes>
-              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
-              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
-              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
-              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
-              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
-              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
-            </attributes>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>analysis</remote-name>
-            <remote-type>129</remote-type>
-            <local-name>[analysis]</local-name>
-            <parent-name>[inference_results.csv]</parent-name>
-            <remote-alias>analysis</remote-alias>
-            <ordinal>0</ordinal>
-            <local-type>string</local-type>
-            <aggregation>Count</aggregation>
-            <scale>1</scale>
-            <width>1073741823</width>
-            <contains-null>true</contains-null>
-            <collation flag='0' name='LEN_RUS' />
-            <object-id>[inference_results.csv_06853E73A5A2405385836823AD854032]</object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>metric</remote-name>
-            <remote-type>129</remote-type>
-            <local-name>[metric]</local-name>
-            <parent-name>[inference_results.csv]</parent-name>
-            <remote-alias>metric</remote-alias>
-            <ordinal>1</ordinal>
-            <local-type>string</local-type>
-            <aggregation>Count</aggregation>
-            <scale>1</scale>
-            <width>1073741823</width>
-            <contains-null>true</contains-null>
-            <collation flag='0' name='LEN_RUS' />
-            <object-id>[inference_results.csv_06853E73A5A2405385836823AD854032]</object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>value</remote-name>
-            <remote-type>5</remote-type>
-            <local-name>[value]</local-name>
-            <parent-name>[inference_results.csv]</parent-name>
-            <remote-alias>value</remote-alias>
-            <ordinal>2</ordinal>
-            <local-type>real</local-type>
-            <aggregation>Sum</aggregation>
-            <contains-null>true</contains-null>
-            <object-id>[inference_results.csv_06853E73A5A2405385836823AD854032]</object-id>
-          </metadata-record>
-        </metadata-records>
-      </connection>
-      <aliases enabled='yes' />
-      <column caption='inference_results.csv' datatype='table' name='[__tableau_internal_object_id__].[inference_results.csv_06853E73A5A2405385836823AD854032]' role='measure' type='quantitative' />
-      <column caption='Analysis' datatype='string' name='[analysis]' role='dimension' type='nominal' />
-      <column caption='Metric' datatype='string' name='[metric]' role='dimension' type='nominal' />
-      <column caption='Value' datatype='real' name='[value]' role='measure' type='quantitative' />
-      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
-      <semantic-values>
-        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
-      </semantic-values>
-      <object-graph>
-        <objects>
-          <object caption='inference_results.csv' id='inference_results.csv_06853E73A5A2405385836823AD854032'>
-            <properties context=''>
-              <relation connection='textscan.0uyp8690lgf5g910h7bxp0bk4p76' name='inference_results.csv' table='[inference_results#csv]' type='table'>
-                <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
-                  <column datatype='string' name='analysis' ordinal='0' />
-                  <column datatype='string' name='metric' ordinal='1' />
-                  <column datatype='real' name='value' ordinal='2' />
-                </columns>
-              </relation>
-            </properties>
-          </object>
-        </objects>
-      </object-graph>
-    </datasource>
-    <datasource caption='sealed_returns' inline='true' name='federated.14tlmw40kzkaq91fdxebn1j7boyd' version='18.1'>
-      <connection class='federated'>
-        <named-connections>
-          <named-connection caption='sealed_returns' name='textscan.1vamzwk0z1h6ir16zfdzd0hi8kmd'>
-            <connection class='textscan' directory='.../data/processed' filename='sealed_returns.csv' password='' server='' />
-          </named-connection>
-        </named-connections>
-        <relation connection='textscan.1vamzwk0z1h6ir16zfdzd0hi8kmd' name='sealed_returns.csv' table='[sealed_returns#csv]' type='table'>
-          <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
-            <column datatype='string' name='game' ordinal='0' />
-            <column datatype='string' name='set_code' ordinal='1' />
-            <column datatype='string' name='set_name' ordinal='2' />
-            <column datatype='string' name='set_category' ordinal='3' />
-            <column datatype='date' name='release_date' ordinal='4' />
-            <column datatype='string' name='product_type' ordinal='5' />
-            <column datatype='real' name='tcgplayer_market_usd' ordinal='6' />
-            <column datatype='date' name='collected_date' ordinal='7' />
-            <column datatype='string' name='source_note' ordinal='8' />
-            <column datatype='real' name='msrp_usd' ordinal='9' />
-            <column datatype='string' name='msrp_basis' ordinal='10' />
-            <column datatype='real' name='years' ordinal='11' />
-            <column datatype='real' name='total_return' ordinal='12' />
-            <column datatype='real' name='cagr' ordinal='13' />
-          </columns>
-        </relation>
-        <metadata-records>
-          <metadata-record class='capability'>
-            <remote-name />
-            <remote-type>0</remote-type>
-            <parent-name>[sealed_returns.csv]</parent-name>
-            <remote-alias />
-            <aggregation>Count</aggregation>
-            <contains-null>true</contains-null>
-            <attributes>
-              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
-              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
-              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
-              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
-              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
-              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
-            </attributes>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>game</remote-name>
-            <remote-type>129</remote-type>
-            <local-name>[game]</local-name>
-            <parent-name>[sealed_returns.csv]</parent-name>
-            <remote-alias>game</remote-alias>
-            <ordinal>0</ordinal>
-            <local-type>string</local-type>
-            <aggregation>Count</aggregation>
-            <scale>1</scale>
-            <width>1073741823</width>
-            <contains-null>true</contains-null>
-            <collation flag='0' name='LEN_RUS' />
-            <object-id>[sealed_returns.csv_3E9DEFA52FCC4762B27AA19C534C7A33]</object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>set_code</remote-name>
-            <remote-type>129</remote-type>
-            <local-name>[set_code]</local-name>
-            <parent-name>[sealed_returns.csv]</parent-name>
-            <remote-alias>set_code</remote-alias>
-            <ordinal>1</ordinal>
-            <local-type>string</local-type>
-            <aggregation>Count</aggregation>
-            <scale>1</scale>
-            <width>1073741823</width>
-            <contains-null>true</contains-null>
-            <collation flag='0' name='LEN_RUS' />
-            <object-id>[sealed_returns.csv_3E9DEFA52FCC4762B27AA19C534C7A33]</object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>set_name</remote-name>
-            <remote-type>129</remote-type>
-            <local-name>[set_name]</local-name>
-            <parent-name>[sealed_returns.csv]</parent-name>
-            <remote-alias>set_name</remote-alias>
-            <ordinal>2</ordinal>
-            <local-type>string</local-type>
-            <aggregation>Count</aggregation>
-            <scale>1</scale>
-            <width>1073741823</width>
-            <contains-null>true</contains-null>
-            <collation flag='0' name='LEN_RUS' />
-            <object-id>[sealed_returns.csv_3E9DEFA52FCC4762B27AA19C534C7A33]</object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>set_category</remote-name>
-            <remote-type>129</remote-type>
-            <local-name>[set_category]</local-name>
-            <parent-name>[sealed_returns.csv]</parent-name>
-            <remote-alias>set_category</remote-alias>
-            <ordinal>3</ordinal>
-            <local-type>string</local-type>
-            <aggregation>Count</aggregation>
-            <scale>1</scale>
-            <width>1073741823</width>
-            <contains-null>true</contains-null>
-            <collation flag='0' name='LEN_RUS' />
-            <object-id>[sealed_returns.csv_3E9DEFA52FCC4762B27AA19C534C7A33]</object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>release_date</remote-name>
-            <remote-type>133</remote-type>
-            <local-name>[release_date]</local-name>
-            <parent-name>[sealed_returns.csv]</parent-name>
-            <remote-alias>release_date</remote-alias>
-            <ordinal>4</ordinal>
-            <local-type>date</local-type>
-            <aggregation>Year</aggregation>
-            <contains-null>true</contains-null>
-            <object-id>[sealed_returns.csv_3E9DEFA52FCC4762B27AA19C534C7A33]</object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>product_type</remote-name>
-            <remote-type>129</remote-type>
-            <local-name>[product_type]</local-name>
-            <parent-name>[sealed_returns.csv]</parent-name>
-            <remote-alias>product_type</remote-alias>
-            <ordinal>5</ordinal>
-            <local-type>string</local-type>
-            <aggregation>Count</aggregation>
-            <scale>1</scale>
-            <width>1073741823</width>
-            <contains-null>true</contains-null>
-            <collation flag='0' name='LEN_RUS' />
-            <object-id>[sealed_returns.csv_3E9DEFA52FCC4762B27AA19C534C7A33]</object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>tcgplayer_market_usd</remote-name>
-            <remote-type>5</remote-type>
-            <local-name>[tcgplayer_market_usd]</local-name>
-            <parent-name>[sealed_returns.csv]</parent-name>
-            <remote-alias>tcgplayer_market_usd</remote-alias>
-            <ordinal>6</ordinal>
-            <local-type>real</local-type>
-            <aggregation>Sum</aggregation>
-            <contains-null>true</contains-null>
-            <object-id>[sealed_returns.csv_3E9DEFA52FCC4762B27AA19C534C7A33]</object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>collected_date</remote-name>
-            <remote-type>133</remote-type>
-            <local-name>[collected_date]</local-name>
-            <parent-name>[sealed_returns.csv]</parent-name>
-            <remote-alias>collected_date</remote-alias>
-            <ordinal>7</ordinal>
-            <local-type>date</local-type>
-            <aggregation>Year</aggregation>
-            <contains-null>true</contains-null>
-            <object-id>[sealed_returns.csv_3E9DEFA52FCC4762B27AA19C534C7A33]</object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>source_note</remote-name>
-            <remote-type>129</remote-type>
-            <local-name>[source_note]</local-name>
-            <parent-name>[sealed_returns.csv]</parent-name>
-            <remote-alias>source_note</remote-alias>
-            <ordinal>8</ordinal>
-            <local-type>string</local-type>
-            <aggregation>Count</aggregation>
-            <scale>1</scale>
-            <width>1073741823</width>
-            <contains-null>true</contains-null>
-            <collation flag='0' name='LEN_RUS' />
-            <object-id>[sealed_returns.csv_3E9DEFA52FCC4762B27AA19C534C7A33]</object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>msrp_usd</remote-name>
-            <remote-type>5</remote-type>
-            <local-name>[msrp_usd]</local-name>
-            <parent-name>[sealed_returns.csv]</parent-name>
-            <remote-alias>msrp_usd</remote-alias>
-            <ordinal>9</ordinal>
-            <local-type>real</local-type>
-            <aggregation>Sum</aggregation>
-            <contains-null>true</contains-null>
-            <object-id>[sealed_returns.csv_3E9DEFA52FCC4762B27AA19C534C7A33]</object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>msrp_basis</remote-name>
-            <remote-type>129</remote-type>
-            <local-name>[msrp_basis]</local-name>
-            <parent-name>[sealed_returns.csv]</parent-name>
-            <remote-alias>msrp_basis</remote-alias>
-            <ordinal>10</ordinal>
-            <local-type>string</local-type>
-            <aggregation>Count</aggregation>
-            <scale>1</scale>
-            <width>1073741823</width>
-            <contains-null>true</contains-null>
-            <collation flag='0' name='LEN_RUS' />
-            <object-id>[sealed_returns.csv_3E9DEFA52FCC4762B27AA19C534C7A33]</object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>years</remote-name>
-            <remote-type>5</remote-type>
-            <local-name>[years]</local-name>
-            <parent-name>[sealed_returns.csv]</parent-name>
-            <remote-alias>years</remote-alias>
-            <ordinal>11</ordinal>
-            <local-type>real</local-type>
-            <aggregation>Sum</aggregation>
-            <contains-null>true</contains-null>
-            <object-id>[sealed_returns.csv_3E9DEFA52FCC4762B27AA19C534C7A33]</object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>total_return</remote-name>
-            <remote-type>5</remote-type>
-            <local-name>[total_return]</local-name>
-            <parent-name>[sealed_returns.csv]</parent-name>
-            <remote-alias>total_return</remote-alias>
-            <ordinal>12</ordinal>
-            <local-type>real</local-type>
-            <aggregation>Sum</aggregation>
-            <contains-null>true</contains-null>
-            <object-id>[sealed_returns.csv_3E9DEFA52FCC4762B27AA19C534C7A33]</object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>cagr</remote-name>
-            <remote-type>5</remote-type>
-            <local-name>[cagr]</local-name>
-            <parent-name>[sealed_returns.csv]</parent-name>
-            <remote-alias>cagr</remote-alias>
-            <ordinal>13</ordinal>
-            <local-type>real</local-type>
-            <aggregation>Sum</aggregation>
-            <contains-null>true</contains-null>
-            <object-id>[sealed_returns.csv_3E9DEFA52FCC4762B27AA19C534C7A33]</object-id>
-          </metadata-record>
-        </metadata-records>
-      </connection>
-      <aliases enabled='yes' />
-      <column caption='Show Pokemon' datatype='boolean' name='[Calculation_1403276381462528]' role='dimension' type='nominal'>
-        <calculation class='tableau' formula='[Parameters].[Parameter 1] = &quot;Pokemon&quot;' />
-      </column>
-      <column caption='Emphasis' datatype='string' name='[Calculation_1403276381741058]' role='dimension' type='nominal'>
-        <calculation class='tableau' formula='IF LOWER([game]) = LOWER([Parameters].[Parameter 1])&#13;&#10;    THEN [game] &#13;&#10;    ELSE &quot;inactive&quot; &#13;&#10;END' />
-      </column>
-      <column caption='Stem Base' datatype='real' name='[Calculation_1927743420399616]' role='measure' type='quantitative'>
-        <calculation class='tableau' formula='MIN(1.0)' />
-      </column>
-      <column caption='Return vs Launch' datatype='real' name='[Calculation_1927743420485633]' role='measure' type='quantitative'>
-        <calculation class='tableau' formula='AVG([total_return]) - 1.0' />
-      </column>
-      <column caption='Next View' datatype='string' name='[Calculation_2013505631608838]' role='dimension' type='nominal'>
-        <calculation class='tableau' formula='IF [Parameters].[Parameter 1] = &quot;Pokemon&quot; &#13;&#10;    THEN &quot;MTG&quot; &#13;&#10;    ELSE &quot;Pokemon&quot;&#13;&#10;END' />
-      </column>
-      <column caption='Flip Label' datatype='string' name='[Calculation_2013505631764487]' role='dimension' type='nominal'>
-        <calculation class='tableau' formula='&quot;⇄ flip card: &quot; + IF [Parameters].[Parameter 1] = &quot;Pokemon&quot; &#13;&#10;    THEN &quot;the mtg reading&quot; &#13;&#10;    ELSE &quot;the pokemon reading&quot;&#13;&#10;END' />
-      </column>
-      <column caption='Show Magic' datatype='boolean' name='[Show Pokemon (copy)_1403276381659137]' role='dimension' type='nominal'>
-        <calculation class='tableau' formula='[Parameters].[Parameter 1] = &quot;MTG&quot;' />
-      </column>
-      <column caption='sealed_returns.csv' datatype='table' name='[__tableau_internal_object_id__].[sealed_returns.csv_3E9DEFA52FCC4762B27AA19C534C7A33]' role='measure' type='quantitative' />
-      <column caption='Cagr' datatype='real' default-format='p0.0%' name='[cagr]' role='measure' type='quantitative' />
-      <column caption='Collected Date' datatype='date' name='[collected_date]' role='dimension' type='ordinal' />
-      <column caption='Game' datatype='string' name='[game]' role='dimension' type='nominal'>
-        <aliases>
-          <alias key='&quot;mtg&quot;' value='Magic: The Gathering' />
-          <alias key='&quot;pokemon&quot;' value='Pokemon' />
-        </aliases>
-      </column>
-      <column caption='Msrp Basis' datatype='string' name='[msrp_basis]' role='dimension' type='nominal' />
-      <column caption='Msrp Usd' datatype='real' default-format='c&quot;$&quot;#,##0.00;(&quot;$&quot;#,##0.00)' name='[msrp_usd]' role='measure' type='quantitative' />
-      <column caption='Product Type' datatype='string' name='[product_type]' role='dimension' type='nominal' />
-      <column caption='Release Date' datatype='date' name='[release_date]' role='dimension' type='ordinal' />
-      <column caption='Set Category' datatype='string' name='[set_category]' role='dimension' type='nominal'>
-        <aliases>
-          <alias key='&quot;main&quot;' value='Main expansion' />
-          <alias key='&quot;special&quot;' value='Special' />
-          <alias key='&quot;special_paired&quot;' value='Special set (paired release)' />
-          <alias key='&quot;standard&quot;' value='Standard set' />
-          <alias key='&quot;universes_beyond&quot;' value='Universes Beyond' />
-        </aliases>
-      </column>
-      <column caption='Set Code' datatype='string' name='[set_code]' role='dimension' type='nominal' />
-      <column caption='Set Name' datatype='string' name='[set_name]' role='dimension' type='nominal' />
-      <column caption='Source Note' datatype='string' name='[source_note]' role='dimension' type='nominal' />
-      <column caption='Tcgplayer Market Usd' datatype='real' default-format='c&quot;$&quot;#,##0.00;(&quot;$&quot;#,##0.00)' name='[tcgplayer_market_usd]' role='measure' type='quantitative' />
-      <column caption='Total Return' datatype='real' default-format='*0.00&quot;x&quot;' name='[total_return]' role='measure' type='quantitative' />
-      <column caption='Years' datatype='real' default-format='n#,##0.0;-#,##0.0' name='[years]' role='measure' type='quantitative' />
-      <column-instance column='[Calculation_1403276381741058]' derivation='None' name='[none:Calculation_1403276381741058:nk]' pivot='key' type='nominal' />
-      <column-instance column='[game]' derivation='None' name='[none:game:nk]' pivot='key' type='nominal' />
-      <layout common-percentage='0.726168' dim-ordering='alphabetic' measure-ordering='alphabetic' parameter-percentage='0.273832' show-aliased-fields='true' show-structure='true' user-set-layout-v2='true' />
-      <style>
-        <style-rule element='mark'>
-          <encoding attr='color' field='[none:game:nk]' palette='PMA Chase Card' type='palette'>
-            <map to='#3a4058'>
-              <bucket>&quot;pokemon&quot;</bucket>
-            </map>
-            <map to='#9d8cff'>
-              <bucket>&quot;mtg&quot;</bucket>
-            </map>
-          </encoding>
-          <encoding attr='color' field='[none:Calculation_1403276381741058:nk]' type='palette'>
-            <map to='#3a4058'>
-              <bucket>&quot;inactive&quot;</bucket>
-            </map>
-            <map to='#9d8cff'>
-              <bucket>&quot;mtg&quot;</bucket>
-            </map>
-            <map to='#f5c84c'>
-              <bucket>&quot;pokemon&quot;</bucket>
-            </map>
-          </encoding>
-        </style-rule>
-      </style>
-      <semantic-values>
-        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
-      </semantic-values>
-      <datasource-dependencies datasource='Parameters'>
-        <column caption='Card View' datatype='string' name='[Parameter 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;Pokemon&quot;'>
-          <calculation class='tableau' formula='&quot;Pokemon&quot;' />
-          <aliases>
-            <alias key='&quot;MTG&quot;' value='Magic: The Gathering' />
-          </aliases>
-        </column>
-      </datasource-dependencies>
-      <object-graph>
-        <objects>
-          <object caption='sealed_returns.csv' id='sealed_returns.csv_3E9DEFA52FCC4762B27AA19C534C7A33'>
-            <properties context=''>
-              <relation connection='textscan.1vamzwk0z1h6ir16zfdzd0hi8kmd' name='sealed_returns.csv' table='[sealed_returns#csv]' type='table'>
-                <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
-                  <column datatype='string' name='game' ordinal='0' />
-                  <column datatype='string' name='set_code' ordinal='1' />
-                  <column datatype='string' name='set_name' ordinal='2' />
-                  <column datatype='string' name='set_category' ordinal='3' />
-                  <column datatype='date' name='release_date' ordinal='4' />
-                  <column datatype='string' name='product_type' ordinal='5' />
-                  <column datatype='real' name='tcgplayer_market_usd' ordinal='6' />
-                  <column datatype='date' name='collected_date' ordinal='7' />
-                  <column datatype='string' name='source_note' ordinal='8' />
-                  <column datatype='real' name='msrp_usd' ordinal='9' />
-                  <column datatype='string' name='msrp_basis' ordinal='10' />
-                  <column datatype='real' name='years' ordinal='11' />
-                  <column datatype='real' name='total_return' ordinal='12' />
-                  <column datatype='real' name='cagr' ordinal='13' />
-                </columns>
-              </relation>
-            </properties>
-          </object>
-        </objects>
-      </object-graph>
     </datasource>
     <datasource caption='singles_prices' inline='true' name='federated.022yy3210adx2s1amqn411bcdyp5' version='18.1'>
       <connection class='federated'>
@@ -790,6 +345,221 @@
       <column caption='Tier Order' datatype='integer' name='[tier_order]' role='measure' type='quantitative' />
       <column-instance column='[Calculation_1403276400222212]' derivation='None' name='[none:Calculation_1403276400222212:nk]' pivot='key' type='nominal' />
       <column-instance column='[Calculation_1403276403179527]' derivation='None' name='[none:Calculation_1403276403179527:nk]' pivot='key' type='nominal' />
+      <extract _.fcp.VConnDownstreamExtractsWithWarnings.true...user-specific='false' count='-1' enabled='true' object-id='' units='records'>
+        <connection access_mode='readonly' authentication='auth-none' author-locale='en_US' class='hyper' dbname='.../singles_prices.hyper' default-settings='yes' schema='Extract' sslmode='' tablename='Extract' update-time='07/20/2026 10:34:09 PM' username='tableau_internal_user'>
+          <relation name='Extract' table='[Extract].[Extract]' type='table' />
+          <refresh>
+            <refresh-event add-from-file-path='singles_prices' increment-value='%null%' refresh-type='create' rows-inserted='8747' timestamp-start='2026-07-20 22:34:08.967' />
+          </refresh>
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>game</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[game]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>game</remote-alias>
+              <ordinal>0</ordinal>
+              <family>singles_prices.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[singles_prices.csv_BEB54C59D8654BCD93FD64DEE5C4EBEE]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>set_code</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[set_code]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>set_code</remote-alias>
+              <ordinal>1</ordinal>
+              <family>singles_prices.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>27</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[singles_prices.csv_BEB54C59D8654BCD93FD64DEE5C4EBEE]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>set_name</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[set_name]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>set_name</remote-alias>
+              <ordinal>2</ordinal>
+              <family>singles_prices.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>27</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[singles_prices.csv_BEB54C59D8654BCD93FD64DEE5C4EBEE]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>release_date</remote-name>
+              <remote-type>133</remote-type>
+              <local-name>[release_date]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>release_date</remote-alias>
+              <ordinal>3</ordinal>
+              <family>singles_prices.csv</family>
+              <local-type>date</local-type>
+              <aggregation>Year</aggregation>
+              <approx-count>24</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[singles_prices.csv_BEB54C59D8654BCD93FD64DEE5C4EBEE]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>card_key</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[card_key]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>card_key</remote-alias>
+              <ordinal>4</ordinal>
+              <family>singles_prices.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>8747</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[singles_prices.csv_BEB54C59D8654BCD93FD64DEE5C4EBEE]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>card_name</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[card_name]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>card_name</remote-alias>
+              <ordinal>5</ordinal>
+              <family>singles_prices.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>3318</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[singles_prices.csv_BEB54C59D8654BCD93FD64DEE5C4EBEE]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>rarity_raw</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[rarity_raw]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>rarity_raw</remote-alias>
+              <ordinal>6</ordinal>
+              <family>singles_prices.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>13</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[singles_prices.csv_BEB54C59D8654BCD93FD64DEE5C4EBEE]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>finish_used</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[finish_used]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>finish_used</remote-alias>
+              <ordinal>7</ordinal>
+              <family>singles_prices.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>4</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[singles_prices.csv_BEB54C59D8654BCD93FD64DEE5C4EBEE]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>price_usd</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[price_usd]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>price_usd</remote-alias>
+              <ordinal>8</ordinal>
+              <family>singles_prices.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>932</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[singles_prices.csv_BEB54C59D8654BCD93FD64DEE5C4EBEE]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>tier_mapped</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[tier_mapped]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>tier_mapped</remote-alias>
+              <ordinal>9</ordinal>
+              <family>singles_prices.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>4</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[singles_prices.csv_BEB54C59D8654BCD93FD64DEE5C4EBEE]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>tier_order</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[tier_order]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>tier_order</remote-alias>
+              <ordinal>10</ordinal>
+              <family>singles_prices.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>4</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[singles_prices.csv_BEB54C59D8654BCD93FD64DEE5C4EBEE]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>set_age_days</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[set_age_days]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>set_age_days</remote-alias>
+              <ordinal>11</ordinal>
+              <family>singles_prices.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>24</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[singles_prices.csv_BEB54C59D8654BCD93FD64DEE5C4EBEE]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>in_price_window</remote-name>
+              <remote-type>11</remote-type>
+              <local-name>[in_price_window]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>in_price_window</remote-alias>
+              <ordinal>12</ordinal>
+              <family>singles_prices.csv</family>
+              <local-type>boolean</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[singles_prices.csv_BEB54C59D8654BCD93FD64DEE5C4EBEE]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>release_event_id</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[release_event_id]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>release_event_id</remote-alias>
+              <ordinal>13</ordinal>
+              <family>singles_prices.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>26</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[singles_prices.csv_BEB54C59D8654BCD93FD64DEE5C4EBEE]</object-id>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
       <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-aliased-fields='true' show-structure='true' />
       <style>
         <style-rule element='mark'>
@@ -827,8 +597,8 @@
         <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
       </semantic-values>
       <datasource-dependencies datasource='Parameters'>
-        <column caption='Card View' datatype='string' name='[Parameter 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;Pokemon&quot;'>
-          <calculation class='tableau' formula='&quot;Pokemon&quot;' />
+        <column alias='Magic: The Gathering' caption='Card View' datatype='string' name='[Parameter 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;MTG&quot;'>
+          <calculation class='tableau' formula='&quot;MTG&quot;' />
           <aliases>
             <alias key='&quot;MTG&quot;' value='Magic: The Gathering' />
           </aliases>
@@ -857,6 +627,729 @@
                 </columns>
               </relation>
             </properties>
+            <properties context='extract'>
+              <relation name='Extract' table='[Extract].[Extract]' type='table' />
+            </properties>
+          </object>
+        </objects>
+      </object-graph>
+    </datasource>
+    <datasource caption='inference_results' inline='true' name='federated.1vx2g491as1p2613es30t0bveheg' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='inference_results' name='textscan.0uyp8690lgf5g910h7bxp0bk4p76'>
+            <connection class='textscan' directory='.../data/processed' filename='inference_results.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <relation connection='textscan.0uyp8690lgf5g910h7bxp0bk4p76' name='inference_results.csv' table='[inference_results#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+            <column datatype='string' name='analysis' ordinal='0' />
+            <column datatype='string' name='metric' ordinal='1' />
+            <column datatype='real' name='value' ordinal='2' />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[inference_results.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>analysis</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[analysis]</local-name>
+            <parent-name>[inference_results.csv]</parent-name>
+            <remote-alias>analysis</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[inference_results.csv_06853E73A5A2405385836823AD854032]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>metric</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[metric]</local-name>
+            <parent-name>[inference_results.csv]</parent-name>
+            <remote-alias>metric</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[inference_results.csv_06853E73A5A2405385836823AD854032]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>value</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[value]</local-name>
+            <parent-name>[inference_results.csv]</parent-name>
+            <remote-alias>value</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[inference_results.csv_06853E73A5A2405385836823AD854032]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='inference_results.csv' datatype='table' name='[__tableau_internal_object_id__].[inference_results.csv_06853E73A5A2405385836823AD854032]' role='measure' type='quantitative' />
+      <column caption='Analysis' datatype='string' name='[analysis]' role='dimension' type='nominal' />
+      <column caption='Metric' datatype='string' name='[metric]' role='dimension' type='nominal' />
+      <column caption='Value' datatype='real' name='[value]' role='measure' type='quantitative' />
+      <extract _.fcp.VConnDownstreamExtractsWithWarnings.true...user-specific='false' count='-1' enabled='true' object-id='' units='records'>
+        <connection access_mode='readonly' authentication='auth-none' author-locale='en_US' class='hyper' dbname='.../inference_results.hyper' default-settings='yes' schema='Extract' sslmode='' tablename='Extract' update-time='07/20/2026 10:33:54 PM' username='tableau_internal_user'>
+          <relation name='Extract' table='[Extract].[Extract]' type='table' />
+          <refresh>
+            <refresh-event add-from-file-path='inference_results' increment-value='%null%' refresh-type='create' rows-inserted='52' timestamp-start='2026-07-20 22:33:54.158' />
+          </refresh>
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>analysis</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[analysis]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>analysis</remote-alias>
+              <ordinal>0</ordinal>
+              <family>inference_results.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>10</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[inference_results.csv_06853E73A5A2405385836823AD854032]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>metric</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[metric]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>metric</remote-alias>
+              <ordinal>1</ordinal>
+              <family>inference_results.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>40</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[inference_results.csv_06853E73A5A2405385836823AD854032]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>value</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[value]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>value</remote-alias>
+              <ordinal>2</ordinal>
+              <family>inference_results.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>46</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[inference_results.csv_06853E73A5A2405385836823AD854032]</object-id>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+      <object-graph>
+        <objects>
+          <object caption='inference_results.csv' id='inference_results.csv_06853E73A5A2405385836823AD854032'>
+            <properties context=''>
+              <relation connection='textscan.0uyp8690lgf5g910h7bxp0bk4p76' name='inference_results.csv' table='[inference_results#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+                  <column datatype='string' name='analysis' ordinal='0' />
+                  <column datatype='string' name='metric' ordinal='1' />
+                  <column datatype='real' name='value' ordinal='2' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='Extract' table='[Extract].[Extract]' type='table' />
+            </properties>
+          </object>
+        </objects>
+      </object-graph>
+    </datasource>
+    <datasource caption='sealed_returns' inline='true' name='federated.14tlmw40kzkaq91fdxebn1j7boyd' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='sealed_returns' name='textscan.1vamzwk0z1h6ir16zfdzd0hi8kmd'>
+            <connection class='textscan' directory='.../data/processed' filename='sealed_returns.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <relation connection='textscan.1vamzwk0z1h6ir16zfdzd0hi8kmd' name='sealed_returns.csv' table='[sealed_returns#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+            <column datatype='string' name='game' ordinal='0' />
+            <column datatype='string' name='set_code' ordinal='1' />
+            <column datatype='string' name='set_name' ordinal='2' />
+            <column datatype='string' name='set_category' ordinal='3' />
+            <column datatype='date' name='release_date' ordinal='4' />
+            <column datatype='string' name='product_type' ordinal='5' />
+            <column datatype='real' name='tcgplayer_market_usd' ordinal='6' />
+            <column datatype='date' name='collected_date' ordinal='7' />
+            <column datatype='string' name='source_note' ordinal='8' />
+            <column datatype='real' name='msrp_usd' ordinal='9' />
+            <column datatype='string' name='msrp_basis' ordinal='10' />
+            <column datatype='real' name='years' ordinal='11' />
+            <column datatype='real' name='total_return' ordinal='12' />
+            <column datatype='real' name='cagr' ordinal='13' />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[sealed_returns.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>game</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[game]</local-name>
+            <parent-name>[sealed_returns.csv]</parent-name>
+            <remote-alias>game</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[sealed_returns.csv_3E9DEFA52FCC4762B27AA19C534C7A33]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>set_code</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[set_code]</local-name>
+            <parent-name>[sealed_returns.csv]</parent-name>
+            <remote-alias>set_code</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[sealed_returns.csv_3E9DEFA52FCC4762B27AA19C534C7A33]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>set_name</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[set_name]</local-name>
+            <parent-name>[sealed_returns.csv]</parent-name>
+            <remote-alias>set_name</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[sealed_returns.csv_3E9DEFA52FCC4762B27AA19C534C7A33]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>set_category</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[set_category]</local-name>
+            <parent-name>[sealed_returns.csv]</parent-name>
+            <remote-alias>set_category</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[sealed_returns.csv_3E9DEFA52FCC4762B27AA19C534C7A33]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>release_date</remote-name>
+            <remote-type>133</remote-type>
+            <local-name>[release_date]</local-name>
+            <parent-name>[sealed_returns.csv]</parent-name>
+            <remote-alias>release_date</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[sealed_returns.csv_3E9DEFA52FCC4762B27AA19C534C7A33]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>product_type</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[product_type]</local-name>
+            <parent-name>[sealed_returns.csv]</parent-name>
+            <remote-alias>product_type</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[sealed_returns.csv_3E9DEFA52FCC4762B27AA19C534C7A33]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>tcgplayer_market_usd</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[tcgplayer_market_usd]</local-name>
+            <parent-name>[sealed_returns.csv]</parent-name>
+            <remote-alias>tcgplayer_market_usd</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[sealed_returns.csv_3E9DEFA52FCC4762B27AA19C534C7A33]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>collected_date</remote-name>
+            <remote-type>133</remote-type>
+            <local-name>[collected_date]</local-name>
+            <parent-name>[sealed_returns.csv]</parent-name>
+            <remote-alias>collected_date</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[sealed_returns.csv_3E9DEFA52FCC4762B27AA19C534C7A33]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>source_note</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[source_note]</local-name>
+            <parent-name>[sealed_returns.csv]</parent-name>
+            <remote-alias>source_note</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[sealed_returns.csv_3E9DEFA52FCC4762B27AA19C534C7A33]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>msrp_usd</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[msrp_usd]</local-name>
+            <parent-name>[sealed_returns.csv]</parent-name>
+            <remote-alias>msrp_usd</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[sealed_returns.csv_3E9DEFA52FCC4762B27AA19C534C7A33]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>msrp_basis</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[msrp_basis]</local-name>
+            <parent-name>[sealed_returns.csv]</parent-name>
+            <remote-alias>msrp_basis</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[sealed_returns.csv_3E9DEFA52FCC4762B27AA19C534C7A33]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>years</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[years]</local-name>
+            <parent-name>[sealed_returns.csv]</parent-name>
+            <remote-alias>years</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[sealed_returns.csv_3E9DEFA52FCC4762B27AA19C534C7A33]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>total_return</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[total_return]</local-name>
+            <parent-name>[sealed_returns.csv]</parent-name>
+            <remote-alias>total_return</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[sealed_returns.csv_3E9DEFA52FCC4762B27AA19C534C7A33]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>cagr</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[cagr]</local-name>
+            <parent-name>[sealed_returns.csv]</parent-name>
+            <remote-alias>cagr</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[sealed_returns.csv_3E9DEFA52FCC4762B27AA19C534C7A33]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Show Pokemon' datatype='boolean' name='[Calculation_1403276381462528]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='[Parameters].[Parameter 1] = &quot;Pokemon&quot;' />
+      </column>
+      <column caption='Emphasis' datatype='string' name='[Calculation_1403276381741058]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='IF LOWER([game]) = LOWER([Parameters].[Parameter 1])&#13;&#10;    THEN [game] &#13;&#10;    ELSE &quot;inactive&quot; &#13;&#10;END' />
+      </column>
+      <column caption='Stem Base' datatype='real' name='[Calculation_1927743420399616]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='MIN(1.0)' />
+      </column>
+      <column caption='Return vs Launch' datatype='real' name='[Calculation_1927743420485633]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='AVG([total_return]) - 1.0' />
+      </column>
+      <column caption='Next View' datatype='string' name='[Calculation_2013505631608838]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='IF [Parameters].[Parameter 1] = &quot;Pokemon&quot; &#13;&#10;    THEN &quot;MTG&quot; &#13;&#10;    ELSE &quot;Pokemon&quot;&#13;&#10;END' />
+      </column>
+      <column caption='Flip Label' datatype='string' name='[Calculation_2013505631764487]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='&quot;⇄ flip card: &quot; + IF [Parameters].[Parameter 1] = &quot;Pokemon&quot; &#13;&#10;    THEN &quot;the mtg reading&quot; &#13;&#10;    ELSE &quot;the pokemon reading&quot;&#13;&#10;END' />
+      </column>
+      <column caption='Show Magic' datatype='boolean' name='[Show Pokemon (copy)_1403276381659137]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='[Parameters].[Parameter 1] = &quot;MTG&quot;' />
+      </column>
+      <column caption='sealed_returns.csv' datatype='table' name='[__tableau_internal_object_id__].[sealed_returns.csv_3E9DEFA52FCC4762B27AA19C534C7A33]' role='measure' type='quantitative' />
+      <column caption='Cagr' datatype='real' default-format='p0.0%' name='[cagr]' role='measure' type='quantitative' />
+      <column caption='Collected Date' datatype='date' name='[collected_date]' role='dimension' type='ordinal' />
+      <column caption='Game' datatype='string' name='[game]' role='dimension' type='nominal'>
+        <aliases>
+          <alias key='&quot;mtg&quot;' value='Magic: The Gathering' />
+          <alias key='&quot;pokemon&quot;' value='Pokemon' />
+        </aliases>
+      </column>
+      <column caption='Msrp Basis' datatype='string' name='[msrp_basis]' role='dimension' type='nominal' />
+      <column caption='Msrp Usd' datatype='real' default-format='c&quot;$&quot;#,##0.00;(&quot;$&quot;#,##0.00)' name='[msrp_usd]' role='measure' type='quantitative' />
+      <column caption='Product Type' datatype='string' name='[product_type]' role='dimension' type='nominal' />
+      <column caption='Release Date' datatype='date' name='[release_date]' role='dimension' type='ordinal' />
+      <column caption='Set Category' datatype='string' name='[set_category]' role='dimension' type='nominal'>
+        <aliases>
+          <alias key='&quot;main&quot;' value='Main expansion' />
+          <alias key='&quot;special&quot;' value='Special' />
+          <alias key='&quot;special_paired&quot;' value='Special set (paired release)' />
+          <alias key='&quot;standard&quot;' value='Standard set' />
+          <alias key='&quot;universes_beyond&quot;' value='Universes Beyond' />
+        </aliases>
+      </column>
+      <column caption='Set Code' datatype='string' name='[set_code]' role='dimension' type='nominal' />
+      <column caption='Set Name' datatype='string' name='[set_name]' role='dimension' type='nominal' />
+      <column caption='Source Note' datatype='string' name='[source_note]' role='dimension' type='nominal' />
+      <column caption='Tcgplayer Market Usd' datatype='real' default-format='c&quot;$&quot;#,##0.00;(&quot;$&quot;#,##0.00)' name='[tcgplayer_market_usd]' role='measure' type='quantitative' />
+      <column caption='Total Return' datatype='real' default-format='*0.00&quot;x&quot;' name='[total_return]' role='measure' type='quantitative' />
+      <column caption='Years' datatype='real' default-format='n#,##0.0;-#,##0.0' name='[years]' role='measure' type='quantitative' />
+      <column-instance column='[Calculation_1403276381741058]' derivation='None' name='[none:Calculation_1403276381741058:nk]' pivot='key' type='nominal' />
+      <column-instance column='[game]' derivation='None' name='[none:game:nk]' pivot='key' type='nominal' />
+      <extract _.fcp.VConnDownstreamExtractsWithWarnings.true...user-specific='false' count='-1' enabled='true' object-id='' units='records'>
+        <connection access_mode='readonly' authentication='auth-none' author-locale='en_US' class='hyper' dbname='.../sealed_returns.hyper' default-settings='yes' schema='Extract' sslmode='' tablename='Extract' update-time='07/20/2026 10:34:02 PM' username='tableau_internal_user'>
+          <relation name='Extract' table='[Extract].[Extract]' type='table' />
+          <refresh>
+            <refresh-event add-from-file-path='sealed_returns' increment-value='%null%' refresh-type='create' rows-inserted='30' timestamp-start='2026-07-20 22:34:02.642' />
+          </refresh>
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>game</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[game]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>game</remote-alias>
+              <ordinal>0</ordinal>
+              <family>sealed_returns.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[sealed_returns.csv_3E9DEFA52FCC4762B27AA19C534C7A33]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>set_code</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[set_code]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>set_code</remote-alias>
+              <ordinal>1</ordinal>
+              <family>sealed_returns.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>30</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[sealed_returns.csv_3E9DEFA52FCC4762B27AA19C534C7A33]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>set_name</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[set_name]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>set_name</remote-alias>
+              <ordinal>2</ordinal>
+              <family>sealed_returns.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>30</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[sealed_returns.csv_3E9DEFA52FCC4762B27AA19C534C7A33]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>set_category</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[set_category]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>set_category</remote-alias>
+              <ordinal>3</ordinal>
+              <family>sealed_returns.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>5</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[sealed_returns.csv_3E9DEFA52FCC4762B27AA19C534C7A33]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>release_date</remote-name>
+              <remote-type>133</remote-type>
+              <local-name>[release_date]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>release_date</remote-alias>
+              <ordinal>4</ordinal>
+              <family>sealed_returns.csv</family>
+              <local-type>date</local-type>
+              <aggregation>Year</aggregation>
+              <approx-count>27</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[sealed_returns.csv_3E9DEFA52FCC4762B27AA19C534C7A33]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>product_type</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[product_type]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>product_type</remote-alias>
+              <ordinal>5</ordinal>
+              <family>sealed_returns.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[sealed_returns.csv_3E9DEFA52FCC4762B27AA19C534C7A33]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>tcgplayer_market_usd</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[tcgplayer_market_usd]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>tcgplayer_market_usd</remote-alias>
+              <ordinal>6</ordinal>
+              <family>sealed_returns.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>30</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[sealed_returns.csv_3E9DEFA52FCC4762B27AA19C534C7A33]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>collected_date</remote-name>
+              <remote-type>133</remote-type>
+              <local-name>[collected_date]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>collected_date</remote-alias>
+              <ordinal>7</ordinal>
+              <family>sealed_returns.csv</family>
+              <local-type>date</local-type>
+              <aggregation>Year</aggregation>
+              <approx-count>1</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[sealed_returns.csv_3E9DEFA52FCC4762B27AA19C534C7A33]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>source_note</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[source_note]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>source_note</remote-alias>
+              <ordinal>8</ordinal>
+              <family>sealed_returns.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>6</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[sealed_returns.csv_3E9DEFA52FCC4762B27AA19C534C7A33]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>msrp_usd</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[msrp_usd]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>msrp_usd</remote-alias>
+              <ordinal>9</ordinal>
+              <family>sealed_returns.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>5</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[sealed_returns.csv_3E9DEFA52FCC4762B27AA19C534C7A33]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>msrp_basis</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[msrp_basis]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>msrp_basis</remote-alias>
+              <ordinal>10</ordinal>
+              <family>sealed_returns.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>4</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[sealed_returns.csv_3E9DEFA52FCC4762B27AA19C534C7A33]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>years</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[years]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>years</remote-alias>
+              <ordinal>11</ordinal>
+              <family>sealed_returns.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>27</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[sealed_returns.csv_3E9DEFA52FCC4762B27AA19C534C7A33]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>total_return</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[total_return]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>total_return</remote-alias>
+              <ordinal>12</ordinal>
+              <family>sealed_returns.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>30</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[sealed_returns.csv_3E9DEFA52FCC4762B27AA19C534C7A33]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>cagr</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[cagr]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>cagr</remote-alias>
+              <ordinal>13</ordinal>
+              <family>sealed_returns.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>30</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[sealed_returns.csv_3E9DEFA52FCC4762B27AA19C534C7A33]</object-id>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout common-percentage='0.726168' dim-ordering='alphabetic' measure-ordering='alphabetic' parameter-percentage='0.273832' show-aliased-fields='true' show-structure='true' user-set-layout-v2='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[none:game:nk]' palette='PMA Chase Card' type='palette'>
+            <map to='#3a4058'>
+              <bucket>&quot;pokemon&quot;</bucket>
+            </map>
+            <map to='#9d8cff'>
+              <bucket>&quot;mtg&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[none:Calculation_1403276381741058:nk]' type='palette'>
+            <map to='#3a4058'>
+              <bucket>&quot;inactive&quot;</bucket>
+            </map>
+            <map to='#9d8cff'>
+              <bucket>&quot;mtg&quot;</bucket>
+            </map>
+            <map to='#f5c84c'>
+              <bucket>&quot;pokemon&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+      <datasource-dependencies datasource='Parameters'>
+        <column alias='Magic: The Gathering' caption='Card View' datatype='string' name='[Parameter 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;MTG&quot;'>
+          <calculation class='tableau' formula='&quot;MTG&quot;' />
+          <aliases>
+            <alias key='&quot;MTG&quot;' value='Magic: The Gathering' />
+          </aliases>
+        </column>
+      </datasource-dependencies>
+      <object-graph>
+        <objects>
+          <object caption='sealed_returns.csv' id='sealed_returns.csv_3E9DEFA52FCC4762B27AA19C534C7A33'>
+            <properties context=''>
+              <relation connection='textscan.1vamzwk0z1h6ir16zfdzd0hi8kmd' name='sealed_returns.csv' table='[sealed_returns#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+                  <column datatype='string' name='game' ordinal='0' />
+                  <column datatype='string' name='set_code' ordinal='1' />
+                  <column datatype='string' name='set_name' ordinal='2' />
+                  <column datatype='string' name='set_category' ordinal='3' />
+                  <column datatype='date' name='release_date' ordinal='4' />
+                  <column datatype='string' name='product_type' ordinal='5' />
+                  <column datatype='real' name='tcgplayer_market_usd' ordinal='6' />
+                  <column datatype='date' name='collected_date' ordinal='7' />
+                  <column datatype='string' name='source_note' ordinal='8' />
+                  <column datatype='real' name='msrp_usd' ordinal='9' />
+                  <column datatype='string' name='msrp_basis' ordinal='10' />
+                  <column datatype='real' name='years' ordinal='11' />
+                  <column datatype='real' name='total_return' ordinal='12' />
+                  <column datatype='real' name='cagr' ordinal='13' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='Extract' table='[Extract].[Extract]' type='table' />
+            </properties>
           </object>
         </objects>
       </object-graph>
@@ -883,8 +1376,8 @@
             <datasource name='Parameters' />
           </datasources>
           <datasource-dependencies datasource='Parameters'>
-            <column caption='Card View' datatype='string' name='[Parameter 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;Pokemon&quot;'>
-              <calculation class='tableau' formula='&quot;Pokemon&quot;' />
+            <column alias='Magic: The Gathering' caption='Card View' datatype='string' name='[Parameter 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;MTG&quot;'>
+              <calculation class='tableau' formula='&quot;MTG&quot;' />
               <aliases>
                 <alias key='&quot;MTG&quot;' value='Magic: The Gathering' />
               </aliases>
@@ -1022,8 +1515,8 @@
             <datasource name='Parameters' />
           </datasources>
           <datasource-dependencies datasource='Parameters'>
-            <column caption='Card View' datatype='string' name='[Parameter 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;Pokemon&quot;'>
-              <calculation class='tableau' formula='&quot;Pokemon&quot;' />
+            <column alias='Magic: The Gathering' caption='Card View' datatype='string' name='[Parameter 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;MTG&quot;'>
+              <calculation class='tableau' formula='&quot;MTG&quot;' />
               <aliases>
                 <alias key='&quot;MTG&quot;' value='Magic: The Gathering' />
               </aliases>
@@ -1146,8 +1639,8 @@
             <datasource name='Parameters' />
           </datasources>
           <datasource-dependencies datasource='Parameters'>
-            <column caption='Card View' datatype='string' name='[Parameter 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;Pokemon&quot;'>
-              <calculation class='tableau' formula='&quot;Pokemon&quot;' />
+            <column alias='Magic: The Gathering' caption='Card View' datatype='string' name='[Parameter 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;MTG&quot;'>
+              <calculation class='tableau' formula='&quot;MTG&quot;' />
               <aliases>
                 <alias key='&quot;MTG&quot;' value='Magic: The Gathering' />
               </aliases>
@@ -1224,8 +1717,8 @@
             <datasource name='Parameters' />
           </datasources>
           <datasource-dependencies datasource='Parameters'>
-            <column caption='Card View' datatype='string' name='[Parameter 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;Pokemon&quot;'>
-              <calculation class='tableau' formula='&quot;Pokemon&quot;' />
+            <column alias='Magic: The Gathering' caption='Card View' datatype='string' name='[Parameter 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;MTG&quot;'>
+              <calculation class='tableau' formula='&quot;MTG&quot;' />
               <aliases>
                 <alias key='&quot;MTG&quot;' value='Magic: The Gathering' />
               </aliases>
@@ -1546,7 +2039,7 @@
       </style>
       <size maxheight='1820' maxwidth='1300' minheight='1820' minwidth='1300' sizing-mode='fixed' />
       <zones>
-        <zone friendly-name='Pokemon P/T pill' h='2967' id='60' type-v2='empty' w='9231' x='79385' y='85989'>
+        <zone friendly-name='Pokemon P/T pill' h='2967' hidden-by-user='true' id='60' type-v2='empty' w='9231' x='79385' y='85989'>
           <zone-style>
             <format attr='border-color' value='#000000' />
             <format attr='border-style' value='none' />
@@ -1555,7 +2048,7 @@
             <format attr='background-color' value='#f5c84c' />
           </zone-style>
         </zone>
-        <zone friendly-name='MTG P/T pill' h='2967' hidden-by-user='true' id='50' type-v2='empty' w='14615' x='74000' y='85989'>
+        <zone friendly-name='MTG P/T pill' h='2967' id='50' type-v2='empty' w='14615' x='74000' y='85989'>
           <zone-style>
             <format attr='border-color' value='#000000' />
             <format attr='border-style' value='none' />
@@ -1564,7 +2057,7 @@
             <format attr='background-color' value='#9d8cff' />
           </zone-style>
         </zone>
-        <zone friendly-name='Act 2 panel' h='32967' id='48' type-v2='empty' w='40769' x='50000' y='51923'>
+        <zone friendly-name='Act 2 panel' h='30220' id='48' type-v2='empty' w='40000' x='50769' y='51923'>
           <zone-style>
             <format attr='border-color' value='#000000' />
             <format attr='border-style' value='none' />
@@ -1573,7 +2066,7 @@
             <format attr='background-color' value='#161c2b' />
           </zone-style>
         </zone>
-        <zone friendly-name='Act 1 panel' h='32967' id='49' type-v2='empty' w='39231' x='10769' y='51923'>
+        <zone friendly-name='Act 1 panel' h='30220' id='49' type-v2='empty' w='38462' x='9231' y='51923'>
           <zone-style>
             <format attr='border-color' value='#000000' />
             <format attr='border-style' value='none' />
@@ -1591,8 +2084,8 @@
             <format attr='background-color' value='#161c2b' />
           </zone-style>
         </zone>
-        <zone friendly-name='Pokemon Card' h='100000' id='33' param='horz' type-v2='layout-flow' w='100000' x='0' y='0'>
-          <zone h='100000' id='32' is-scaled='1' param='.../assets/frame_pokemon_1300x1820.png' type-v2='bitmap' w='100000' x='0' y='0'>
+        <zone friendly-name='Pokemon Card' h='100000' hidden-by-user='true' id='33' param='horz' type-v2='layout-flow' w='100000' x='0' y='0'>
+          <zone h='100000' hidden-by-user='true' id='32' is-scaled='1' param='.../assets/frame_pokemon_1300x1820.png' type-v2='bitmap' w='100000' x='0' y='0'>
             <zone-style>
               <format attr='border-color' value='#000000' />
               <format attr='border-style' value='none' />
@@ -1601,8 +2094,8 @@
             </zone-style>
           </zone>
         </zone>
-        <zone friendly-name='MTG Card' h='100000' hidden-by-user='true' id='1' param='horz' type-v2='layout-flow' w='100000' x='0' y='0'>
-          <zone forceUpdate='true' h='100000' hidden-by-user='true' id='2' is-scaled='1' param='.../assets/frame_mtg_1300x1820.png' type-v2='bitmap' w='100000' x='0' y='0'>
+        <zone friendly-name='MTG Card' h='100000' id='1' param='horz' type-v2='layout-flow' w='100000' x='0' y='0'>
+          <zone h='100000' id='2' is-scaled='1' param='.../assets/frame_mtg_1300x1820.png' type-v2='bitmap' w='100000' x='0' y='0'>
             <zone-style>
               <format attr='border-color' value='#000000' />
               <format attr='border-style' value='none' />
@@ -1611,19 +2104,19 @@
             </zone-style>
           </zone>
         </zone>
-        <zone forceUpdate='true' h='3077' hidden-by-user='true' id='7' type-v2='text' w='47692' x='9231' y='7143'>
+        <zone forceUpdate='true' h='3077' id='7' type-v2='text' w='47692' x='9231' y='7143'>
           <formatted-text>
             <run fontcolor='#edeae2' fontname='raleway bold' fontsize='26'>Parallel Economies</run>
           </formatted-text>
         </zone>
-        <zone forceUpdate='true' h='3516' hidden-by-user='true' id='8' is-centered='0' is-scaled='1' param='.../assets/orb_mtg_violet.png' type-v2='bitmap' w='4923' x='83692' y='6923' />
-        <zone h='1648' hidden-by-user='true' id='9' is-centered='0' param='.../assets/divider_mtg_1060x30.png' type-v2='bitmap' w='81538' x='9231' y='49451' />
-        <zone forceUpdate='true' h='2088' hidden-by-user='true' id='10' type-v2='text' w='58462' x='9231' y='10659'>
+        <zone h='3516' id='8' is-centered='0' is-scaled='1' param='.../assets/orb_mtg_violet.png' type-v2='bitmap' w='4923' x='83692' y='6923' />
+        <zone h='1648' id='9' is-centered='0' param='.../assets/divider_mtg_1060x30.png' type-v2='bitmap' w='81538' x='9231' y='49451' />
+        <zone forceUpdate='true' h='2088' id='10' type-v2='text' w='58462' x='9231' y='10659'>
           <formatted-text>
             <run fontcolor='#9aa3b5' fontname='Lato' fontsize='11'>the mtg reading — tiered pricing, thick playable middle, market grades each premium</run>
           </formatted-text>
         </zone>
-        <zone forceUpdate='true' h='2747' hidden-by-user='true' id='13' type-v2='text' w='37538' x='11538' y='86264'>
+        <zone forceUpdate='true' h='2747' id='13' type-v2='text' w='37538' x='11538' y='86264'>
           <formatted-text>
             <run fontcolor='#c9c2b4' fontname='Lato' fontsize='13'>&quot;Premiums are proposed by the printer and ratified by the market.&quot;</run>
             <run fontcolor='#c9c2b4' fontname='Lato' fontsize='13' italic='true'>Æ </run>
@@ -1636,9 +2129,9 @@
             <run fontcolor='#5a6478' fontname='Lato'>PMA 001-002/002 · 2026 · obie.w.lawrence · tcgplayer market 2026-07-15 · matched window 2024-02→2026-06 · rarity axis log-scaled · mkm/otj launch basis = market (tcgplayer mid)</run>
           </formatted-text>
         </zone>
-        <zone h='10165' id='15' name='Act1 | Concentration' show-title='false' w='36154' x='10769' y='57143' />
+        <zone h='10165' id='15' name='Act1 | Concentration' show-title='false' w='36154' x='10000' y='57143' />
         <zone h='12582' id='18' name='Act2 | Rarity Ladder' show-title='false' w='37692' x='51538' y='57143' />
-        <zone forceUpdate='true' h='3242' id='19' type-v2='text' w='36923' x='10769' y='52912'>
+        <zone forceUpdate='true' h='3242' id='19' type-v2='text' w='35385' x='10000' y='52912'>
           <formatted-text>
             <run fontcolor='#edeae2' fontname='raleway bold' fontsize='16'>Where the value lives</run>
             <run>Æ&#10;</run>
@@ -1650,77 +2143,76 @@
             <run fontcolor='#edeae2' fontname='raleway bold' fontsize='16'>The rarity ladder</run>
           </formatted-text>
         </zone>
-        <zone forceUpdate='true' h='2088' hidden-by-user='true' id='21' type-v2='text' w='13385' x='74615' y='86429'>
+        <zone forceUpdate='true' h='2088' id='21' type-v2='text' w='13385' x='74615' y='86429'>
           <formatted-text>
             <run fontalignment='1' fontcolor='#10141f' fontname='raleway bold' fontsize='20'>0.90 / 2.30</run>
           </formatted-text>
         </zone>
-        <zone h='3846' hidden-by-user='true' id='22' type-v2='text' w='36154' x='10769' y='67857'>
+        <zone forceUpdate='true' h='3846' id='22' type-v2='text' w='36154' x='10000' y='67857'>
           <formatted-text>
             <run fontcolor='#9aa3b5' fontname='Lato' fontsize='11'>median card $0.29 vs $0.19 — pocket change either way; the difference is where value sits: 71% top-tier vs 94%</run>
-            <run>Æ&#10;</run>
           </formatted-text>
         </zone>
-        <zone forceUpdate='true' h='9341' hidden-by-user='true' id='23' type-v2='text' w='35385' x='51538' y='66484'>
+        <zone forceUpdate='true' h='9341' id='23' type-v2='text' w='35385' x='51538' y='66484'>
           <formatted-text>
-            <run fontcolor='#9d8cff' fontname='Lato' fontsize='10'>◆</run>
-            <run fontcolor='#000000' fontname='Lato' fontsize='10'>Æ </run>
-            <run fontcolor='#9aa3b5' fontname='Lato' fontsize='10'>four of five $6.99 universes beyond packs trade below launch — final fantasy (1.27×) is the exception</run>
+            <run fontcolor='#9d8cff' fontname='Lato' fontsize='11'>◆</run>
+            <run fontcolor='#000000' fontname='Lato' fontsize='11'>Æ </run>
+            <run fontcolor='#9aa3b5' fontname='Lato' fontsize='11'>four of five $6.99 universes beyond packs trade below launch — final fantasy (1.27×) is the exception</run>
             <run>Æ&#10;&#10;&#10;</run>
-            <run fontcolor='#9d8cff' fontname='Lato' fontsize='10'>◆</run>
-            <run fontcolor='#000000' fontname='Lato' fontsize='10'>Æ </run>
-            <run fontcolor='#9aa3b5' fontname='Lato' fontsize='10'>sealed drifts back toward launch as sets age (ρ 0.73)</run>
+            <run fontcolor='#9d8cff' fontname='Lato' fontsize='11'>◆</run>
+            <run fontcolor='#000000' fontname='Lato' fontsize='11'>Æ </run>
+            <run fontcolor='#9aa3b5' fontname='Lato' fontsize='11'>sealed drifts back toward launch as sets age (ρ 0.73)</run>
           </formatted-text>
         </zone>
         <zone h='32967' id='31' name='Hero | Sealed Returns' show-title='false' w='78462' x='10769' y='14835' />
-        <zone forceUpdate='true' h='3077' id='34' type-v2='text' w='47692' x='9231' y='7143'>
+        <zone forceUpdate='true' h='3077' hidden-by-user='true' id='34' type-v2='text' w='47692' x='9231' y='7143'>
           <formatted-text>
             <run fontcolor='#edeae2' fontname='raleway bold' fontsize='26'>Chase Market</run>
           </formatted-text>
         </zone>
-        <zone forceUpdate='true' h='2088' id='35' type-v2='text' w='58462' x='9231' y='10659'>
+        <zone forceUpdate='true' h='2088' hidden-by-user='true' id='35' type-v2='text' w='58462' x='9231' y='10659'>
           <formatted-text>
             <run fontcolor='#9aa3b5' fontname='Lato' fontsize='11'>the pokemon reading — flat pricing, scarce chase, market sorts the winners</run>
           </formatted-text>
         </zone>
-        <zone h='2418' id='36' type-v2='text' w='13538' x='69231' y='7473'>
+        <zone h='2418' hidden-by-user='true' id='36' type-v2='text' w='13538' x='69231' y='7473'>
           <formatted-text>
             <run fontalignment='2' fontcolor='#f5c84c' fontname='raleway bold' fontsize='22'>HP 230</run>
           </formatted-text>
         </zone>
-        <zone h='3516' id='37' is-centered='0' is-scaled='1' param='.../Image/orb_pokemon_gold.png' type-v2='bitmap' w='4923' x='83692' y='6923' />
-        <zone h='3846' id='38' type-v2='text' w='36154' x='10769' y='65934'>
+        <zone h='3516' hidden-by-user='true' id='37' is-centered='0' is-scaled='1' param='.../Image/orb_pokemon_gold.png' type-v2='bitmap' w='4923' x='83692' y='6923' />
+        <zone h='3846' hidden-by-user='true' id='38' type-v2='text' w='36154' x='10000' y='65934'>
           <formatted-text>
             <run fontcolor='#9aa3b5' fontname='Lato' fontsize='11'>94% of singles value sits in the chase tier — the pack is a lottery ticket</run>
           </formatted-text>
         </zone>
-        <zone forceUpdate='true' h='8242' id='39' type-v2='text' w='37692' x='51538' y='71429'>
+        <zone forceUpdate='true' h='8242' hidden-by-user='true' id='39' type-v2='text' w='37692' x='51538' y='71429'>
           <formatted-text>
-            <run fontcolor='#f5c84c' fontname='Lato' fontsize='10'>◆</run>
-            <run fontcolor='#9aa3b5' fontname='Lato' fontsize='10'> specials cluster at 3.0–3.5×; every set trades above launch</run>
+            <run fontcolor='#f5c84c' fontname='Lato' fontsize='11'>◆</run>
+            <run fontcolor='#9aa3b5' fontname='Lato' fontsize='11'> specials cluster at 3.0–3.5×; every set trades above launch</run>
             <run>Æ&#10;&#10;&#10;</run>
-            <run fontcolor='#f5c84c' fontname='Lato' fontsize='10'>◆</run>
-            <run fontcolor='#9aa3b5' fontname='Lato' fontsize='10'> annualized returns run hottest when newest (ρ −0.82)</run>
+            <run fontcolor='#f5c84c' fontname='Lato' fontsize='11'>◆</run>
+            <run fontcolor='#9aa3b5' fontname='Lato' fontsize='11'> annualized returns run hottest when newest (ρ −0.82)</run>
           </formatted-text>
         </zone>
-        <zone forceUpdate='true' h='2747' id='41' type-v2='text' w='39846' x='11538' y='86264'>
+        <zone forceUpdate='true' h='2747' hidden-by-user='true' id='41' type-v2='text' w='39846' x='11538' y='86264'>
           <formatted-text>
             <run fontcolor='#c9c2b4' fontname='Lato' fontsize='13'>&quot;Demand for lottery tickets outran the printer.&quot;</run>
             <run fontcolor='#c9c2b4' fontname='Lato' fontsize='13' italic='true'> — every time</run>
           </formatted-text>
         </zone>
-        <zone forceUpdate='true' h='2088' id='42' type-v2='text' w='8000' x='80000' y='86429'>
+        <zone forceUpdate='true' h='2088' hidden-by-user='true' id='42' type-v2='text' w='8000' x='80000' y='86429'>
           <formatted-text>
             <run fontalignment='1' fontcolor='#10141f' fontname='raleway bold' fontsize='20'>×2.30</run>
           </formatted-text>
         </zone>
         <zone h='1538' id='44' name='Btn | Flip' show-title='false' w='20308' x='76923' y='2747' />
-        <zone forceUpdate='true' h='1978' hidden-by-user='true' id='51' type-v2='text' w='20000' x='53077' y='86538'>
+        <zone forceUpdate='true' h='1978' id='51' type-v2='text' w='20000' x='53077' y='86538'>
           <formatted-text>
             <run fontalignment='2' fontname='Lato'>median sealed return — mtg / pokemon</run>
           </formatted-text>
         </zone>
-        <zone h='6868' id='52' type-v2='text' w='23692' x='10769' y='71978'>
+        <zone h='6868' id='52' type-v2='text' w='23692' x='10000' y='71978'>
           <formatted-text>
             <run fontcolor='#9aa3b5' fontname='Lato' fontsize='11'>Median single (cheapest copy)</run>
             <run>Æ&#10;</run>
@@ -1731,7 +2223,7 @@
             <run fontcolor='#9aa3b5' fontname='Lato' fontsize='11'>Rarity ladder, Dunn pairs distinct</run>
           </formatted-text>
         </zone>
-        <zone h='6868' id='53' type-v2='text' w='12154' x='34769' y='71978'>
+        <zone h='6868' id='53' type-v2='text' w='12154' x='34692' y='71978'>
           <formatted-text>
             <run fontalignment='2' fontcolor='#edeae2' fontname='Lato' fontsize='11'>$0.29</run>
             <run fontalignment='2'>Æ&#10;</run>
@@ -1742,20 +2234,20 @@
             <run fontalignment='2' fontcolor='#edeae2' fontname='Lato' fontsize='11'>6/6</run>
           </formatted-text>
         </zone>
-        <zone forceUpdate='true' h='1648' id='58' is-centered='0' is-scaled='1' param='.../assets/divider_pokemon_1060x30.png' type-v2='bitmap' w='81538' x='9231' y='49451' />
-        <zone forceUpdate='true' h='1978' id='59' type-v2='text' w='20000' x='58462' y='86538'>
+        <zone h='1648' hidden-by-user='true' id='58' is-centered='0' is-scaled='1' param='.../assets/divider_pokemon_1060x30.png' type-v2='bitmap' w='81538' x='9231' y='49451' />
+        <zone forceUpdate='true' h='1978' hidden-by-user='true' id='59' type-v2='text' w='20000' x='58462' y='86538'>
           <formatted-text>
             <run fontalignment='2' fontcolor='#9aa3b5' fontname='raleway bold'>median sealed return vs launch</run>
           </formatted-text>
         </zone>
-        <zone h='1868' hidden-by-user='true' id='61' type-v2='text' w='37692' x='51538' y='54286'>
+        <zone h='1868' id='61' type-v2='text' w='37692' x='51538' y='54286'>
           <formatted-text>
             <run fontcolor='#9aa3b5' fontname='Lato'>median market price per card at each of magic&apos;s four rarities — cheapest copy, matched window</run>
           </formatted-text>
         </zone>
-        <zone forceUpdate='true' h='1868' id='62' type-v2='text' w='37692' x='51538' y='54286'>
+        <zone forceUpdate='true' h='1868' hidden-by-user='true' id='62' type-v2='text' w='37692' x='51538' y='54286'>
           <formatted-text>
-            <run fontcolor='#9aa3b5' fontname='latos'>median market price per card across pokémon&apos;s eleven rarity tiers — cheapest copy, matched window</run>
+            <run fontcolor='#9aa3b5' fontname='Lato'>median market price per card across pokémon&apos;s eleven rarity tiers — cheapest copy, matched window</run>
           </formatted-text>
         </zone>
       </zones>
@@ -1763,9 +2255,9 @@
         <devicelayout auto-generated='true' name='Phone'>
           <size maxheight='3050' minheight='3050' sizing-mode='vscroll' />
           <zones>
-            <zone h='100000' id='67' type-v2='layout-basic' w='100000' x='0' y='0'>
-              <zone h='99120' id='66' param='vert' type-v2='layout-flow' w='98770' x='615' y='440'>
-                <zone fixed-size='280' h='100000' id='32' is-fixed='true' is-scaled='1' param='.../assets/frame_pokemon_1300x1820.png' type-v2='bitmap' w='100000' x='0' y='0'>
+            <zone h='100000' id='79' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='99120' id='78' param='vert' type-v2='layout-flow' w='98770' x='615' y='440'>
+                <zone fixed-size='280' h='100000' hidden-by-user='true' id='32' is-fixed='true' is-scaled='1' param='.../assets/frame_pokemon_1300x1820.png' type-v2='bitmap' w='100000' x='0' y='0'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
                     <format attr='border-style' value='none' />
@@ -1774,7 +2266,7 @@
                     <format attr='padding' value='0' />
                   </zone-style>
                 </zone>
-                <zone fixed-size='280' forceUpdate='true' h='100000' hidden-by-user='true' id='2' is-fixed='true' is-scaled='1' param='.../assets/frame_mtg_1300x1820.png' type-v2='bitmap' w='100000' x='0' y='0'>
+                <zone fixed-size='280' h='100000' id='2' is-fixed='true' is-scaled='1' param='.../assets/frame_mtg_1300x1820.png' type-v2='bitmap' w='100000' x='0' y='0'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
                     <format attr='border-style' value='none' />
@@ -1792,7 +2284,7 @@
                     <format attr='padding' value='0' />
                   </zone-style>
                 </zone>
-                <zone fixed-size='64' forceUpdate='true' h='3516' id='8' is-centered='0' is-fixed='true' is-scaled='1' param='.../assets/orb_mtg_violet.png' type-v2='bitmap' w='4923' x='83692' y='6923'>
+                <zone fixed-size='64' h='3516' id='8' is-centered='0' is-fixed='true' is-scaled='1' param='.../assets/orb_mtg_violet.png' type-v2='bitmap' w='4923' x='83692' y='6923'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
                     <format attr='border-style' value='none' />
@@ -1888,7 +2380,7 @@
                     <format attr='padding' value='0' />
                   </zone-style>
                 </zone>
-                <zone fixed-size='30' forceUpdate='true' h='1648' id='58' is-centered='0' is-fixed='true' is-scaled='1' param='.../assets/divider_pokemon_1060x30.png' type-v2='bitmap' w='81538' x='9231' y='49451'>
+                <zone fixed-size='30' h='1648' id='58' is-centered='0' is-fixed='true' is-scaled='1' param='.../assets/divider_pokemon_1060x30.png' type-v2='bitmap' w='81538' x='9231' y='49451'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
                     <format attr='border-style' value='none' />
@@ -1897,7 +2389,7 @@
                     <format attr='padding' value='0' />
                   </zone-style>
                 </zone>
-                <zone forceUpdate='true' h='3242' id='19' type-v2='text' w='36923' x='10769' y='52912'>
+                <zone forceUpdate='true' h='3242' id='19' type-v2='text' w='35385' x='10000' y='52912'>
                   <formatted-text>
                     <run fontcolor='#edeae2' fontname='raleway bold' fontsize='16'>Where the value lives</run>
                     <run>Æ&#10;</run>
@@ -1937,7 +2429,7 @@
                 </zone>
                 <zone forceUpdate='true' h='1868' id='62' type-v2='text' w='37692' x='51538' y='54286'>
                   <formatted-text>
-                    <run fontcolor='#9aa3b5' fontname='latos'>median market price per card across pokémon&apos;s eleven rarity tiers — cheapest copy, matched window</run>
+                    <run fontcolor='#9aa3b5' fontname='Lato'>median market price per card across pokémon&apos;s eleven rarity tiers — cheapest copy, matched window</run>
                   </formatted-text>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
@@ -1947,7 +2439,7 @@
                     <format attr='padding' value='0' />
                   </zone-style>
                 </zone>
-                <zone fixed-size='185' h='10165' id='15' is-fixed='true' name='Act1 | Concentration' show-title='false' w='36154' x='10769' y='57143'>
+                <zone fixed-size='185' h='10165' id='15' is-fixed='true' name='Act1 | Concentration' show-title='false' w='36154' x='10000' y='57143'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
                     <format attr='border-style' value='none' />
@@ -1965,7 +2457,7 @@
                     <format attr='padding' value='0' />
                   </zone-style>
                 </zone>
-                <zone h='3846' id='38' type-v2='text' w='36154' x='10769' y='65934'>
+                <zone h='3846' id='38' type-v2='text' w='36154' x='10000' y='65934'>
                   <formatted-text>
                     <run fontcolor='#9aa3b5' fontname='Lato' fontsize='11'>94% of singles value sits in the chase tier — the pack is a lottery ticket</run>
                   </formatted-text>
@@ -1979,13 +2471,13 @@
                 </zone>
                 <zone forceUpdate='true' h='9341' id='23' type-v2='text' w='35385' x='51538' y='66484'>
                   <formatted-text>
-                    <run fontcolor='#9d8cff' fontname='Lato' fontsize='10'>◆</run>
-                    <run fontcolor='#000000' fontname='Lato' fontsize='10'>Æ </run>
-                    <run fontcolor='#9aa3b5' fontname='Lato' fontsize='10'>four of five $6.99 universes beyond packs trade below launch — final fantasy (1.27×) is the exception</run>
+                    <run fontcolor='#9d8cff' fontname='Lato' fontsize='11'>◆</run>
+                    <run fontcolor='#000000' fontname='Lato' fontsize='11'>Æ </run>
+                    <run fontcolor='#9aa3b5' fontname='Lato' fontsize='11'>four of five $6.99 universes beyond packs trade below launch — final fantasy (1.27×) is the exception</run>
                     <run>Æ&#10;&#10;&#10;</run>
-                    <run fontcolor='#9d8cff' fontname='Lato' fontsize='10'>◆</run>
-                    <run fontcolor='#000000' fontname='Lato' fontsize='10'>Æ </run>
-                    <run fontcolor='#9aa3b5' fontname='Lato' fontsize='10'>sealed drifts back toward launch as sets age (ρ 0.73)</run>
+                    <run fontcolor='#9d8cff' fontname='Lato' fontsize='11'>◆</run>
+                    <run fontcolor='#000000' fontname='Lato' fontsize='11'>Æ </run>
+                    <run fontcolor='#9aa3b5' fontname='Lato' fontsize='11'>sealed drifts back toward launch as sets age (ρ 0.73)</run>
                   </formatted-text>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
@@ -1995,10 +2487,9 @@
                     <format attr='padding' value='0' />
                   </zone-style>
                 </zone>
-                <zone h='3846' id='22' type-v2='text' w='36154' x='10769' y='67857'>
+                <zone forceUpdate='true' h='3846' id='22' type-v2='text' w='36154' x='10000' y='67857'>
                   <formatted-text>
                     <run fontcolor='#9aa3b5' fontname='Lato' fontsize='11'>median card $0.29 vs $0.19 — pocket change either way; the difference is where value sits: 71% top-tier vs 94%</run>
-                    <run>Æ&#10;</run>
                   </formatted-text>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
@@ -2010,11 +2501,11 @@
                 </zone>
                 <zone forceUpdate='true' h='8242' id='39' type-v2='text' w='37692' x='51538' y='71429'>
                   <formatted-text>
-                    <run fontcolor='#f5c84c' fontname='Lato' fontsize='10'>◆</run>
-                    <run fontcolor='#9aa3b5' fontname='Lato' fontsize='10'> specials cluster at 3.0–3.5×; every set trades above launch</run>
+                    <run fontcolor='#f5c84c' fontname='Lato' fontsize='11'>◆</run>
+                    <run fontcolor='#9aa3b5' fontname='Lato' fontsize='11'> specials cluster at 3.0–3.5×; every set trades above launch</run>
                     <run>Æ&#10;&#10;&#10;</run>
-                    <run fontcolor='#f5c84c' fontname='Lato' fontsize='10'>◆</run>
-                    <run fontcolor='#9aa3b5' fontname='Lato' fontsize='10'> annualized returns run hottest when newest (ρ −0.82)</run>
+                    <run fontcolor='#f5c84c' fontname='Lato' fontsize='11'>◆</run>
+                    <run fontcolor='#9aa3b5' fontname='Lato' fontsize='11'> annualized returns run hottest when newest (ρ −0.82)</run>
                   </formatted-text>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
@@ -2024,7 +2515,7 @@
                     <format attr='padding' value='0' />
                   </zone-style>
                 </zone>
-                <zone h='6868' id='52' type-v2='text' w='23692' x='10769' y='71978'>
+                <zone h='6868' id='52' type-v2='text' w='23692' x='10000' y='71978'>
                   <formatted-text>
                     <run fontcolor='#9aa3b5' fontname='Lato' fontsize='11'>Median single (cheapest copy)</run>
                     <run>Æ&#10;</run>
@@ -2042,7 +2533,7 @@
                     <format attr='padding' value='0' />
                   </zone-style>
                 </zone>
-                <zone h='6868' id='53' type-v2='text' w='12154' x='34769' y='71978'>
+                <zone h='6868' id='53' type-v2='text' w='12154' x='34692' y='71978'>
                   <formatted-text>
                     <run fontalignment='2' fontcolor='#edeae2' fontname='Lato' fontsize='11'>$0.29</run>
                     <run fontalignment='2'>Æ&#10;</run>
@@ -2167,33 +2658,12 @@
       <viewpoints>
         <viewpoint name='Act1 | Concentration' />
         <viewpoint name='Act2 | Rarity Ladder' />
-        <viewpoint name='Btn | Flip'>
-          <selection-collection>
-            <tuple-selection>
-              <tuple-reference>
-                <tuple-descriptor>
-                  <pane-descriptor>
-                    <x-fields />
-                    <y-fields />
-                  </pane-descriptor>
-                  <columns>
-                    <field>[federated.14tlmw40kzkaq91fdxebn1j7boyd].[none:Calculation_2013505631608838:nk]</field>
-                    <field>[federated.14tlmw40kzkaq91fdxebn1j7boyd].[none:Calculation_2013505631764487:nk]</field>
-                  </columns>
-                </tuple-descriptor>
-                <tuple>
-                  <value>&quot;MTG&quot;</value>
-                  <value>&quot;⇄ flip card: the mtg reading&quot;</value>
-                </tuple>
-              </tuple-reference>
-            </tuple-selection>
-          </selection-collection>
-        </viewpoint>
+        <viewpoint name='Btn | Flip' />
         <viewpoint name='Hero | Sealed Returns'>
           <zoom type='entire-view' />
         </viewpoint>
       </viewpoints>
-      <active id='-1' />
+      <active id='44' />
       <simple-id uuid='{A7E9F6CA-7325-4643-A630-7098B18124DE}' />
     </window>
     <window class='worksheet' name='Hero | Sealed Returns'>
@@ -2348,8 +2818,8 @@
         <pair execution-subgraph-guid='30aac782-b9d0-4e1b-ac5b-c2fe9e47fe28' node-guid='c7ecdf2d-bb27-4d1d-ba9b-71dadbf417e7' />
         <pair execution-subgraph-guid='30aac782-b9d0-4e1b-ac5b-c2fe9e47fe28' node-guid='7c02d347-ec02-4d17-a2d0-bdee1a3a7ec2' />
         <pair execution-subgraph-guid='30aac782-b9d0-4e1b-ac5b-c2fe9e47fe28' node-guid='c8c82d2f-3018-4104-a4b2-9313bb73de4b' />
-        <pair execution-subgraph-guid='30aac782-b9d0-4e1b-ac5b-c2fe9e47fe28' node-guid='d8a0a5f7-141d-455e-8d51-d791ec369620' />
         <pair execution-subgraph-guid='30aac782-b9d0-4e1b-ac5b-c2fe9e47fe28' node-guid='99503d72-8418-4760-b52d-6914bdfeed58' />
+        <pair execution-subgraph-guid='30aac782-b9d0-4e1b-ac5b-c2fe9e47fe28' node-guid='d8a0a5f7-141d-455e-8d51-d791ec369620' />
         <pair execution-subgraph-guid='30aac782-b9d0-4e1b-ac5b-c2fe9e47fe28' node-guid='fc442768-f1bb-4dd7-8fe4-47363a8f3a5d' />
         <pair execution-subgraph-guid='30aac782-b9d0-4e1b-ac5b-c2fe9e47fe28' node-guid='70e7df14-508c-4e92-b674-75919408949a' />
         <pair execution-subgraph-guid='30aac782-b9d0-4e1b-ac5b-c2fe9e47fe28' node-guid='d7d40b46-fa9d-4672-acb3-46a4f32d4b16' />
@@ -2765,173 +3235,138 @@
     </thumbnail>
     <thumbnail height='192' name='Chase Card' width='192'>
       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
-      AAAgAElEQVR4nO2deZQl11nYf7eq3r73Nr3M9PT07KORZjQabbFsI9nGxBjHlhTisMgWyTkY
-      ENhh8eEAMSQ2CY6xIXCAk5CwxAKMIU7AEEu2sWV5k2RptM2i2Zfe936v31bvVdXNH2/funtm
-      epl5c39/9KmqW3Xrvurvu/e72/eJQLhHsgz9O2McfnCIHQe76d8VIxDxAlD9kETUPCMbjgVS
-      SnI5cLkFQlSlCVFz81LCJhQxap6tIKpvrZw7AjRZl978ORDF9y6T1nC9cB5fsBi9nOPAIX9V
-      ucWyZW34jS3LuHJerctX/ZtW83uWvy5loRBCEyv+jta/ezW/ue76dZV/lf8HKfEtOKQ7DMSz
-      lzBowY7bu3nPh+5i+I4epAQhBK00RSCb/DMrr5fFd3/jn1K8/QcCdUIvy+cjFzOcPZ7iofd0
-      t3hTRchL+Uop8VzqJbdtFlz2is+Vj2v1pfV95WJKZqfzzEzlmzzX+p2i+GzlN7d+x2rzvP58
-      lkcISJ6PE9gZQYi1y7c5a1v2FRGCbFQvvHlXZ6MC6IbG+544ylse2VcpnmgsaEkAKzQKZ3Wa
-      lIKDd3jRNMibOobHbrgv2uGio8eNlBIhisKz7AcqCpmlIZxaBV2NUtaXu3nZi9eFYHDYg9ev
-      UyPPVymIUoLuaDia0/LWVmVYHWujGBXhv9Y8VvMtJP35KOOu+IbqgNQAR0J/CK06weMz+PDv
-      v5O3PLy36YOt24Dlyy8AIST9Ww2kI8gmvLXPyUK+oajBHfeEWL7SqW38hABzeBLHkwMkjrMa
-      0VmteNUac4ah0b/N3bR8q/3/aY6ge6T/qp6pKZGUhRZlldQbjY3Xm99fX/O3LOu1ayoCQU8+
-      uKp7kwtpcpl8Qw4tcZzWaRIWX0thp52KAuiG4Gc+83aGbuuqMVGaW6mt0lpb0OXrGoS6Uy3L
-      pmnNPvxyX1mC4RSNDTjxf0ysbLnnUXtffb6yWVqrdoMVFLN5XpV3FY4Ny4U750WztZb3tzqW
-      UjI5arI4Vy8I9b/nasp4FdQpnkTS/5J5VQpZz+v+8RW/q5QweX6WqYtz9UVoipbP0XPiG7X3
-      Vr9ECILDPnS/VlGAh584ytBtXQixvNCvXJO06rY0PluT1vDLmt8rpUTaFVu/+h2OLbnynM3k
-      Cavps6vJf6Vnmteoq88r5zGZ6R/H0etqKFmbSzOZEELgcgkMV7WJc71cex6utGTgxRzB6WVq
-      2+UQ4IiV3y8EdA/G6NoWXVUlJDUdyxNgua/kChf6ARrA8MFu3vLwvqpmr3UtWCj3tZtCzfrp
-      ZVqod/Vz2YtTJF+/XFfrFPPUBLvfYdB3yNWQ1ni8XK15bcK9mgZCIMgGU+Wby8/kJO7T+RVr
-      064tbkIRV5OUaytz6zxWvjfvF0zvc5Hq1hpS19qkj3SH8IW8y95TKr3UdeZ3372qQmgAP/ST
-      d1IZ8KrPrsBam0LL5SGlxEzLhjIgJY5pkVusreErdivsfocL3Vjd+1dUjqtiFaZME6UtXfe+
-      lsP/HXPFF1/9oMxatBLNEQiuvMWzio+1BmW42t8tGiW6GVr/cJTdh7YAIG0HmasI1/WZQs3T
-      mplCEjBTbpAgsjncl8e5eMwim6wTZAF2aCvnX97fRBCKrcCKEtLkn7Gi9dWqj7BGrYOA/HaD
-      /JDR8I3TkxmslLX6dzXWGVWKd3U1/KrQxLVo5XVwje+SEncm0fCztCMPDpU/kGNaWMls9VPX
-      YQqt7gMKQHNsZi92I4REWDYil2fXvQbeYOOAYLAXeg5T+s/W5FNLddpqTTYJUuJfMApDsav6
-      Bcvlt3qsHp30A56GvLzdXnS/Xne9eUtS/24pJZevXJu5enVcXQ0vATuZW7O3r+6lktte+luM
-      fLV8C4wdB7vKk1y6z43uK9TEsmqcW1R98pJISsAjbXrsNBGZa1oJrDB2Q+lf4E4kOLR7FvIa
-      0gMM+YAZaBzsAARHHgDRpJ97bera2K71jvmZDmTK36DxuZUGEZtflw23NGlLck3yKff5r2ZQ
-      s/Cf2uWGzpyo+d6tyldNy2/ZtLZv9m1bv0vaDrnxBO7t0RXub33tagZ1ZdF86N2iE7RPIbOV
-      PouxdVeMeiEvPdpKgN3S5nB+mpnXx/jStxc4eT5F3rp2O294wMuVSRPLXj97dbUIBB992/v4
-      3f/+FKbVVAMVNzWnas7En73y80Wpa9QsWVdbSSDkmOwdv8CvfPoMz7wYX8+Sbhr94RjjiYXN
-      LoZiAzAqNb2kvikRdaaQWzrsGb/Aw0+8wmSTyZh2QQn/rYMGtZZlw8iPLKXAYWuaX/nt020t
-      /Ipbi8YZjGZKQKHDO/XqGN94KbER5VIoNoSyAiw75i+hx07x1HfmN6RQCsVGUdMCLDfBE5F5
-      TpxLr3+JFIoNRGtd8zfu3bkRhikVirWkrhNcz7XNhioUNwtNOsErrQFSKNoHrdXy5Pr+gFIC
-      RTtSbAFWpwQKRbuhrb6mV0qgaD+KnWBZXBHdqATK9FG0MxqAlILFqc6WNwlgdnY1+2wVipuL
-      QgsgILZlruWe3XTa5uIltf5H0X6UV4OK+rUPlBxTgd+vEe1v6UROobhpaZgHaN4pFvT3N/NE
-      oFDc3DSdCVZzAIpbhVVMhDU/VyjagRarQatR4/+K9kWr3wncfA5AKYGiPanqA6ykBApF+1G3
-      I2w1nnMUivahSR9Ajfwobh0adoQV2CAl0Fw8/lM/w5N/+vv85f/6Qz7y+A8hgAff/SgP3jm0
-      xi/z8Id/+t945G13lq9sO3AXf/0Xnya6zFMFwnz8V39yxbv2Hb6b7T2B6yqlYmNpmAfYyOHP
-      H/upD7PLO8djj/8sP/LBD7Plrnfx/rffQU//VnpiQfoH+vG6Kn4xvf4gwzu2YlS1W31bBwj7
-      Kz41hW6wfXCg5p4COnuHt/HIo+8uX3nPe9/Frp3DuIvn0Y4utg/0lNNdLoNYZxcew8PBA8MA
-      aLqOyyiUyeMLsK2/GM9MCN7/2GNs7wld93dRbBzl9Q3VrhALxxVHWeulBI+858381HvfiwPg
-      5PmNX/x35M0s/3L4IR770E+z59gZHnjgLj7wI4+z/8FH+eA7D3Li0hwP3b+XRx75EL/8qc+Q
-      mzrLjtsO83//+Pf49iWTP/rUL/G9F17l6JED/NJHPsqVucpG/nx8hBljgIGQwVhS545+N8cn
-      C+k//csfY3cgRZwww4E4j/38Z/jcF75Adv4Kf/+X/whAuGcrf/SZX+U//9rH8O24m5//8bfx
-      6tlJ9vS6+IVP/DlH9m2j8+Ef4tnjf7xOX0yx1jTdEgnLjwytFVHDZjpTeYeZzVIK8fX3n3uS
-      j//W7/LF5y9z5+6tTFw4xUd/7ZP8v6f/iYTWx7ZO2L2jn3NnzvGJX/9Njp0Z51899hgv/tOX
-      +Noz3+IrL17iA4++veGd//iV53n32+9h990PcO573ypff+lrX+TXP/On/MMX/4EdBwpmUtCd
-      5fEPPsFfP/0C3mgvT/7PT/Fbv/KrHL80w8/+3E/w5J88yVeeepq4bwdHB+B7Jy/zF5/7wjp8
-      KcV6YVRHU6x3iFvfEqw1F+bz7OvxcXI6A8D+o29if6TgvnpxseB31LYcXIbO/Q/8AG/Z5ef5
-      l0/iFEMk/cxP/yIPv/ef88nf/iAvfumv0KMhOl2D3GfEwJzju69daHjnM09/mQ/81r8hMKHx
-      d3/0SQ6+7zHA4Icf/7c4Mxd5/eRpSs4v0vEFcsXjcCzMl77yGt//1qO8/tkvEw162XXwMEPA
-      uWPfYXTBXJdvpFhfyhtiSjTvA6zPRNgf/4/P8/FPfoyDe4c4cMed/OavPcH4+ETTex968Cif
-      +sSn+buvv8LWgS40V4g/+J1/z9Nf+Bs+9pk/4+D+3Xz3uWN4tTyfffLzuLfsoCfUuIAvFx9j
-      QvZwuNPmzExB8fDEuGuHn//4n/4rr4/l6QnpDc9NXzzDb37ikxz9Fz/OwcEOnjt2huTEaZ78
-      /Bc58qY3YWcz5CybnTuH1AjaTYT+6Ifu+43KaWubv9vJ8tWnrjAytXaBDUbPn+LcdJ73vPv7
-      ObhrgD/5wz/ghVOjAExPjDKzWLDPx69c5OvffZ1//dj7Gep087d/9xVmJ8d49uVL/NiPPsru
-      bhf/5ff+nOMvH0NGt/Ejj7yLkePP8Zdf/Had6tq8dvwMoxOznH79ZS6PzwLwxqsvcWrS5IM/
-      +j5EYoSnXzjPyOk3yEk4cfJM8dk8x0+c5sVXz7Fvezd//tm/4fADD/GDb7uPL/7VZ3nx9BgT
-      E1Pcf98Rjj33cvPQBoobDvFXr3y4LCP1g5/VwrPPmueXP/JtvvPa0oYVTqFYb7TGIdD17fgq
-      FDcSLTbEqMVviluDFTbEqFZA0d5opcq+UQlqTSGlCIp2pNAHWIUSKBTtiFYOetpCCVR/QNHO
-      1PYBmiiB6hQr2pmqDTFV0fBQHWHFrYH+wx+69zdKJzXzwKJW8LucLF99amTNZoJ1w8e+vcMM
-      7txHNpXAcjQiQR9ZM0co1oVbc3D5wrg1h9sP3UU8voDLG8CtOXiCMXweNx6XhnD58bs1hMtL
-      KOAjmzUJhDtw6xCNxshk83R1RDEtyV3f9066/YLMUpJAJEY2l6e7s4NMpjb0k9AMHnzHD7J9
-      ax+TMwv43TrDe/exMDuDxxckHPRjoxHuGqAvYqB7w3T3DyDTzfONdW0hn83Q1d1N3pKEg16k
-      5iLo9xIMd5AzM3R2dpBOZ/D4wwQ8Ae66/27mpibwhTrANol29mBmM3R1dZFOF/INx7rxety4
-      DYHLH8bAwhuKceiuu4hPTaPpGrFohK5tO3CScSyh0xEJ4Whugl4DdDfR6BaGBrvI5gWazNOx
-      bQ8B2+LQ/fcwNzWBJxBFk3kMlwcpDHThsG3fQfRMHF+4A8uxiUU7yGbSdPVsIZ+3iIbDuLwB
-      sHPYzo1tPTS4eysvjpPFhXBifep/oYfo7Y2StT0cOHgI4Q6iWUm++eyzHDp0GJkHdBOkhiey
-      lR2Jafp3HyYxO47uDeFxGWQzKYTuRhcSS4Imbb79rWe56577MM0cjmPTNTvG8MHbSU3MErdt
-      orEYB+7oYdZ0uOuwC+kO8vxXn8LXvZVQwIuVTXF5bAJpZVlKZejbOsjubf3khMaFN05w+MhR
-      pK7hdTRevTjKrv23MXHpNbw93fR3dDfku2S5uef++0kl4lw4fYr+/q0c3L+LhVSeyfk0/uwV
-      9h54G7ZtwyvPsufOo5x87QSGrnH7oaMsmTax8BEiES+JRBLTcjDy32ViMcvtdxzC7dJJp5Is
-      LGXo6wigecIkMmnuueduktKNrgt8bsnr45fp2bWfDpeJEexC00ATBm+cG2FLh5eO/gNcOfU8
-      3s4t5FNzhfff+VainR7mJsaZSEqGYwGsYISAK0sqGGY2lefOox2MXhzjn731zcyOTmOEIyxd
-      eYXQ9qOcf+2bjE/d2IEVDWi2CrSwBvTEJQ8HhnLrogOWGSdjCubmiovf9AQit4QEvIEwU5fO
-      oPnDYC4yPT2Hyx1gcnKK+NQonkCkUE4Bbn8ED1kS6cpqzIkrF0lk83SFvOgeP5OTU9jxFK4O
-      g8V4gnwOxmeTDHbuZH5mAbfXYHr8MtNV5RsfG0UCkXCMuflZ8poXw9DQDQ+51DwT8SSL87NM
-      jhl4wt2YqSXSmVxNvntv28+Lr57m0sgEfpGns7sT3fAzOzvDQjzJ+MQ8t+0eYG5mHB1JIpMn
-      vpQiGPAwMTYCBIl1hYgvzLKQdOGy0li2Q2TLdqYWTzMzOVb+v4VjPSwszJHNzZIDlqSO0CSa
-      5jBpafj8XuamxogO9hJfSuE3LBLJDDOTo2S37mH80jm8/hDz05N0+LzF9/swrRDTY6OMTy+x
-      7e7bkGmNU7MzRASMTy7SETGYGBshEPVhZ7MkFpPER8cIOVF8gRBwYyuA+PzLP1e3Fqh4LGFu
-      Sacz4gCw11rgoxu0Fqirp4fZ6emVb7xOYt399HRGuHDmFHlndc+spmylfMcuXySZya5BSWvx
-      eDyYplp+vRYY1bV/zbGAzpANUmx4L3gjhB9gYWachZnxq3pmNWW7lnyvBiX8a4fWLBxq+VgU
-      R4du7H6MQnHNlGOElQRfSjUjrLh1qFoNWpgRTs0EmyqBagYU7UjDfoCFy50IoZxjKW4NynuC
-      F+c7kRK2Hb1EtegrJVC0MwYUguQFQ4mCsBeXh8oNUgJN09FdnpVvVCjWgcJEmACXq7CNuzIk
-      uv5K4PaGcLm965CzQrE6GnyD1vYJ1q/j6/L4lfArNp2GeQDYGCUwXEr4FZtPwzxAifVWAk1r
-      dD6lUGw0VSbQ8kpwo+L1+Ta7CIqbmDqvEMspwY05Eebz+Te7CIqbmLoQSXCztgQKxbXQIkyq
-      UgLFrcEyw6CNSqBQtBsrDIMqJVC0N6sYBlVKoGhfDAFYtmR00mGwX68x9is7xDZnBKivr59k
-      cglN0/F6vUgpMU2TeHxxU8qjaD80gDMXLZ5/JYcQtbW9lJtb+5tmls6ubnx+H26Pm0gkQv/A
-      AHccOkw0Eubee45sYukU7YAGsHPQ4NA+o1jRy6IzXEniSiebaQJFYx0Yho5t2xiGC0llP+xS
-      MsXzLxzbpJIp2gUDwOMS7NtZcBFUMnmkFPg6UpRi5G2GElw4f658PLNBG+UVtxaakJBdqPgE
-      KQm6EBJ30Fw3x1gKxY2AlhixuPT1bGE3fJFqJVCxARTtjBHeqiN0N0LU+oGuHQFSKqBoTzQh
-      INSv0xgj8sZfCKdQXC8Nq0Frz5USKNqbymrQltGCVYwwRftS6xdIlhRB+QVS3Bo0D5OqlEBx
-      i6AhJbNnpmuGQQGkJYmft1u4SVQo2gNNCFgaW8Q2rRpBnz1hM/bNfNlNokLRjhgAQ2/eiTAK
-      /eHS+H/nHh2hiebuohWKNsEA0IrCL6smvTTNpvtgMYSY0gFFm9LgHRokznyS3NmxuphJG1ou
-      hWJDaBgFEoBw6QhDb9gfoFC0Gw1uUaSURHwP4dnVT32aQtFuaNVuD0szvo5IgybKJpFC0a6U
-      A2SUEEKQ1l4pbwNQSqBoZ8qR4kvBsUGUhb8k9rkpDce38YbQ0I5hHNtGNww8nkIQDcexGR8b
-      I51O4zirDO6rULSg6ShQ/fnicy6WThhsNOl0GrfHg9vlwrIsHMcGBPe/6QGCAb/aFK+4bgoR
-      YqjfCFO1CUYK3F0ORnATalspmZmeQkqJrhsgwLFtRkdGMM0sz79wjFhH58aXS9E2VJlAtUpQ
-      ihMmBESO5glo1oYXbnp6asPfqbi1aBgFqqaUpntAaCgUbUfjKBDNosOoUSBFe6JJWVrvVpj1
-      TS+JhvVvakeYol3R5vNBso4LgPi84NjXPZX+gBplVLQ5WqcriV8vxAi2cmDlASmx4xrJF33K
-      +lG0NVr1jG9Xr82db82CAM0l0bxO2TRSKNqR2ggxElL+EALQ/Q7B27PKNaKirSlGiKnYORnb
-      RdnuEaXOsbKDFO1JzVoghGB3aJZmS+BUO6BoR+qC5Mllhj9VK6BoP7TSfl8hJbmkWdz/Wyvs
-      qvZXtCul3fBYps2pp06X/QOp0R/FrYBWEnTDrRPuC9cZRaoDrGhvKn5PgOH7tteEA6isDlWt
-      gaI9Kdf3QoAo7QMurn9TQq9od6rcohRXxVXX9lIthFO0NwYU5P7seT9Dg1lc7pISiFLU1E3T
-      gOHhnSSTyeKEnMDr82KaJpMTE5tTIEXboQkKoSKf/16Ul14JI+1SkqzY/pvUD04kEti2TT6X
-      JxKN4na7icVivPXBh1SgbMWaoJWke3BbhoVFL2fOh+sEfvMiRXb39OByuzBcBol4nHQ6w+Ji
-      nPPnzqpA2Yo1obwU4oH74nz1mT7m593UDoRW/m40p06e2JT3Km4djJKwG4bD0cOz+Pw2QlSJ
-      fClwhlTzAYr2o8Y3aHeXScBvlc8BcjMJ8vEc42d3bkLxFIr1pTLvKyV500Nl6Kdg+7ujATSv
-      Hyvv2qwyKhTrRnkewLZdXDm9n9J5AYnmNnB5LQb3n96UAioU64lWqu113cIfipfX/lRGforn
-      muoDKNoPo7q27xu6iBC1m2GqPcYpFO2GBoUBnuOn/DVOsBqd5ioU7UdxJhgCfofKOqB6M0ih
-      aE/Kw6A7h7Jl86eiBEoRFO2NhpQgqwWf8nG9IigU7YYG4GTvLXQEmix/VrW/op0pTIRpKUCS
-      WNTLKx4ahV61Aor2QxMCdPdrCGBx3oWVqwx8qtpf0e4UQiQJAMH24XSVK8SqoHkoRVC0J5qo
-      WuUphGgy/q9MH0X7UlgLVIqSUaSxE6yUQNGe1ATJQ0qkqB0S3UzR7x8YYCmRQNN13G43AoFp
-      msTji5tYKkU7YdQLeskkqleEzSCTzhCJRvF5feW9+YbLxfahIa5cusDevbs4c+7yJpZQcbNT
-      syGmmnqzaDPYuWsXlmVh23ahdQJM0wRQe4IVa4IhivGAodHsqTaLNqMlePF7L2zCWxW3EuUw
-      qcuGSi3OEisU7UZN+Ot6H6AqPoCi3dEaJ7kaPUKriTBFu1LTCa6PEK/G/xXtjiGKA4w1HV9q
-      XaMrFO1KsQWQK9j/CkV70iRInlIExa1D2S/QSh1hhaIdMardnrS2/zdnIkyhWG+0Zu7Pm7UI
-      CkU7Uu4Er6wISgkU7YfWKOTNFUGhaEdq9wMUqd0Mqep+RfvSZClEo08gNRSqaFe0VkJu2zA5
-      YVTFC1Ao2g+tVW2/uGhw+Yq7fE2haEeMUuVe8oZSsv+7OvMEA3bZX6hC0Y5U9gQ3KAJ4vQ6l
-      9mEz1ODwnUc4eeIE/QMDWPk8wVAIx7EZHxsjnU7jOM4mlErRTjQuhy76whWyMBPsZDU2qw+w
-      MD+PrmtMT00SjkRwHBsQ3P+mBwgG/CpQtuKquPc2L59+ootPP9HFvbd5gfKe4BKVJQ8SsNMu
-      0uc6CN0+zWYoQTqTJhgM4TgOY6MjaLqOY9uMjoxgmlmef+EYsY7ODS+X4ubkc/+hr3z88PeF
-      2PHoxaJrxPLl2hkAw5cnuH9mY0tZxcz09Ka9W3Fz0tupM7toY9mru79mMRxURoRKiqAZxSM1
-      Eqq4gRnoNnj0wSA/8YMRnj+R4ekX0vzvZ5IrPlfTArRWBIXixmZrj8FHfjgGwDvuCRAKaKtS
-      AE0gkU5tcAy1IUZxo/LOe/1sielrlp+BlFw4MUffUAR/yEX9sKdqATafwe1DpNMpdE1nKbmE
-      rumYORPDMAgGgkxPTzG0Y5hEIk5nZxcXzp8reNOrQtN1fD4f0nFIp9MAhMNhlpaW6OzsItbR
-      wdjoSDmtFR6PB6/PR3yx4p81Go2xuLiw9j+8iv1Dbj72eAdH93kZnbb42ktpPv5n89edryGE
-      YOxSAqEJdh7oLBv7tcvhVCuwmWzZsoVzZ8+ye/8e8nmL+fk58vkcc3NzdHR2MDs7g2lmkVLi
-      OA69fX0YusHk5AQ9W7aQyWRwu910dnbh8/kxzUJAxKVEglQqxbbBQQzDIJ/PEwwGcRwHwzBI
-      JpPkcia7du1mcnISx3GIRKJMT0/R19eP1+sll8uxtJQoK4AQgkg0Rs40yeVMLMtak28QDmjc
-      d5sPgKE+Fwd2uNckXwMp2bE3Ru+2UI2U13eGFZvH5MQE8fgi8Xicy5cvMTi4nUw6jaHreDxe
-      orEYW7cOcvqNkySTSVKpgu1rmiYjV64AEAqHCQSCLCwsEA6HmZmeLgj37j3Mzs4Qi3VgZrNI
-      6ZBKpejvH0AAUkquXLlCMBQklUySiC9Sqh4dxyGRSGAY5UXFSClJLiVwuz2EwhEMl6t51PXi
-      cT6XI5czMc0stl1ZeSA3yC+tIYRg++4oEzMh/FaeSKjgfLZ2m6QyhDaTkZGCEJ88cRyAUydP
-      AKDrOq++8jIA83NzACQSiaZ5LCUSLDVJi8fjhXcUFaXE7Ezt8LfP5yeTaW4eVSsAgGVZWJZF
-      Op1q/aOKuFxu3B4PkWiMrq4+DMNFOpUikVhgfn79h8ELWyIFhANZAt58OUFti7zxqbfz15NW
-      wg9cl5mTz+dIJZeYn5vFsSFn5jEMNx0dW645z6uhPA8Q9OdrJL7eY7QyghTtSGUeQNTPA9R2
-      hhWKdqTGeKvdFll9TZk/ivbEqPb90zgTXECi2gDF9dPR0YPPF8S2LXK57IZ0cleiqgWo3vnV
-      WhkUiuUIBMLkcib5vNmQVtuxjdwYClCzIaYs6a2VQaFohs8XYGBguHyeySQZG7u4iSVaHVpp
-      lefsbBjptPYTeqOqgabpdHf31GzdLB273W629PbW3C+EIBqNFoKCq+2etzwFtw+O4PjxYQ7s
-      v8yW3uKUNpDLC9wu54beFi+EYEvvFnbv2cPs7CyxWAwhNGzbYnRkhKHhYXRNp7evD5fLRTwe
-      JxqNMj4+zrZtg4yOjnD50o1fUynWh4IJJCRHj5whHE4VB3wK+8S+/NUOjt6ZpLc3tymF6+7u
-      YW5+jlAo1DJQtuM4JJPJwjUJ2UyGVCqFz+/HkQ5n3ngDy7bQdJ3R0REWFxZYWFjA43Zz8eJ5
-      EvHmM6eKW4PyPEAkXJi2Lo/+SxjcmiUWtYr7gzee7p4eEok4Pd09LQNlXx6ZYnpqCrfbW/Ns
-      aWlAiXNnzgHgcnkxs7maZQF+fwDD5UYTlZiBeSuHrNp0v97pum6g65UxCdu2sG1rzdKFpuEy
-      KgvIHOlg5XNXne73B+npjjI2PkEqVVnq4HZ7cJyq94nCd62mOh2uLj1rufjGa5W0syP6VaUD
-      Neml/MWZF96/7LKjUuc4InM89guv8p3Xlpa5e/UEwt0r3rN7zx5SqTRejwdN00AIHMchGAxy
-      4vjr2LZNrKOThfk5du26vebZc+derzlfKX1gYAc+X7B8PjZ2gUwmtWHpHR09NaMk8/NTNaMk
-      15tuGC7C4RihUJRkMkEul2VpabEh3e8Pk8kkG9JL6LqBlDbveOgtvPTK68zOXv+S5M3EKHRy
-      W/uA3sx+4tkzZzbv5TcZicQCmUyKSKSTeHy+YRjSsvLMz0+zsDCLlI3uZErpK6vFc/EAAAMM
-      SURBVA1NllqVp7/6De675wiRcIjzFy6v3Q/ZYLRqr3DVnuFu3G6vohmWlSeTSTE5eYVMJoll
-      5Zve10z4r5XnXjiG2+3iyOGDa5bnRlMTIqlRGZRCKJbn1BvnmJ6Z461vvq98LRQK4/V66ezq
-      IhbrIBwO09tbcEnS3d0DQCQSKV/rHxggHA4ztGO4YOpeBX6/H4/Xi8fjKeQbjQLg9frweLzL
-      PQq09ApRobIt/sacB2gXCiZMmnCkg0S8sOOrmpJ54vMFavoONwKjYxPE4wne9c4H+dKXnyEa
-      ixEMBunt7WN+fg7btsnn80SjMbq6u7FsCwF09XQzNzeLy+Xm7nvu4/nnvsOB2w4ipeTUyRMM
-      bN2KZVkszM+za/ceLMtCCEFyaYlgKIim6Xi9Xi6cP8/uPXtIJpMkk0v09vZhmlksy2Z05Mqy
-      Za/zC1RALYPYeCwrXzRjlvdkcKMJf4mlZIovffkZpJSY2SyZTJqlRALdMHAcByEEppklHl8k
-      Z5oEQyFchptgKITP5+Py5UtsG9zOzMx02e1laZOO1+tlKZHA6/chEARDQZJLSULhMKZpks/n
-      iC8ukk6nyVt5urt7sCyLnLny8H1xMZzElj40kaU+IJ6q91fHzMwELpcLny9IKpXANDM16YVl
-      AQKv10c2u/zG85uV0jbG6empFe81TZOpyUmg4AJzObLZLJcvX1r2ntOn3ygfxxfj5HLmqjYM
-      GVAY6sw7XXj1Uep9AZXUQbUEy5PLZcnlsqRSyw0Ty7YV/qtlrTbLN2O53Wv1aALQhCgKfxEJ
-      8xkDZGkNkGoHFO1Jg3doAdiO4HeObeXs+QzSuZFXAikU14cmkCBlMT5Aoaa3pcC0NcbHMyzM
-      ZpQCKNoWA2As3kfcDHKg5yxCSLy6zYcPjyKndaIdhbHUW10JZmYm0HUdXTewbauhk6u4OTGQ
-      cGZ2J/FsmINbzhQWRggYDJnIULi4Zv7m7wfMz08BAk0TTSPLFATcQNf1pgKey2U3qKSKjcQQ
-      Au7oPUXCDFIzBCrKf9qClda4KAG/Nfn/kerfg9K58A8AAAAASUVORK5CYII=
+      AAAboklEQVR4nO3deZRcV33g8e9bauvaq6t675bU2iyrZS22ZElmGTMQAmcCAZwEY04yJgkk
+      DCTkTDhgZibAAAFCwjIkOOA4cDBJHMdDMGOOBbEBsQhJtiRb1ma51VKrq7dauvblVdV7b/4o
+      qaW2epXUXdVd96PT53TVffXerdb9vXvfffe+Kzk9LSaz8DR10BHaQcC9Bq+zE6vFNcOWJq8O
+      vsjB+CbKpmW2XS5jJn23u3B7FX71TAokqdYZEq5mmuQqQ9iUIKrcNK+PqDMlBNy93Lr6rTR7
+      12KaJtJc/9kmnM12UjLUGysXplnXBctqk7DaZEygfnPZmEwkQMdEn/dnpFfWAJKk0LfmHfR2
+      vOY6MnBjhcKlFrDJJeIl7w3sZXFZbRJWu0Q2ZdQ6K8I0DLOCLM14Xr/GlC1V2caevg/gd6++
+      roPf0BnRNOlwxHEoJWKat24rgZJmUtIMxPm/Pi2k8EvyVQEgScpk4Z+zubMYJIlI0YdNKSFJ
+      9d7AqOe8CfPl9plXAqBvzdtrV/gvSZadUHayeAWs3gNLWEqpOMhQveBd0/6amhb+KonFLKBN
+      3U4kS62/o3CZImuwgAvWm02SpGoA3Lr6LXVQ+BdfOVnCLM/a6yssofaW5wj5T9c0D6qnqYOg
+      d30NDm1iyiAZSxd4lUwF6aoaxrBWkCoykiEvWR6EKtOEJnsMWS4jJaBWTVO1M7QDE3NKwVga
+      EmZbAWnUDuZSHXvqcSr+HHLBipp2LNHxhcskCcLje6hUFvOab25qwN17Xc0f0zSx2ay0dwTx
+      +zxI8nWeRduv72M3h7gorq1Ntc4AqtfVueAPWSwqd+7egs4oB4/tY//RM1T0yiJkTxAWlzrz
+      2J7peb0udu7u5eFHH+DYif2LlC1BWBrzv21G9cy/c/caPv43v0U8MbZYeRKEJTPvADBNk927
+      t/Dwow+Iwi+sGPO+crXbbJQYFc0eYUVR59v92d4R5PCxfYucHUFYWvOuAXw+DwODpxYzL4Kw
+      5OYdALIsoRu1G7chCItBFfeBhEYmBsEIDU0EgNDQRAAIDW3e3aBi0JiwEokaQGhoIgCEhiYC
+      QGhoIgCEhjb/G2HiGlhYgeYcDl2Wcsgr9mG3QqObvQlkQtYyTM4yukTZEYSlNet9ABMTi9mE
+      YthEC0hYkWZtAkmShLPcjiSulYUVas5rAHlh04YFYVkRp3ahoYkAEBpaTds3H/jwx3j1tlUA
+      lLUCj3/nEb734yML3s+te+7m9uYS50p+gtpFvr//+DXb3POe93F+/3c5ci5afcMe4pGHP431
+      qm2e/Jdv88iTv7yer7Jw3g4+/l/v5pNf+aelOZ4wrZrOCFt3yyY++8D7eP5iHnegnSe++/f8
+      8pdvJapBqLUNCyVGxicACYsq428OEItEMZDp7ukiOxElkSngaQ6xukMjVWils5gCQFYtdHe0
+      EB4aRjehe00vySO2KwdXbARJ8qb7PnJNviRZpae7jZHwMGW9+jTpUGsblUKaRDoPkoRFkbG7
+      vNikErFE9tIHFVb1tDM2MopW1pEVBck0CLW1k4yOoxkS3e1BLobHIBPh7//pB5PH7OzqJBEd
+      J69Vn7Bnd7pp9TkYHI4szh9fAOpoOHQ2k6SoS6iyxGe+/CWMyDnsLWswhp7jI98+xP5HP8fA
+      4CjffPhb/MF/+yOOHj7C9t17efzBLzDyin21rdnEVz/zpxx67kV2btvIn37gw9MeU7HYaG0J
+      Tr5OJRLYgz089KWP8ezh57lzVx/v/8M/431/8Snc+VEcLas5s//7fOvAKD/4+gMcfPY4qzZt
+      4bsP/jU/eCHKP3z1kxw/coytd2zni5/4OJ7bXs+fvP1Ojp4cYM/OPp4/cwHJ6sYy/iJ/9vAv
+      +D8f/23u/e9/y4MP/hXDZ06wdnMfD//N54naV/M//uBNvDgQZfsqJ/f+8ScRD3VfHDXv4vns
+      l79KTjOw2azs+9aDjBZVvv+df6B/MMqGLXfwyd9/DXz7EPmxc7z7PR/F6QsS+eRnSGoSMd3J
+      zq238sTA1H2++z3384unnuAXJ4YpqF7ue+trmW5Ju+Cq9Xzif/355OuHv/IlNv36b/HEN7/G
+      d354jI19W+no280m6zj3fviLINv4wZMP8+iBz5IKv8xH/uKvWHfH6/jAG7YirQvwk8f+kW98
+      71d0btnLZ//wd/j2oTiHfvJDPvON7/PXX/9H/vXvvsDRsJPvPfLnwC8A2POGNyNFzvKD//g5
+      rlNj/Ml77+Whn41RSMX48VPf5//mK8jUchmJla3mAfDAhz7I8xfzk69lm4f3f+hDXDx9nJMD
+      E5Nnvnii2rTxhjr51Kc/yIEDh9AsViheu0+f143as5rdzjZIj3Lk9BDbN1y73Xj/Cf74gx+d
+      8t5uv5eBeAKA8IUB1m69i3h8oppoaKR0hSYgkarmp1wuA+Dxeoifqm4XjU/g9biBOBOJxOR2
+      +UIeDMeUs7nf68bpa2b3nbcD8O8/OsgP/9/PqKR/jXe863e5fVMn77r394nmxKqUi6HueoHc
+      batokSb49Of/loSh4lCUKel927dz6sDTfPHvHsEdCKKoyjX7OHDoKBajyLe/8294ezbin2HN
+      ZIfbz+47b5/8uWVtF4cPH+G/vPXNeFxu/udffoYWfZRV21/Fuq4gt+25G0f0HBPT7OtXBw7x
+      lnveht/j5Hff+TYO/OrZeX3fI88exeW08/hjj/Ny3GDL+nbefv8f0ddc5n9/6gtczMo0u2xz
+      70i4Lsq2je/8xHw2bGsLcrL/GSKxoZuagf6XzpDVrpzdtFSEpBTgvt9+E5HTz/HCUIKTJ85g
+      lgucevkiF/pfZv32Pbz57l08vW8fyXSK0+fCpOMRBkfixMZH2P/j/djb1/HOt72R/iM/499+
+      +CwmED4/QCKnTR7L3RxgVVcH3Zd+VKPAMz/6D0quTu6759c5/KMneOrnRzlw7BzvuvceekNW
+      Pv35B8lpZXQtz5lz4WqesykO/PKXJAwP9/3ObxDvP8bX/3kfhgmJ6Bgj0Wptcf7ls+TLAGVO
+      nh6AcoHDBw/x0miBd7/r7bj1Cb7y0GOcOH6CW3e9hre+cS/7HvtnDp4K39S/uXCF9Htv+fd5
+      XV9t3baRf933MU6cObDYeRKEJVN3TSBBWErzDoAGWERSaEBqIyyPKggzEU0goaGJABAamggA
+      oaGJABAamggAoaEp226Z753gZk7cxDvBiurglo299Ky9hWIuTcWQ8bocFLUS3uYQNqsNiyKx
+      dsMm0uk0Pp+HYqFAk8uHTZXw+vzkCxqhUDMFrczmnW9gTYeTQiqJwxOgqJUIBZspFAqvOLLM
+      ps19+P0BUqkMAa8bw5RwuZw4nB70UgFfcwvbt+1gdHwcvy9ARa/g93no7OwhVyzjtNnp6unG
+      lGQko4zbH8IsF9ENk7UbN1OQXey5tZuxWJ7Vq1tBttO5YQtqNoIhSShWBz6Pi02btxKbSOJu
+      siHLCqpqwepwY5UNdtz5WjKJcTbftoN0No+Kjo5Cc3MAq9WOIVlZ0xVAVpvYtm0HuXyBHbff
+      TrCljUKhhFmp5sdms+P2uGlyuihqZYIBH7ph4nJ3snlzG6lUAZfHj6FX2LBxI7FoFH+wFbNS
+      wesLYJoGbpcTQ7LwurvvZnBoGJ/HiSlbcVoVtHKFYEsr+VyeUEuIfL5IKBRk463bKBWzFApF
+      mtw+nHYVVBsOmwWPL0C5XMHv9WJzOFEcPjr8dnJ5DbvTicfjqX7HchFjkYfBLmAw3M3tLpUU
+      N21tPoq6jVv7tiJZXciVLD//2c/o27INiyJRzBexNzXhcHoI+jz85Jl93HHnXvJFDQydoD9M
+      1y13oOSGGUyWcYX8bLz1DmK5Mjtvvw1ddnB0/z4kT1v1P61SZOB8mNa2TgrZFM139aBIFRRD
+      4uzgCFvXt5MxXGjRM6iKTGjVbfiNGFv3vpZi+ARFxcPt7V2cOn4Sr6+Dru4QhZwNV7ObbHSI
+      w889T6illUg6jCwr3LZ1D/aAin90gJzdwa49e9n3zE/ZuevVlCUZZzlLa3s3WzauJppIUy6V
+      yBUrdLf60CWVLdvuoFA0ues1ryY5PsIL5yfYsK4Dq6qRI4jbKeMaPEVToIsNPRMoioLsbGHv
+      Li9jY2Mce+FF+rbtQnXY0Qs6mehZ1m3fRXZkgpNnznHL1j3EkhY29DQTTxTxBWycPmVj+85d
+      ZNMaHluOM+fG2bFlE5FklooBu++6G4kCJU0iGTmPz95Cp9NKe2uQUM9mbKUox46fxG6307t5
+      K/mf/5RtO+5ANnRQrCTyRTzoqB4fWjaGUZZo8nswywalyvNs2HEHpWSm+h2LBs89t/AJUgux
+      gPkAN1dFS1HQJOLxS88cUtJIpQwmEBkNgwlI0FRuxqpCLJXBpsJo+DyJrEab3wlWJ9HRUVQ9
+      ic0SJDGRREuXGBlL0tO+mYl4HIvNyvh4mPj4lWMnUlnQMqQTGWxSCQOF8ZGLxFvcDI8P0t0a
+      IJWcABz4AgFGL5wjNTKEM9iDVpFwOW1kMiky6QlkSxtOt4WsJrOmu5WxSASnBUaGw+BUyZY0
+      3DYvRjHDQDKHy2FBVizIxRSRZBqfz0s8FmM0Y+LVhvG0rmciMYHFGaCcTZDXDCpUmBgJY5Ql
+      RofDWFQNXCrFTAGHy09sdBC71UU2mSBbToHTymgsw5ruVtLJKOUkFLOwqj3A2Ng4ejxOLBHn
+      +PMvYLcYJDI5hi6ex+q8BVm1YJaKZNJJEtkwbm8nkViUTNHAIumMRZOoep5UQafZ42A0Moq/
+      3U9JspIYG8GoJAk2N5OIjJKm2sa22JrIRC6SKWiMTWTpbfeTTmapFOPoZYMWuYtCJktH12oS
+      8QnSY+PV72j1LXo5lO7/zSfmVcnctnUDjz71QE3GAgXbugl4HPSfPTvtuP7peJvbaAv5Od9/
+      hlLl+urRJm8L5COXBrDNQLayYcN6khMxkhNRSpW5cxgKtRKNjk95LxBqIRGN3LyJL7IFq6zP
+      Kz9TP3fp+8RGicSmG/e6cKGWVqKR8bk3rIGazweYj9jYELEFLk6fio+Rit/Yivb51DymIxol
+      zp45uaD9vrLwA0xEb/LUR6NM6XqmEFzH95lLvRZ+mKMXyHCUMcVkPGEFmzEATNPEDBQw3aWl
+      zI8gLKkZm0CSBFLKhpwTT4YWVq5ZrgEk5IxNrAsgrGizd4NK0/4qCCtGzXuBZFlBsYhJ30Jt
+      1DQArHY3Fqu9llkQGlzN1giz2JpE4RdqrmajQVWLKPxC7dUsAGT52gdaCcJSW/bzAewOR62z
+      ICxjCwiA+uwIdThmeO6hIMxDzYZDC0I9WPZNIEG4ESIAhIYmAkBoaDVdI0wQaq3mY4Fm097e
+      QTabQZYV7HY7pmmiaRqpVLLWWRNWiLoOAE0r0hwMUSwWsFgs2G12VIuFVatXc/HCABs3ruNs
+      /2CtsyksY7LEfP8tPZ8/gKoq6LqOqlowAU2rrvCSyeY4dPhoDXIlrCRX1QAmJualol4fFwYD
+      5/onf49GxHq5ws032QtkmoBUwTTro/ALwlKYrAEkSQLTWi8nf0FYEuI+gNDQRAAIDa1mM8IE
+      oR4s++HQgnAj5j0cWhR/YSUS1wBCQxMBIDQ0EQBCQxMBIDQ0EQBCQxMBIDQ0VZJEB6fQuEQN
+      IDQ0WawBJjQy2ZDTIIJAaFAqKJhmdU2werN6TS+GrqOoKjZbdRENw9AZGR4mn89jGNezDqgg
+      XCHLupN6vRDO5/NYbTasFguVSgXD0AGJPXe9CpeziTt37ah1FoVlrr57gUyTaGQc0zRRFBUk
+      MHSd8NAQmlbk0OGj+APNtc6lsIzV9WNRInW8wriwMixgOHQd1xSCcJ3mfx9AlH9hBRLPBhUa
+      mrgTLDQ0EQBCQxMBIDQ0EQBCQxMBIDQ0sUqk0NBEDSA0NBEAQkMTzwYVGpqoAYSGJgJAaGgi
+      AISGJoZDCw2trifE9PauJZvNglQNQLvDjqZpjI2O1jprwgpR102gdDqNruuUS2W8Ph9WqxW/
+      389r734dPq9HzAkWbtgcNUD1qUG1av6EWlpIJCbQdZ10KoWiqhiGQSaTmVwoW8wJFm7ErAFg
+      SCWQdCTDsVT5meL0qZM1Oa7QOGa9ESahXPpFXAALK9OsNYCECmZdXycLwg2p64tgQVhsCxoO
+      LRpCwkojagChoYkAEBqaCAChoYkAEBqaCAChoYkZYUJDW0A3qIgAYeURTSChoc0SACamKRbP
+      E1a2GQPANCFdGkQsoyqsZDMGgIFOSc+IFVSFFW3GAJBRCdg3LmVeBGHJzTjWWZJAkaxLmZdr
+      dHR2kkmnkRUFq9WKhISmaaRSyZrmS1g55j3YvxadoIV8Aa/Ph8PuuDQ1E1SLhVWrV3PxwgAb
+      N67jbP9gDXImrBSyJEnM56cW1q5bR6VSQdd1MKuX45qmAUzOCRaEG1HX072ee/ZwrbMgrHDi
+      RpjQ0EQACA1NBIDQ0EQACA1NBIDQ0BYQAGI4tLDyiFUihYYmZoQJDU1cAwgNTQSA0NBEAAgN
+      TQSA0NBmDABVyS9lPgShJmSJ6f4ZbFr7CJhXvycIK8+0NYBpKoRHX4eYECysdNPOB5AkSGY2
+      iJWRhBVv/jfCBGEFqusZYdu27+DUyZN0dHZSKZdxud0Yhs7I8DD5fB7DMGqdRWGZq+tu0MTE
+      BIoiExkfw+P1Yhg6ILHnrlfhcjaJhbKFBXE4nLS0dNHS0oXD4QTqvAbIF/K4XG4Mw2A4PISs
+      KBi6TnhoCE0rioWyhQXp7Oyd/N3j8dPf/+JCAmDpLxaikciSH1NY3lTVQqVSnv/2oodfWAlU
+      1YLH48frDVIo5MjlUmQycz9Ara6bQIIwXxaLlUCgFQCXy4OiyPMKgLq+CBaEV3I6PSjKzTtv
+      ixpgGehZtZp8PociK2SyGRRZQStpqKqKy+kiEhln9Zpe0ukUzc1BBs71V5+mdxVZUXA4HJiG
+      QT5fHefl8XjIZDI0NwfxBwIMh4cm02Zis9mwOxykklfOrj6fn2QycfO/+FWsVjuhUDt2u5Ny
+      uUQ+nyEWG73h/YobYctAa2sr/S+/zPpNGyiXK0xMxCmXS8TjcQLNAWKxKJpWxDRNDMOgrb0d
+      VVEZGxulpbWVQqGA1WqluTmIw9GEphWRJIlMOk0ul6O7pwdVVSmXy7hcLgzDQFVVstkspZLG
+      unXrGRsbwzAMvF4fkcg47e0d2O12SqUSmUx6MgAkScLr81PSNEoljUqlclP+Boqi4HC4ALBa
+      bej6/C90ZyNqgGVgbHSUVCpJKpVicPACPT2rKOTzqIqCzWbH5/fT1dXDS2dOkc1myeWyQPU5
+      qkMXLwLg9nhwOl0kEgk8Hg/RSKRauNdvIBaL4vcH0IpFTNMgl8vR0dGJBJimycWLF3G5XeSy
+      WdKpJJfHiBmGQTqdRlWvFCPTNMlm0litNtweL6rFcmVImcQ1v5dLJUolDU0rous6qmLDxETX
+      S0vxpxUBsBwMDVUL8amTJwA4feokUD0rvvD8MQAm4nEA0un0tPvIpNNkpklLpVLVY1wKlMti
+      0eiU1w5HE4XC9M2jqwMAoFKpUKlUyOdzM3+pSywWK1abDa/Pz6/t/SAuZzP5XJbx6EWeOfi1
+      OT9/o+bdDSpaSvXnle38xTRT4QduqJlTLpcol0vkshm2rn3H5Ptb1rIkASB6gYSGJgJAaGgi
+      AIQlJUky9dSgVgEsVoNKRcI06idjwsrzn3e/n/U9e8nkY4zFzi5JG38uKpi09RYoFWTGB+3U
+      U3QKy0/fujcwHu8nmjh/Tdrrd7//qu1eXycBIEEhq6AVZGadAyniQpjFmq6dvPeeb06+Hgg/
+      y0OP31/DHM2PDBLxYTuZibmWRK3PCJBlhVCoZcpCfpd/t1qttLa1TdlekiR8Pl9NF/8T6sfk
+      fYDlWhQkSaK1rZX1GzYQi8Xw+/1IkoyuVwgPDbG6txdFVmhrb8disZBKpfD5fIyMjNDd3UM4
+      PMTghWura6Ex1PWd4FCohfhEHLfbPeNC2YZhkM1mq++ZUCwUyOVyOJqaMEyDs2fOUNEryIpC
+      ODxEMpEgkUhgs1o5f/4c6dT0d06FxlDfAdDSQjqdoiXUMuNC2YND40TGx2kNrp+sxjxOP+Ox
+      l6fsKz6mYZWDtDQHAaakNzU58Xu7sFock+9NpMKUy4XJ14ud7mwK4Gq6Mr0zm4+Ty0/ctHSL
+      xUHA2zX5ulQukEiFF5y+ftVedGmY/vNniMavpJuSxsDIgcnX44l+mpqcXO3qdGBB6VarDcO4
+      csdZkhaWDkxJv7z/ug6AcrlEczCEruvIsowpVWsAi8UyuVC2P9BMPp/jvW//zpTPPvDlvimv
+      50q/780fpbdr5+Trbzx+P+fDzy5Z+p7bfm9KL8nTB782pZfkRtN9Hi+9HXvZfstvcPLc04zH
+      +xkefema9E1r/hMD4WcZi5+dkg45UqkYsViYvJbk9XffRe75KLFYNcgu5I/z0NB7mc1Dj11/
+      ej6fI5mcuO50gIGB09e8V9cB8PLZs7XOwrJx5NT3GAg/y13b7uPg8ceIJS9MSU+mR3jm4Nf4
+      +ZFvUSpfO67ncvpcXZOZfAyAHz69n927duD1uDk3MHjTvsdSm18AmOL5O/UumR4hmR6ZUqtM
+      Z7rCf70OHj7KplvWsWNbH0efP3HT9ruU5jEUwsRtvIxqiqdFC9c6faafSDTOa1+9e/I9t9uD
+      3W6nORjE7w/g8Xhoa2sHqh0bAF6vd/K9js5OPB4Pq9f0IssLG53T1NSEzW7HZrNV9+vzAWC3
+      O7DZ7HN+Xp2rL9w0JayksJBZUMaEhTly6nsMjhxjZ989HDz+KIn08JT0y82T3q5dDIQP1yiX
+      0wsPj5JKpXnzG+/mqR/9FJ/fj8vloq2tnYmJOLquUy6X8fn8BEMhKnoFCQi2hIjHY1gsVnbu
+      2s2hgwe4dXMfpmly+tRJOru6qFQqJCYmWLd+A5VKBUmSyGYyuNwuZFnBbrczcO4c6zdsIJvN
+      ks1maGtrR9OKVCo64aGLs+Z9ziaQJEFK6SMotd6sv5cwjctNmP6Lv5p1u3or/Jdlsjme+tFP
+      MU0TrVikUMiTSadRVBXDMJAkCU0rkkolKWkaLrcbi2rF5XbjcDgYHLxAd88qotHI5GMvL0/S
+      sdvtZNJp7E0OJCRcbhfZTBa3x4OmaZTLJVLJJPl8nnKlTCjUQqVSoaTNPatsXtcAuuSce6MG
+      9+T+z+Fzd7CuZzcn+p9mNHpmSvpDj9+PIlvobr+NC8NHapTLxWWa1fmOkcj4nNtqmsb42BhQ
+      fQTmbIrFIoODF2bd5qWXrvy9U8kUpZI2rwlDdd0LtJyMRl9iNPoSpwd+MuM2ulFesYV/oW7W
+      ZPnpzDZ77ZXEfAChoYkAEBqaCAChoYlrgHl6cv/naLL7cTUFSOei11zkCsvTAp4OvVwHTFc9
+      ffBryLKCRbWjla59Xs2T+z+H0xGgye4lk49fU8BHoy9d8xlh+Zu2BjAxr50lsLzL/5xjXEQB
+      b0z/H+9cjahGRd4kAAAAAElFTkSuQmCC
     </thumbnail>
     <thumbnail height='192' name='Hero | Sealed Returns' width='192'>
       iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAACXBIWXMAAA7DAAAOwwHHb6hk
